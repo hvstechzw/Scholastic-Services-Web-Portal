@@ -1,249 +1,656 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal - View Your Reports</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scholastic Services Web Portal</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <style>
+            :root {
+                --primary-white: #ffffff;
+                --secondary-white: #f8f9fa;
+                --light-gray: #e9ecef;
+                --medium-gray: #adb5bd;
+                --dark-gray: #495057;
+                --black: #212529;
+                --accent: #6c757d;
+                --hover-accent: #5a6268;
+                --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                --transition: all 0.3s ease;
+            }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        .container {
-            width: 100%;
-            max-width: 400px;
-        }
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: var(--secondary-white);
+                color: var(--black);
+                line-height: 1.6;
+            }
 
-        .login-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .login-box h2 {
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 600;
-        }
-
-        .login-box > p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.5;
-        }
-
-        .input-group {
-            margin-bottom: 1.2rem;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #555;
-            font-weight: 500;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            background: #f8f9fa;
-        }
-
-        .input-group input:focus {
-            outline: none;
-            border-color: #667eea;
-            background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .login-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-        }
-
-        .login-btn:active {
-            transform: translateY(0);
-        }
-
-        .error-message {
-            color: #e63946;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            background: #ffeaea;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 4px solid #e63946;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Dashboard Styles */
-        .dashboard-container {
-            max-width: 900px;
-        }
-
-        .dashboard-box {
-            text-align: center;
-            min-height: 500px;
-        }
-
-        .welcome-message {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-        }
-
-        .report-image {
-            max-width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .logout-btn {
-            background: #e63946;
-            margin-top: 20px;
-        }
-
-        .logout-btn:hover {
-            background: #d00000;
-            transform: translateY(-2px);
-        }
-
-        .loading {
-            color: #667eea;
-            font-size: 1.1rem;
-            margin: 2rem 0;
-        }
-
-        .no-report {
-            color: #666;
-            font-style: italic;
-            margin: 2rem 0;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .student-info {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .student-info h3 {
-            margin-bottom: 5px;
-        }
-
-        @media (max-width: 768px) {
             .container {
-                max-width: 100%;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
             }
-            
+
+            /* Header Styles */
+            header {
+                background-color: var(--primary-white);
+                box-shadow: var(--shadow);
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 0;
+            }
+
+            .logo-container {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .system-logo {
+                height: 50px;
+                width: auto;
+            }
+
+            .logo-placeholder {
+                width: 50px;
+                height: 50px;
+                background-color: var(--dark-gray);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-white);
+                font-weight: bold;
+                border-radius: 5px;
+            }
+
+            .portal-name {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--black);
+            }
+
+            .manufacturer-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .manufacturer-logo {
+                height: 30px;
+                width: auto;
+            }
+
+            .manufacturer-logo-placeholder {
+                width: 30px;
+                height: 30px;
+                background-color: var(--black);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--primary-white);
+                font-size: 0.7rem;
+                border-radius: 3px;
+            }
+
+            .manufacturer-name {
+                font-size: 0.9rem;
+                color: var(--dark-gray);
+            }
+
+            /* Main Content Styles */
+            .main-content {
+                min-height: calc(100vh - 140px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 40px 0;
+            }
+
             .login-box {
-                padding: 2rem 1.5rem;
+                background-color: var(--primary-white);
+                border-radius: 10px;
+                box-shadow: var(--shadow);
+                padding: 40px;
+                width: 100%;
+                max-width: 450px;
             }
-            
+
+            .login-header {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .login-header h1 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+                color: var(--black);
+            }
+
+            .login-header p {
+                color: var(--dark-gray);
+                font-size: 0.95rem;
+            }
+
+            .input-group {
+                margin-bottom: 20px;
+            }
+
+            .input-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                color: var(--dark-gray);
+            }
+
+            .input-group input {
+                width: 100%;
+                padding: 12px 15px;
+                border: 1px solid var(--light-gray);
+                border-radius: 6px;
+                font-size: 1rem;
+                transition: var(--transition);
+                background-color: var(--secondary-white);
+            }
+
+            .input-group input:focus {
+                outline: none;
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
+            }
+
+            .login-btn {
+                width: 100%;
+                padding: 12px;
+                background-color: var(--accent);
+                color: var(--primary-white);
+                border: none;
+                border-radius: 6px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: var(--transition);
+                margin-top: 10px;
+            }
+
+            .login-btn:hover {
+                background-color: var(--hover-accent);
+                transform: translateY(-2px);
+            }
+
+            .error-message {
+                color: #dc3545;
+                margin-top: 15px;
+                font-size: 0.9rem;
+                background: #f8d7da;
+                padding: 10px;
+                border-radius: 5px;
+                border-left: 4px solid #dc3545;
+                display: none;
+            }
+
+            /* Dashboard Styles */
             .dashboard-container {
-                max-width: 100%;
+                width: 100%;
+                max-width: 1000px;
+                display: none;
             }
-        }
-    </style>
-</head>
-<body>
-    <!-- Login Page -->
-    <div id="loginPage" class="container">
-        <div class="login-box">
-            <div class="logo">🎓</div>
-            <h2>Student Portal</h2>
-            <p>Enter your credentials to view your academic report</p>
-            
-            <form id="loginForm">
-                <div class="input-group">
-                    <label for="portalId">Portal ID</label>
-                    <input type="text" id="portalId" name="portalId" required placeholder="Enter your 6-digit Portal ID">
+
+            .dashboard-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+
+            .dashboard-title {
+                font-size: 1.8rem;
+                color: var(--black);
+            }
+
+            .dashboard-actions {
+                display: flex;
+                gap: 15px;
+            }
+
+            .action-btn {
+                padding: 10px 20px;
+                background-color: var(--accent);
+                color: var(--primary-white);
+                border: none;
+                border-radius: 6px;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .action-btn:hover {
+                background-color: var(--hover-accent);
+            }
+
+            .student-info-card {
+                background-color: var(--primary-white);
+                border-radius: 10px;
+                box-shadow: var(--shadow);
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+
+            .student-details {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .detail-item {
+                margin-bottom: 10px;
+            }
+
+            .detail-label {
+                font-weight: 600;
+                color: var(--dark-gray);
+                font-size: 0.9rem;
+            }
+
+            .detail-value {
+                color: var(--black);
+                font-size: 1rem;
+            }
+
+            .report-container {
+                background-color: var(--primary-white);
+                border-radius: 10px;
+                box-shadow: var(--shadow);
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+
+            .report-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            .report-title {
+                font-size: 1.5rem;
+                color: var(--black);
+            }
+
+            .report-actions {
+                display: flex;
+                gap: 10px;
+            }
+
+            .report-content {
+                border: 1px solid var(--light-gray);
+                border-radius: 8px;
+                overflow: hidden;
+                min-height: 400px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--secondary-white);
+            }
+
+            .report-image {
+                max-width: 100%;
+                max-height: 500px;
+                display: none;
+            }
+
+            .loading {
+                color: var(--accent);
+                font-size: 1.1rem;
+                margin: 2rem 0;
+                text-align: center;
+            }
+
+            .no-report {
+                color: var(--dark-gray);
+                text-align: center;
+                padding: 40px;
+            }
+
+            .no-report i {
+                font-size: 3rem;
+                margin-bottom: 15px;
+                color: var(--medium-gray);
+            }
+
+            /* Fullscreen Report Styles */
+            .fullscreen-report {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+
+            .fullscreen-content {
+                position: relative;
+                max-width: 90%;
+                max-height: 90%;
+            }
+
+            .fullscreen-image {
+                max-width: 100%;
+                max-height: 90vh;
+            }
+
+            .close-fullscreen {
+                position: absolute;
+                top: -40px;
+                right: 0;
+                background: none;
+                border: none;
+                color: var(--primary-white);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            /* Footer Styles */
+            footer {
+                background-color: var(--black);
+                color: var(--primary-white);
+                padding: 30px 0;
+            }
+
+            .footer-content {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-section {
+                flex: 1;
+            }
+
+            .footer-title {
+                font-size: 1.2rem;
+                margin-bottom: 15px;
+                color: var(--primary-white);
+            }
+
+            .social-links {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .social-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background-color: var(--dark-gray);
+                border-radius: 50%;
+                color: var(--primary-white);
+                text-decoration: none;
+                transition: var(--transition);
+            }
+
+            .social-link:hover {
+                background-color: var(--accent);
+                transform: translateY(-3px);
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-item {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .contact-item i {
+                width: 20px;
+                color: var(--medium-gray);
+            }
+
+            .development-notice {
+                background-color: var(--dark-gray);
+                padding: 15px;
+                border-radius: 6px;
+                margin-top: 20px;
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                padding-top: 20px;
+                border-top: 1px solid var(--dark-gray);
+                color: var(--medium-gray);
+                font-size: 0.9rem;
+            }
+
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .header-content {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .manufacturer-info {
+                    justify-content: center;
+                }
+
+                .login-box {
+                    padding: 30px 20px;
+                }
+
+                .dashboard-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 15px;
+                }
+
+                .dashboard-actions {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+
+                .footer-content {
+                    flex-direction: column;
+                }
+            }
+
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo-container">
+                        <!-- System Logo -->
+                        <img src="Images/logo_light.png" alt="Scholastic Services Logo" class="system-logo" onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';">
+                        <div id="logo-placeholder" class="logo-placeholder">SS</div>
+                        <div class="portal-name">Scholastic Services Web Portal</div>
+                    </div>
+                    <div class="manufacturer-info">
+                        <!-- Manufacturer Logo -->
+                        <img src="Images/Black Variation.png" alt="High Voltage Software Technologies" class="manufacturer-logo" onerror="this.style.display='none'; document.getElementById('manufacturer-logo-placeholder').style.display='flex';">
+                        <div id="manufacturer-logo-placeholder" class="manufacturer-logo-placeholder">HV</div>
+                        <div class="manufacturer-name">High Voltage Software Technologies</div>
+                    </div>
                 </div>
-                
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Login Page -->
+            <div class="container">
+                <div class="login-box" id="loginPage">
+                    <div class="login-header">
+                        <h1>Student Portal Access</h1>
+                        <p>Enter your credentials to view your academic reports</p>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="portalId">Portal ID</label>
+                            <input type="text" id="portalId" name="portalId" required placeholder="Enter your 6-digit Portal ID">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter your password">
+                        </div>
+                        
+                        <button type="submit" class="login-btn">Access My Reports</button>
+                    </form>
+                    
+                    <div id="errorMessage" class="error-message">
+                        Invalid Portal ID or Password. Please try again.
+                    </div>
                 </div>
-                
-                <button type="submit" class="login-btn">Access My Report</button>
-            </form>
-            
-            <div id="errorMessage" class="error-message hidden">
-                Invalid Portal ID or Password. Please try again.
+
+                <!-- Dashboard Page -->
+                <div class="dashboard-container" id="dashboardPage">
+                    <div class="dashboard-header">
+                        <h2 class="dashboard-title">Academic Dashboard</h2>
+                        <div class="dashboard-actions">
+                            <button id="downloadReport" class="action-btn">
+                                <i class="fas fa-download"></i> Download Report
+                            </button>
+                            <button id="logoutBtn" class="action-btn">
+                                <i class="fas fa-sign-out-alt"></i> Log Out
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="student-info-card">
+                        <h3>Student Information</h3>
+                        <div class="student-details">
+                            <div class="detail-item">
+                                <div class="detail-label">Full Name</div>
+                                <div class="detail-value" id="studentName">Loading...</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Class</div>
+                                <div class="detail-value" id="studentClass">Loading...</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Student ID</div>
+                                <div class="detail-value" id="studentId">Loading...</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Portal ID</div>
+                                <div class="detail-value" id="portalIdDisplay">Loading...</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="report-container">
+                        <div class="report-header">
+                            <h3 class="report-title">Academic Report</h3>
+                            <div class="report-actions">
+                                <button id="viewFullscreen" class="action-btn">
+                                    <i class="fas fa-expand"></i> Full Screen
+                                </button>
+                            </div>
+                        </div>
+                        <div class="report-content" id="reportContainer">
+                            <img id="reportImage" class="report-image" src="" alt="Academic Report">
+                            <div class="loading">Loading your report...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Fullscreen Report View -->
+        <div class="fullscreen-report" id="fullscreenReport">
+            <div class="fullscreen-content">
+                <button class="close-fullscreen" id="closeFullscreen">
+                    <i class="fas fa-times"></i>
+                </button>
+                <img id="fullscreenImage" class="fullscreen-image" src="" alt="Fullscreen Academic Report">
             </div>
         </div>
-    </div>
 
-    <!-- Dashboard Page -->
-    <div id="dashboardPage" class="container dashboard-container hidden">
-        <div class="login-box dashboard-box">
-            <div class="logo">📊</div>
-            <h2>Your Academic Report</h2>
-            
-            <div class="student-info">
-                <h3 id="studentName">Loading...</h3>
-                <p id="studentClass">Class: Loading...</p>
-                <p id="studentId">Student ID: Loading...</p>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3 class="footer-title">Connect With Us</h3>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=61561637791826" class="social-link" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/hvstech_official" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@hvstechofficial" class="social-link" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://wa.me/263785558261" class="social-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="mailto:highvoltagesoftware8@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+263 785 558 261</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>highvoltagesoftware8@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="development-notice">
+                        <p><strong>Note:</strong> This web portal is currently under development and subject to change. Features and interface may be updated periodically.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Scholastic Services Web Portal. Developed by High Voltage Software Technologies.</p>
+                </div>
             </div>
-            
-            <div id="reportContainer">
-                <div class="loading">Loading your report...</div>
-            </div>
-            
-            <button id="logoutBtn" class="login-btn logout-btn">Log Out</button>
-        </div>
-    </div>
+        </footer>
 
-    <script>
-        // Portal Accounts Data - Auto-generated from your system
-        const PORTAL_ACCOUNTS = {
+        <script>
+            // Portal Accounts Data - Auto-generated from your system
+            const PORTAL_ACCOUNTS = {
   "FA0733": {
     "password": "10011879",
     "student_id": "10011879",
@@ -3828,119 +4235,179 @@
   }
 };
 
-        // DOM Elements
-        const loginPage = document.getElementById('loginPage');
-        const dashboardPage = document.getElementById('dashboardPage');
-        const loginForm = document.getElementById('loginForm');
-        const errorMessage = document.getElementById('errorMessage');
-        const reportContainer = document.getElementById('reportContainer');
-        const logoutBtn = document.getElementById('logoutBtn');
-        const studentName = document.getElementById('studentName');
-        const studentClass = document.getElementById('studentClass');
-        const studentId = document.getElementById('studentId');
+            // DOM Elements
+            const loginPage = document.getElementById('loginPage');
+            const dashboardPage = document.getElementById('dashboardPage');
+            const loginForm = document.getElementById('loginForm');
+            const errorMessage = document.getElementById('errorMessage');
+            const reportContainer = document.getElementById('reportContainer');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const downloadReportBtn = document.getElementById('downloadReport');
+            const viewFullscreenBtn = document.getElementById('viewFullscreen');
+            const fullscreenReport = document.getElementById('fullscreenReport');
+            const closeFullscreenBtn = document.getElementById('closeFullscreen');
+            const reportImage = document.getElementById('reportImage');
+            const fullscreenImage = document.getElementById('fullscreenImage');
 
-        // Check if already logged in
-        function checkExistingLogin() {
-            const loggedInUser = sessionStorage.getItem('portalLoggedInUser');
-            if (loggedInUser) {
-                showDashboard(JSON.parse(loggedInUser));
+            // Student info elements
+            const studentName = document.getElementById('studentName');
+            const studentClass = document.getElementById('studentClass');
+            const studentId = document.getElementById('studentId');
+            const portalIdDisplay = document.getElementById('portalIdDisplay');
+
+            // Check if already logged in
+            function checkExistingLogin() {
+                const loggedInUser = sessionStorage.getItem('portalLoggedInUser');
+                if (loggedInUser) {
+                    showDashboard(JSON.parse(loggedInUser));
+                }
             }
-        }
 
-        // Login form handler
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            const portalId = document.getElementById('portalId').value.trim().toUpperCase();
-            const password = document.getElementById('password').value;
-            
-            // Validate credentials
-            if (validateLogin(portalId, password)) {
-                const userData = PORTAL_ACCOUNTS[portalId];
-                sessionStorage.setItem('portalLoggedInUser', JSON.stringify({
-                    portalId: portalId,
-                    studentId: userData.student_id,
-                    name: userData.name,
-                    class: userData.class
-                }));
-                showDashboard(userData);
-            } else {
-                showError();
+            // Login form handler
+            loginForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const portalId = document.getElementById('portalId').value.trim().toUpperCase();
+                const password = document.getElementById('password').value;
+                
+                // Validate credentials
+                if (validateLogin(portalId, password)) {
+                    const userData = PORTAL_ACCOUNTS[portalId];
+                    sessionStorage.setItem('portalLoggedInUser', JSON.stringify({
+                        portalId: portalId,
+                        studentId: userData.student_id,
+                        name: userData.name,
+                        class: userData.class
+                    }));
+                    showDashboard(userData, portalId);
+                } else {
+                    showError();
+                }
+            });
+
+            // Validate login credentials
+            function validateLogin(portalId, password) {
+                return PORTAL_ACCOUNTS[portalId] && PORTAL_ACCOUNTS[portalId].password === password;
             }
-        });
 
-        // Validate login credentials
-        function validateLogin(portalId, password) {
-            return PORTAL_ACCOUNTS[portalId] && PORTAL_ACCOUNTS[portalId].password === password;
-        }
+            // Show error message
+            function showError() {
+                errorMessage.style.display = 'block';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 5000);
+            }
 
-        // Show error message
-        function showError() {
-            errorMessage.classList.remove('hidden');
-            setTimeout(() => {
-                errorMessage.classList.add('hidden');
-            }, 5000);
-        }
+            // Show dashboard
+            function showDashboard(userData, portalId) {
+                // Update student info
+                studentName.textContent = userData.name;
+                studentClass.textContent = userData.class;
+                studentId.textContent = userData.student_id;
+                portalIdDisplay.textContent = portalId;
+                
+                // Load report image
+                loadReportImage(userData.student_id);
+                
+                // Switch pages
+                loginPage.style.display = 'none';
+                dashboardPage.style.display = 'block';
+            }
 
-        // Show dashboard
-        function showDashboard(userData) {
-            // Update student info
-            studentName.textContent = userData.name;
-            studentClass.textContent = 'Class: ' + userData.class;
-            studentId.textContent = 'Student ID: ' + userData.student_id;
-            
             // Load report image
-            loadReportImage(userData.student_id);
-            
-            // Switch pages
-            loginPage.classList.add('hidden');
-            dashboardPage.classList.remove('hidden');
-        }
+            function loadReportImage(studentId) {
+                reportContainer.innerHTML = '<div class="loading">Loading your report...</div>';
+                
+                // Try to load report image - using the same path as old version
+                const img = new Image();
+                img.onload = function() {
+                    reportContainer.innerHTML = '';
+                    img.className = 'report-image';
+                    img.style.display = 'block';
+                    img.alt = 'Academic Report for ' + studentId;
+                    reportContainer.appendChild(img);
+                    reportImage.src = img.src; // Update the main report image
+                };
+                
+                img.onerror = function() {
+                    reportContainer.innerHTML = `
+                        <div class="no-report">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <h3>Report Not Available</h3>
+                            <p>Your academic report is not yet available online.</p>
+                            <p>Please contact your school administration if you believe this is an error.</p>
+                        </div>
+                    `;
+                };
+                
+                // Use the same image path as the old working version
+                img.src = '/Scholastic-Services-Web-Portal/reports/' + studentId + '.png';
+            }
 
-        // Load report image
-        function loadReportImage(studentId) {
-            reportContainer.innerHTML = '<div class="loading">Loading your report...</div>';
-            
-            // Try to load report image
-            const img = new Image();
-            img.onload = function() {
-                reportContainer.innerHTML = '';
-                img.className = 'report-image';
-                img.alt = 'Academic Report for ' + studentId;
-                reportContainer.appendChild(img);
-            };
-            
-            img.onerror = function() {
-                reportContainer.innerHTML = `
-                    <div class="no-report">
-                        <h3>Report Not Available</h3>
-                        <p>Your academic report is not yet available online.</p>
-                        <p>Please contact your school administration if you believe this is an error.</p>
-                    </div>
-                `;
-            };
-            
-            // Image path - update this to match your web server structure
-            img.src = '/Scholastic-Services-Web-Portal/reports/' + studentId + '.png';
-        }
+            // Logout handler
+            logoutBtn.addEventListener('click', function() {
+                sessionStorage.removeItem('portalLoggedInUser');
+                dashboardPage.style.display = 'none';
+                loginPage.style.display = 'block';
+                loginForm.reset();
+            });
 
-        // Logout handler
-        logoutBtn.addEventListener('click', function() {
-            sessionStorage.removeItem('portalLoggedInUser');
-            dashboardPage.classList.add('hidden');
-            loginPage.classList.remove('hidden');
-            loginForm.reset();
-        });
+            // Download report handler
+            downloadReportBtn.addEventListener('click', function() {
+                if (reportImage.src && reportImage.style.display !== 'none') {
+                    // Create a temporary link to trigger download
+                    const link = document.createElement('a');
+                    link.href = reportImage.src;
+                    link.download = 'academic_report_' + studentId.textContent + '.png';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    
+                    // Show success feedback
+                    const originalText = downloadReportBtn.innerHTML;
+                    downloadReportBtn.innerHTML = '<i class="fas fa-check"></i> Download Complete';
+                    downloadReportBtn.style.backgroundColor = '#28a745';
+                    
+                    setTimeout(() => {
+                        downloadReportBtn.innerHTML = originalText;
+                        downloadReportBtn.style.backgroundColor = '';
+                    }, 2000);
+                } else {
+                    alert('No report available for download.');
+                }
+            });
 
-        // Initialize
-        checkExistingLogin();
+            // Fullscreen view handler
+            viewFullscreenBtn.addEventListener('click', function() {
+                if (reportImage.src && reportImage.style.display !== 'none') {
+                    fullscreenImage.src = reportImage.src;
+                    fullscreenReport.style.display = 'flex';
+                } else {
+                    alert('No report available to view in fullscreen.');
+                }
+            });
 
-        // URL parameter handling for direct links
-        const urlParams = new URLSearchParams(window.location.search);
-        const portalIdParam = urlParams.get('portalId');
-        if (portalIdParam) {
-            document.getElementById('portalId').value = portalIdParam;
-        }
-    </script>
-</body>
-</html>
+            // Close fullscreen handler
+            closeFullscreenBtn.addEventListener('click', function() {
+                fullscreenReport.style.display = 'none';
+            });
+
+            // Close fullscreen on ESC key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    fullscreenReport.style.display = 'none';
+                }
+            });
+
+            // Initialize
+            checkExistingLogin();
+
+            // URL parameter handling for direct links
+            const urlParams = new URLSearchParams(window.location.search);
+            const portalIdParam = urlParams.get('portalId');
+            if (portalIdParam) {
+                document.getElementById('portalId').value = portalIdParam;
+            }
+        </script>
+    </body>
+    </html>
