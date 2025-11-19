@@ -6,6 +6,7 @@
         <title>Scholastic Services Web Portal</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <style>
+            /* Your existing CSS styles here */
             :root {
                 --primary-white: #ffffff;
                 --secondary-white: #f8f9fa;
@@ -62,21 +63,22 @@
             }
 
             .system-logo {
-                height: 50px;
+                height: 75px;
                 width: auto;
                 border-radius: 5px;
             }
 
             .logo-placeholder {
-                width: 50px;
-                height: 50px;
-                background-color: var(--dark-gray);
+                width: 75px;
+                height: 75px;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: var(--primary-white);
                 font-weight: bold;
                 border-radius: 5px;
+                font-size: 1.2rem;
             }
 
             .portal-name {
@@ -92,7 +94,7 @@
             }
 
             .manufacturer-logo {
-                height: 30px;
+                height: 50px;
                 width: auto;
                 border-radius: 3px;
             }
@@ -100,12 +102,13 @@
             .manufacturer-logo-placeholder {
                 width: 30px;
                 height: 30px;
-                background-color: var(--black);
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 color: var(--primary-white);
                 font-size: 0.7rem;
+                font-weight: bold;
                 border-radius: 3px;
             }
 
@@ -114,379 +117,8 @@
                 color: var(--dark-gray);
             }
 
-            /* Main Content Styles */
-            .main-content {
-                min-height: calc(100vh - 140px);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 40px 0;
-            }
+            /* Rest of your CSS styles... */
 
-            .login-box {
-                background-color: var(--primary-white);
-                border-radius: 10px;
-                box-shadow: var(--shadow);
-                padding: 40px;
-                width: 100%;
-                max-width: 450px;
-            }
-
-            .login-header {
-                text-align: center;
-                margin-bottom: 30px;
-            }
-
-            .login-header h1 {
-                font-size: 1.8rem;
-                margin-bottom: 10px;
-                color: var(--black);
-            }
-
-            .login-header p {
-                color: var(--dark-gray);
-                font-size: 0.95rem;
-            }
-
-            .input-group {
-                margin-bottom: 20px;
-            }
-
-            .input-group label {
-                display: block;
-                margin-bottom: 8px;
-                font-weight: 500;
-                color: var(--dark-gray);
-            }
-
-            .input-group input {
-                width: 100%;
-                padding: 12px 15px;
-                border: 1px solid var(--light-gray);
-                border-radius: 6px;
-                font-size: 1rem;
-                transition: var(--transition);
-                background-color: var(--secondary-white);
-            }
-
-            .input-group input:focus {
-                outline: none;
-                border-color: var(--accent);
-                box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
-            }
-
-            .login-btn {
-                width: 100%;
-                padding: 12px;
-                background-color: var(--accent);
-                color: var(--primary-white);
-                border: none;
-                border-radius: 6px;
-                font-size: 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                transition: var(--transition);
-                margin-top: 10px;
-            }
-
-            .login-btn:hover {
-                background-color: var(--hover-accent);
-                transform: translateY(-2px);
-            }
-
-            .error-message {
-                color: #dc3545;
-                margin-top: 15px;
-                font-size: 0.9rem;
-                background: #f8d7da;
-                padding: 10px;
-                border-radius: 5px;
-                border-left: 4px solid #dc3545;
-                display: none;
-            }
-
-            /* Dashboard Styles */
-            .dashboard-container {
-                width: 100%;
-                max-width: 1000px;
-                display: none;
-            }
-
-            .dashboard-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 30px;
-            }
-
-            .dashboard-title {
-                font-size: 1.8rem;
-                color: var(--black);
-            }
-
-            .dashboard-actions {
-                display: flex;
-                gap: 15px;
-            }
-
-            .action-btn {
-                padding: 10px 20px;
-                background-color: var(--accent);
-                color: var(--primary-white);
-                border: none;
-                border-radius: 6px;
-                font-size: 0.9rem;
-                cursor: pointer;
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                gap: 8px;
-            }
-
-            .action-btn:hover {
-                background-color: var(--hover-accent);
-            }
-
-            .student-info-card {
-                background-color: var(--primary-white);
-                border-radius: 10px;
-                box-shadow: var(--shadow);
-                padding: 25px;
-                margin-bottom: 30px;
-            }
-
-            .student-details {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 15px;
-            }
-
-            .detail-item {
-                margin-bottom: 10px;
-            }
-
-            .detail-label {
-                font-weight: 600;
-                color: var(--dark-gray);
-                font-size: 0.9rem;
-            }
-
-            .detail-value {
-                color: var(--black);
-                font-size: 1rem;
-            }
-
-            .report-container {
-                background-color: var(--primary-white);
-                border-radius: 10px;
-                box-shadow: var(--shadow);
-                padding: 25px;
-                margin-bottom: 30px;
-            }
-
-            .report-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-            }
-
-            .report-title {
-                font-size: 1.5rem;
-                color: var(--black);
-            }
-
-            .report-actions {
-                display: flex;
-                gap: 10px;
-            }
-
-            .report-content {
-                border: 1px solid var(--light-gray);
-                border-radius: 8px;
-                overflow: hidden;
-                min-height: 400px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: var(--secondary-white);
-            }
-
-            .report-image {
-                max-width: 100%;
-                max-height: 500px;
-                display: none;
-            }
-
-            .loading {
-                color: var(--accent);
-                font-size: 1.1rem;
-                margin: 2rem 0;
-                text-align: center;
-            }
-
-            .no-report {
-                color: var(--dark-gray);
-                text-align: center;
-                padding: 40px;
-            }
-
-            .no-report i {
-                font-size: 3rem;
-                margin-bottom: 15px;
-                color: var(--medium-gray);
-            }
-
-            /* Fullscreen Report Styles */
-            .fullscreen-report {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.9);
-                display: none;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-            }
-
-            .fullscreen-content {
-                position: relative;
-                max-width: 90%;
-                max-height: 90%;
-            }
-
-            .fullscreen-image {
-                max-width: 100%;
-                max-height: 90vh;
-            }
-
-            .close-fullscreen {
-                position: absolute;
-                top: -40px;
-                right: 0;
-                background: none;
-                border: none;
-                color: var(--primary-white);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-
-            /* Footer Styles */
-            footer {
-                background-color: var(--black);
-                color: var(--primary-white);
-                padding: 30px 0;
-            }
-
-            .footer-content {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-            }
-
-            .footer-section {
-                flex: 1;
-            }
-
-            .footer-title {
-                font-size: 1.2rem;
-                margin-bottom: 15px;
-                color: var(--primary-white);
-            }
-
-            .social-links {
-                display: flex;
-                gap: 15px;
-                margin-bottom: 20px;
-            }
-
-            .social-link {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 40px;
-                height: 40px;
-                background-color: var(--dark-gray);
-                border-radius: 50%;
-                color: var(--primary-white);
-                text-decoration: none;
-                transition: var(--transition);
-            }
-
-            .social-link:hover {
-                background-color: var(--accent);
-                transform: translateY(-3px);
-            }
-
-            .contact-info {
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .contact-item {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .contact-item i {
-                width: 20px;
-                color: var(--medium-gray);
-            }
-
-            .development-notice {
-                background-color: var(--dark-gray);
-                padding: 15px;
-                border-radius: 6px;
-                margin-top: 20px;
-                font-size: 0.9rem;
-            }
-
-            .footer-bottom {
-                text-align: center;
-                padding-top: 20px;
-                border-top: 1px solid var(--dark-gray);
-                color: var(--medium-gray);
-                font-size: 0.9rem;
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 768px) {
-                .header-content {
-                    flex-direction: column;
-                    gap: 15px;
-                }
-
-                .manufacturer-info {
-                    justify-content: center;
-                }
-
-                .login-box {
-                    padding: 30px 20px;
-                }
-
-                .dashboard-header {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: 15px;
-                }
-
-                .dashboard-actions {
-                    width: 100%;
-                    justify-content: space-between;
-                }
-
-                .footer-content {
-                    flex-direction: column;
-                }
-            }
-
-            .hidden {
-                display: none;
-            }
         </style>
     </head>
     <body>
@@ -495,20 +127,50 @@
             <div class="container">
                 <div class="header-content">
                     <div class="logo-container">
-                        <!-- System Logo - Using GitHub raw content URL -->
+                        <!-- System Logo - Multiple fallback options -->
                         <img src="https://raw.githubusercontent.com/High-Voltage-Software-Technologies/Scholastic-Services-Web-Portal/main/Images/logo_light.png" 
                             alt="Scholastic Services Logo" 
                             class="system-logo" 
-                            onerror="this.style.display='none'; document.getElementById('logo-placeholder').style.display='flex';">
-                        <div id="logo-placeholder" class="logo-placeholder" style="display: none;">SS</div>
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/logo_light.png" 
+                            alt="Scholastic Services Logo" 
+                            class="system-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/logo_light.png" 
+                            alt="Scholastic Services Logo" 
+                            class="system-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/logo_light.png" 
+                            alt="Scholastic Services Logo" 
+                            class="system-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div id="logo-placeholder" class="logo-placeholder" style="display: none;">🎓</div>
                         <div class="portal-name">Scholastic Services Web Portal</div>
                     </div>
                     <div class="manufacturer-info">
-                        <!-- Manufacturer Logo - Using GitHub raw content URL -->
+                        <!-- Manufacturer Logo - Multiple fallback options -->
                         <img src="https://raw.githubusercontent.com/High-Voltage-Software-Technologies/Scholastic-Services-Web-Portal/main/Images/Black%20Variation.png" 
                             alt="High Voltage Software Technologies" 
                             class="manufacturer-logo" 
-                            onerror="this.style.display='none'; document.getElementById('manufacturer-logo-placeholder').style.display='flex';">
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/Black Variation.png" 
+                            alt="High Voltage Software Technologies" 
+                            class="manufacturer-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/Black Variation.png" 
+                            alt="High Voltage Software Technologies" 
+                            class="manufacturer-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                            style="display: none;">
+                        <img src="/Scholastic-Services-Web-Portal/Images/Black Variation.png" 
+                            alt="High Voltage Software Technologies" 
+                            class="manufacturer-logo" 
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div id="manufacturer-logo-placeholder" class="manufacturer-logo-placeholder" style="display: none;">HV</div>
                         <div class="manufacturer-name">High Voltage Software Technologies</div>
                     </div>
@@ -4263,6 +3925,29 @@
             const studentId = document.getElementById('studentId');
             const portalIdDisplay = document.getElementById('portalIdDisplay');
 
+            // Initialize logos on page load
+            document.addEventListener('DOMContentLoaded', function() {
+                initializeLogos();
+            });
+
+            function initializeLogos() {
+                // Try to load logos with multiple fallbacks
+                const systemLogos = document.querySelectorAll('.system-logo');
+                const manufacturerLogos = document.querySelectorAll('.manufacturer-logo');
+                
+                // Show first system logo and hide placeholder
+                if (systemLogos.length > 0) {
+                    systemLogos[systemLogos.length - 1].style.display = 'block';
+                    document.getElementById('logo-placeholder').style.display = 'none';
+                }
+                
+                // Show first manufacturer logo and hide placeholder
+                if (manufacturerLogos.length > 0) {
+                    manufacturerLogos[manufacturerLogos.length - 1].style.display = 'block';
+                    document.getElementById('manufacturer-logo-placeholder').style.display = 'none';
+                }
+            }
+
             // Check if already logged in
             function checkExistingLogin() {
                 const loggedInUser = sessionStorage.getItem('portalLoggedInUser');
@@ -4326,30 +4011,49 @@
             function loadReportImage(studentId) {
                 reportContainer.innerHTML = '<div class="loading">Loading your report...</div>';
                 
-                // Try to load report image - using GitHub raw content URL
-                const img = new Image();
-                img.onload = function() {
-                    reportContainer.innerHTML = '';
-                    img.className = 'report-image';
-                    img.style.display = 'block';
-                    img.alt = 'Academic Report for ' + studentId;
-                    reportContainer.appendChild(img);
-                    reportImage.src = img.src; // Update the main report image
-                };
+                // Try multiple image paths
+                const imagePaths = [
+                    'https://raw.githubusercontent.com/High-Voltage-Software-Technologies/Scholastic-Services-Web-Portal/main/reports/' + studentId + '.png',
+                    '/Scholastic-Services-Web-Portal/reports/' + studentId + '.png',
+                    '../reports/' + studentId + '.png',
+                    './reports/' + studentId + '.png'
+                ];
                 
-                img.onerror = function() {
-                    reportContainer.innerHTML = `
-                        <div class="no-report">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <h3>Report Not Available</h3>
-                            <p>Your academic report is not yet available online.</p>
-                            <p>Please contact your school administration if you believe this is an error.</p>
-                        </div>
-                    `;
-                };
+                let currentPathIndex = 0;
                 
-                // Use GitHub raw content URL for reports
-                img.src = 'https://raw.githubusercontent.com/High-Voltage-Software-Technologies/Scholastic-Services-Web-Portal/main/reports/' + studentId + '.png';
+                function tryNextPath() {
+                    if (currentPathIndex >= imagePaths.length) {
+                        // All paths failed
+                        reportContainer.innerHTML = `
+                            <div class="no-report">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <h3>Report Not Available</h3>
+                                <p>Your academic report is not yet available online.</p>
+                                <p>Please contact your school administration if you believe this is an error.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    const img = new Image();
+                    img.onload = function() {
+                        reportContainer.innerHTML = '';
+                        img.className = 'report-image';
+                        img.style.display = 'block';
+                        img.alt = 'Academic Report for ' + studentId;
+                        reportContainer.appendChild(img);
+                        reportImage.src = img.src;
+                    };
+                    
+                    img.onerror = function() {
+                        currentPathIndex++;
+                        tryNextPath();
+                    };
+                    
+                    img.src = imagePaths[currentPathIndex];
+                }
+                
+                tryNextPath();
             }
 
             // Logout handler
@@ -4409,6 +4113,7 @@
 
             // Initialize
             checkExistingLogin();
+            initializeLogos();
 
             // URL parameter handling for direct links
             const urlParams = new URLSearchParams(window.location.search);
