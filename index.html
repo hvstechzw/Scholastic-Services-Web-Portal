@@ -3341,9 +3341,9 @@
             }
         }
 
-        function handleAutoLogin(portalId) {
+        function handleAutoLogin(portalId, password) {
             const account = PORTAL_ACCOUNTS[portalId];
-            if (account) {
+            if (account && account.password === password) {
                 const userData = {
                     portalId: portalId,
                     ...account
@@ -3353,6 +3353,19 @@
                 return true;
             }
             return false;
+        }
+
+        function handleQRCodeAutoLogin() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const portalId = urlParams.get('portalId');
+            const password = urlParams.get('password');
+            const autoLogin = urlParams.get('autoLogin');
+            
+            if (autoLogin === 'true' && portalId && password) {
+                if (handleAutoLogin(portalId, password)) {
+                    window.history.replaceState(null, null, window.location.pathname);
+                }
+            }
         }
 
         loginForm.addEventListener('submit', function(e) {
@@ -3508,20 +3521,10 @@
             }
         });
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const portalIdParam = urlParams.get('portalId');
-        if (portalIdParam) {
-            document.getElementById('portalId').value = portalIdParam;
-        }
-
-        if (window.location.hash.includes('portal:')) {
-            const portalIdFromHash = window.location.hash.replace('#portal:', '');
-            if (handleAutoLogin(portalIdFromHash)) {
-                window.history.replaceState(null, null, ' ');
-            }
-        }
-
-        checkSession();
+        document.addEventListener('DOMContentLoaded', function() {
+            handleQRCodeAutoLogin();
+            checkSession();
+        });
     </script>
 </body>
 </html>
