@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #3b82f6;
-            --primary-dark: #2563eb;
-            --secondary: #64748b;
-            --success: #10b981;
-            --danger: #ef4444;
-            --warning: #f59e0b;
+            --primary: #4b5563;
+            --primary-dark: #374151;
+            --secondary: #6b7280;
+            --success: #059669;
+            --danger: #dc2626;
+            --warning: #d97706;
             --light: #f8fafc;
-            --dark: #1e293b;
-            --border: #e2e8f0;
+            --dark: #1f2937;
+            --border: #e5e7eb;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
@@ -27,7 +27,7 @@
 
         body {
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #e5e7eb 100%);
             min-height: 100vh;
             color: var(--dark);
         }
@@ -53,6 +53,7 @@
             box-shadow: var(--shadow);
             width: 100%;
             max-width: 440px;
+            border: 1px solid var(--border);
         }
 
         .logo-section {
@@ -156,7 +157,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            box-shadow: 0 0 0 3px rgba(75, 85, 99, 0.1);
         }
 
         .btn {
@@ -205,6 +206,7 @@
             box-shadow: var(--shadow);
             overflow: hidden;
             min-height: 80vh;
+            border: 1px solid var(--border);
         }
 
         .header {
@@ -337,6 +339,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px solid var(--border);
         }
 
         .report-image {
@@ -583,22 +586,6 @@
                 <p>Access your academic reports</p>
             </div>
 
-            <div class="qr-scanner-section">
-                <button class="qr-scanner-btn" id="startScannerBtn">
-                    <i class="fas fa-camera"></i> Scan QR Code to Login
-                </button>
-            </div>
-
-            <div class="camera-container" id="cameraContainer">
-                <div class="scanning-overlay">
-                    <video id="qrVideo" autoplay muted playsinline></video>
-                    <div class="scan-line"></div>
-                </div>
-                <button class="btn btn-light" id="stopScannerBtn" style="margin-top: 10px;">
-                    <i class="fas fa-times"></i> Stop Camera
-                </button>
-            </div>
-
             <form id="loginForm">
                 <div class="form-group">
                     <label for="portalId">Portal ID</label>
@@ -718,7 +705,7 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <ul class="footer-links">
-                    <li><i class="fas fa-envelope"></i> Email: info@hvstech.com</li>
+                    <li><i class="fas fa-envelope"></i> Email: highvoltagesoftware8@gmail.com</li>
                     <li><i class="fas fa-phone"></i> WhatsApp: +263785558261</li>
                     <li><i class="fas fa-map-marker-alt"></i> Based in Zimbabwe</li>
                 </ul>
@@ -732,7 +719,7 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2024 High Voltage Software Technologies. All rights reserved.</p>
+            <p>&copy; 2025 High Voltage Software Technologies. All rights reserved.</p>
         </div>
     </footer>
 
@@ -3336,10 +3323,6 @@
         const fullscreenView = document.getElementById('fullscreenView');
         const closeFullscreen = document.getElementById('closeFullscreen');
         const fullscreenImage = document.getElementById('fullscreenImage');
-        const startScannerBtn = document.getElementById('startScannerBtn');
-        const stopScannerBtn = document.getElementById('stopScannerBtn');
-        const cameraContainer = document.getElementById('cameraContainer');
-        const qrVideo = document.getElementById('qrVideo');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         const downloadBtnMobile = document.getElementById('downloadBtnMobile');
@@ -3351,14 +3334,25 @@
         const studentId = document.getElementById('studentId');
         const displayPortalId = document.getElementById('displayPortalId');
 
-        let scannerActive = false;
-        let qrStream = null;
-
         function checkSession() {
             const user = sessionStorage.getItem('portalUser');
             if (user) {
                 showDashboard(JSON.parse(user));
             }
+        }
+
+        function handleAutoLogin(portalId) {
+            const account = PORTAL_ACCOUNTS[portalId];
+            if (account) {
+                const userData = {
+                    portalId: portalId,
+                    ...account
+                };
+                sessionStorage.setItem('portalUser', JSON.stringify(userData));
+                showDashboard(userData);
+                return true;
+            }
+            return false;
         }
 
         loginForm.addEventListener('submit', function(e) {
@@ -3445,99 +3439,6 @@
             tryLoad();
         }
 
-        async function startQRScanner() {
-            try {
-                scannerActive = true;
-                qrStream = await navigator.mediaDevices.getUserMedia({
-                    video: { facingMode: "environment" },
-                    audio: false
-                });
-                
-                qrVideo.srcObject = qrStream;
-                cameraContainer.style.display = 'block';
-                startScannerBtn.style.display = 'none';
-                
-                detectQRCode();
-                
-            } catch (err) {
-                console.error('Error accessing camera:', err);
-                alert('Unable to access camera. Please check permissions and try again.');
-                stopQRScanner();
-            }
-        }
-
-        function stopQRScanner() {
-            scannerActive = false;
-            if (qrStream) {
-                qrStream.getTracks().forEach(track => track.stop());
-                qrStream = null;
-            }
-            cameraContainer.style.display = 'none';
-            startScannerBtn.style.display = 'inline-flex';
-        }
-
-        function detectQRCode() {
-            if (!scannerActive) return;
-            
-            const canvas = document.createElement('canvas');
-            const context = canvas.getContext('2d');
-            
-            function scanFrame() {
-                if (!scannerActive || qrVideo.readyState !== qrVideo.HAVE_ENOUGH_DATA) {
-                    requestAnimationFrame(scanFrame);
-                    return;
-                }
-                
-                canvas.width = qrVideo.videoWidth;
-                canvas.height = qrVideo.videoHeight;
-                context.drawImage(qrVideo, 0, 0, canvas.width, canvas.height);
-                
-                try {
-                    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-                    const codes = jsQR(imageData.data, imageData.width, imageData.height);
-                    
-                    if (codes && codes.length > 0) {
-                        const qrData = codes[0].data;
-                        if (qrData.startsWith('portal:')) {
-                            const portalId = qrData.replace('portal:', '');
-                            autoLoginWithQR(portalId);
-                            return;
-                        }
-                    }
-                } catch (e) {
-                    console.log('QR detection error:', e);
-                }
-                
-                requestAnimationFrame(scanFrame);
-            }
-            
-            scanFrame();
-        }
-
-        function autoLoginWithQR(portalId) {
-            const account = PORTAL_ACCOUNTS[portalId];
-            if (account) {
-                stopQRScanner();
-                
-                const userData = {
-                    portalId: portalId,
-                    ...account
-                };
-                sessionStorage.setItem('portalUser', JSON.stringify(userData));
-                
-                if (window.location.protocol === 'file:') {
-                    showDashboard(userData);
-                } else {
-                    window.location.href = window.location.origin + window.location.pathname;
-                }
-            } else {
-                alert('Invalid QR code. Please scan a valid student card.');
-            }
-        }
-
-        startScannerBtn.addEventListener('click', startQRScanner);
-        stopScannerBtn.addEventListener('click', stopQRScanner);
-
         mobileMenuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
         });
@@ -3547,7 +3448,6 @@
             dashboard.style.display = 'none';
             loginPage.style.display = 'flex';
             loginForm.reset();
-            stopQRScanner();
             mobileMenu.classList.remove('active');
         }
 
@@ -3567,8 +3467,8 @@
                 const originalTextMobile = downloadBtnMobile.innerHTML;
                 downloadBtn.innerHTML = '<i class="fas fa-check"></i> Downloaded';
                 downloadBtnMobile.innerHTML = '<i class="fas fa-check"></i> Downloaded';
-                downloadBtn.style.backgroundColor = '#10b981';
-                downloadBtnMobile.style.backgroundColor = '#10b981';
+                downloadBtn.style.backgroundColor = '#059669';
+                downloadBtnMobile.style.backgroundColor = '#059669';
                 
                 setTimeout(() => {
                     downloadBtn.innerHTML = originalText;
@@ -3614,17 +3514,14 @@
             document.getElementById('portalId').value = portalIdParam;
         }
 
-        if (window.location.protocol !== 'file:') {
-            const currentUrl = new URL(window.location.href);
-            if (currentUrl.hash.includes('portal:')) {
-                const portalIdFromHash = currentUrl.hash.replace('#portal:', '');
-                autoLoginWithQR(portalIdFromHash);
+        if (window.location.hash.includes('portal:')) {
+            const portalIdFromHash = window.location.hash.replace('#portal:', '');
+            if (handleAutoLogin(portalIdFromHash)) {
+                window.history.replaceState(null, null, ' ');
             }
         }
 
         checkSession();
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 </body>
 </html>
