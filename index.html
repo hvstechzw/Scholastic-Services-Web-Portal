@@ -44,6 +44,7 @@
                 justify-content: center;
                 align-items: center;
                 min-height: 100vh;
+                padding: 20px;
             }
 
             .login-card {
@@ -55,21 +56,82 @@
                 max-width: 440px;
             }
 
-            .logo {
+            .logo-section {
                 text-align: center;
                 margin-bottom: 30px;
             }
 
-            .logo i {
-                font-size: 3rem;
-                color: var(--primary);
-                margin-bottom: 10px;
+            .main-logo {
+                max-width: 200px;
+                height: auto;
+                margin-bottom: 15px;
             }
 
-            .logo h1 {
+            .logo-section h1 {
                 color: var(--dark);
                 font-size: 1.8rem;
                 font-weight: 700;
+                margin-bottom: 5px;
+            }
+
+            .logo-section p {
+                color: var(--secondary);
+                margin-top: 8px;
+            }
+
+            .qr-scanner-section {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .qr-scanner-btn {
+                background: var(--primary);
+                color: white;
+                border: none;
+                padding: 12px 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 600;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .qr-scanner-btn:hover {
+                background: var(--primary-dark);
+                transform: translateY(-1px);
+            }
+
+            .camera-container {
+                display: none;
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            #qrVideo {
+                max-width: 100%;
+                border-radius: 8px;
+                border: 2px solid var(--border);
+            }
+
+            .scanning-overlay {
+                position: relative;
+                margin: 10px auto;
+            }
+
+            .scan-line {
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background: var(--primary);
+                animation: scan 2s infinite;
+            }
+
+            @keyframes scan {
+                0%, 100% { top: 10%; }
+                50% { top: 90%; }
             }
 
             .form-group {
@@ -155,7 +217,7 @@
 
             .header-content {
                 display: flex;
-                justify-content: between;
+                justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
                 gap: 16px;
@@ -217,7 +279,7 @@
 
             .report-header {
                 display: flex;
-                justify-content: between;
+                justify-content: space-between;
                 align-items: center;
                 margin-bottom: 20px;
                 flex-wrap: wrap;
@@ -263,6 +325,21 @@
                 margin-bottom: 16px;
                 color: var(--secondary);
                 opacity: 0.5;
+            }
+
+            /* Footer */
+            .footer {
+                text-align: center;
+                padding: 20px;
+                margin-top: 30px;
+                border-top: 1px solid var(--border);
+            }
+
+            .manufacturer-logo {
+                max-width: 120px;
+                height: auto;
+                opacity: 0.7;
+                margin-top: 10px;
             }
 
             /* Fullscreen */
@@ -346,6 +423,34 @@
                     width: 100%;
                     justify-content: space-between;
                 }
+
+                .report-container {
+                    padding: 20px;
+                    min-height: 300px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .login-card {
+                    padding: 20px;
+                }
+
+                .header {
+                    padding: 16px;
+                }
+
+                .student-info {
+                    padding: 16px;
+                }
+
+                .report-section {
+                    padding: 16px;
+                }
+
+                .btn {
+                    padding: 10px 16px;
+                    font-size: 14px;
+                }
             }
         </style>
     </head>
@@ -353,10 +458,26 @@
         <!-- Login Page -->
         <div class="login-container" id="loginPage">
             <div class="login-card">
-                <div class="logo">
-                    <i class="fas fa-graduation-cap"></i>
+                <div class="logo-section">
+                    <img src="https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/Images/logo_light.png" alt="Scholastic Services" class="main-logo">
                     <h1>Student Portal</h1>
-                    <p style="color: var(--secondary); margin-top: 8px;">Access your academic reports</p>
+                    <p>Access your academic reports</p>
+                </div>
+
+                <div class="qr-scanner-section">
+                    <button class="qr-scanner-btn" id="startScannerBtn">
+                        <i class="fas fa-camera"></i> Scan QR Code to Login
+                    </button>
+                </div>
+
+                <div class="camera-container" id="cameraContainer">
+                    <div class="scanning-overlay">
+                        <video id="qrVideo" autoplay muted playsinline></video>
+                        <div class="scan-line"></div>
+                    </div>
+                    <button class="btn btn-light" id="stopScannerBtn" style="margin-top: 10px;">
+                        <i class="fas fa-times"></i> Stop Camera
+                    </button>
                 </div>
 
                 <form id="loginForm">
@@ -438,6 +559,13 @@
                             <p>Please contact your school administration.</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="footer">
+                    <p style="color: var(--secondary); font-size: 0.875rem;">
+                        Powered by Scholastic Services
+                    </p>
+                    <img src="https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/Images/Black%20Variation.png" alt="Manufacturer Logo" class="manufacturer-logo">
                 </div>
             </div>
         </div>
@@ -3045,12 +3173,20 @@
             const fullscreenView = document.getElementById('fullscreenView');
             const closeFullscreen = document.getElementById('closeFullscreen');
             const fullscreenImage = document.getElementById('fullscreenImage');
+            const startScannerBtn = document.getElementById('startScannerBtn');
+            const stopScannerBtn = document.getElementById('stopScannerBtn');
+            const cameraContainer = document.getElementById('cameraContainer');
+            const qrVideo = document.getElementById('qrVideo');
 
             // Student info elements
             const studentName = document.getElementById('studentName');
             const studentClass = document.getElementById('studentClass');
             const studentId = document.getElementById('studentId');
             const displayPortalId = document.getElementById('displayPortalId');
+
+            // QR Code Scanner Variables
+            let scannerActive = false;
+            let qrStream = null;
 
             // Check existing session
             function checkSession() {
@@ -3155,12 +3291,105 @@
                 tryLoad();
             }
 
+            // QR Code Scanner Functions
+            async function startQRScanner() {
+                try {
+                    scannerActive = true;
+                    qrStream = await navigator.mediaDevices.getUserMedia({
+                        video: { facingMode: "environment" },
+                        audio: false
+                    });
+                    
+                    qrVideo.srcObject = qrStream;
+                    cameraContainer.style.display = 'block';
+                    startScannerBtn.style.display = 'none';
+                    
+                    // Start QR code detection
+                    detectQRCode();
+                    
+                } catch (err) {
+                    console.error('Error accessing camera:', err);
+                    alert('Unable to access camera. Please check permissions and try again.');
+                    stopQRScanner();
+                }
+            }
+
+            function stopQRScanner() {
+                scannerActive = false;
+                if (qrStream) {
+                    qrStream.getTracks().forEach(track => track.stop());
+                    qrStream = null;
+                }
+                cameraContainer.style.display = 'none';
+                startScannerBtn.style.display = 'inline-flex';
+            }
+
+            function detectQRCode() {
+                if (!scannerActive) return;
+                
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                
+                function scanFrame() {
+                    if (!scannerActive || qrVideo.readyState !== qrVideo.HAVE_ENOUGH_DATA) {
+                        requestAnimationFrame(scanFrame);
+                        return;
+                    }
+                    
+                    canvas.width = qrVideo.videoWidth;
+                    canvas.height = qrVideo.videoHeight;
+                    context.drawImage(qrVideo, 0, 0, canvas.width, canvas.height);
+                    
+                    try {
+                        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+                        const codes = jsQR(imageData.data, imageData.width, imageData.height);
+                        
+                        if (codes && codes.length > 0) {
+                            const qrData = codes[0].data;
+                            if (qrData.startsWith('portal:')) {
+                                const portalId = qrData.replace('portal:', '');
+                                autoLoginWithQR(portalId);
+                                return;
+                            }
+                        }
+                    } catch (e) {
+                        console.log('QR detection error:', e);
+                    }
+                    
+                    requestAnimationFrame(scanFrame);
+                }
+                
+                scanFrame();
+            }
+
+            function autoLoginWithQR(portalId) {
+                // Find account with this portal ID
+                const account = PORTAL_ACCOUNTS[portalId];
+                if (account) {
+                    stopQRScanner();
+                    
+                    const userData = {
+                        portalId: portalId,
+                        ...account
+                    };
+                    sessionStorage.setItem('portalUser', JSON.stringify(userData));
+                    showDashboard(userData);
+                } else {
+                    alert('Invalid QR code. Please scan a valid student card.');
+                }
+            }
+
+            // Event Listeners for QR Scanner
+            startScannerBtn.addEventListener('click', startQRScanner);
+            stopScannerBtn.addEventListener('click', stopQRScanner);
+
             // Logout
             logoutBtn.addEventListener('click', function() {
                 sessionStorage.removeItem('portalUser');
                 dashboard.style.display = 'none';
                 loginPage.style.display = 'flex';
                 loginForm.reset();
+                stopQRScanner();
             });
 
             // Download report
@@ -3217,5 +3446,9 @@
             // Initialize
             checkSession();
         </script>
+
+        <!-- QR Code Scanning Library -->
+        <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
     </body>
     </html>
+    
