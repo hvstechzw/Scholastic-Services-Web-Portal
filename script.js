@@ -1,14 +1,13 @@
-// Enhanced Student Portal - Main JavaScript
-// GitHub Pages Optimized Version
+// Enhanced Student Portal - Mobile First JavaScript
 
-class EnhancedPortal {
-    constructor(accountsData, schoolConfig) {
+class MobilePortal {
+    constructor(accountsData, schoolsData) {
         this.accounts = accountsData || {};
-        this.schoolConfig = schoolConfig || {};
+        this.schools = schoolsData || {};
         this.currentUser = null;
         this.currentSchool = {
             id: 'default',
-            name: 'Scholastic Academy'
+            name: 'Select School'
         };
         this.stream = null;
         this.currentReportUrl = null;
@@ -18,6 +17,10 @@ class EnhancedPortal {
             schoolSelectionPage: document.getElementById('schoolSelectionPage'),
             loginPage: document.getElementById('loginPage'),
             dashboard: document.getElementById('dashboard'),
+            mobileSidebar: document.getElementById('mobileSidebar'),
+            menuBtn: document.getElementById('menuBtn'),
+            closeSidebar: document.getElementById('closeSidebar'),
+            sidebarOverlay: document.createElement('div'),
             loginForm: document.getElementById('loginForm'),
             errorMessage: document.getElementById('errorMessage'),
             errorText: document.getElementById('errorText'),
@@ -26,20 +29,34 @@ class EnhancedPortal {
             qrVideo: document.getElementById('qrVideo'),
             stopCameraBtn: document.getElementById('stopCameraBtn'),
             switchSchoolBtn: document.getElementById('switchSchoolBtn'),
+            switchSchoolMobileBtn: document.getElementById('switchSchoolMobileBtn'),
             switchSchoolDashboardBtn: document.getElementById('switchSchoolDashboardBtn'),
             
             // Dashboard elements
             welcomeName: document.getElementById('welcomeName'),
-            welcomeSchool: document.getElementById('welcomeSchool'),
-            studentStatus: document.getElementById('studentStatus'),
-            profileGrid: document.getElementById('profileGrid'),
-            studentQR: document.getElementById('studentQR'),
-            dynamicQR: document.getElementById('dynamicQR'),
+            sidebarUserName: document.getElementById('sidebarUserName'),
+            sidebarUserSchool: document.getElementById('sidebarUserSchool'),
+            quickClass: document.getElementById('quickClass'),
+            quickStatus: document.getElementById('quickStatus'),
             currentSchoolName: document.getElementById('currentSchoolName'),
             currentSchoolId: document.getElementById('currentSchoolId'),
             currentSchoolBadge: document.getElementById('currentSchoolBadge'),
             dashboardSchoolBadge: document.getElementById('dashboardSchoolBadge'),
-            selectedSchoolName: document.getElementById('selectedSchoolName'),
+            dashboardSchoolId: document.getElementById('dashboardSchoolId'),
+            
+            // Profile elements
+            profileStudentName: document.getElementById('profileStudentName'),
+            profileStudentId: document.getElementById('profileStudentId'),
+            profileSchool: document.getElementById('profileSchool'),
+            studentPhotoContainer: document.getElementById('studentPhotoContainer'),
+            detailDob: document.getElementById('detailDob'),
+            detailGender: document.getElementById('detailGender'),
+            detailEmail: document.getElementById('detailEmail'),
+            detailPhone: document.getElementById('detailPhone'),
+            detailClass: document.getElementById('detailClass'),
+            detailStream: document.getElementById('detailStream'),
+            detailEnrollment: document.getElementById('detailEnrollment'),
+            detailSports: document.getElementById('detailSports'),
             
             // Report elements
             reportSection: document.getElementById('reportSection'),
@@ -49,14 +66,16 @@ class EnhancedPortal {
             downloadReportBtn: document.getElementById('downloadReportBtn'),
             viewReportBtn: document.getElementById('viewReportBtn'),
             
-            // Sections
-            welcomeSection: document.getElementById('welcomeSection'),
-            profileSection: document.getElementById('profileSection'),
+            // QR elements
+            qrSection: document.getElementById('qrSection'),
+            dynamicQR: document.getElementById('dynamicQR'),
+            qrPortalId: document.getElementById('qrPortalId'),
+            qrSchool: document.getElementById('qrSchool'),
+            saveQRBtn: document.getElementById('saveQRBtn'),
             
             // Buttons
             logoutBtn: document.getElementById('logoutBtn'),
-            refreshBtn: document.getElementById('refreshBtn'),
-            printBtn: document.getElementById('printBtn')
+            refreshBtn: document.getElementById('refreshBtn')
         };
         
         // Initialize
@@ -65,28 +84,43 @@ class EnhancedPortal {
     
     init() {
         this.setupEventListeners();
-        this.setupSidebarNavigation();
+        this.setupMobileNavigation();
         this.loadAvailableSchools();
         this.handleAutoLogin();
+        this.setupSidebarOverlay();
         
-        // Force light theme
-        this.forceLightTheme();
+        // Prevent zoom on mobile
+        this.preventZoom();
     }
     
-    forceLightTheme() {
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.body.classList.add('light-theme');
+    preventZoom() {
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
         
-        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-        if (metaThemeColor) {
-            metaThemeColor.content = '#f8fafc';
-        }
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+    }
+    
+    setupSidebarOverlay() {
+        const overlay = this.elements.sidebarOverlay;
+        overlay.className = 'sidebar-overlay';
+        overlay.addEventListener('click', () => this.closeMobileSidebar());
+        document.body.appendChild(overlay);
     }
     
     setupEventListeners() {
         const { loginForm, qrScannerBtn, stopCameraBtn, switchSchoolBtn, 
-                switchSchoolDashboardBtn, logoutBtn, refreshBtn, printBtn, 
-                downloadReportBtn } = this.elements;
+                switchSchoolMobileBtn, logoutBtn, refreshBtn, menuBtn, 
+                closeSidebar, saveQRBtn } = this.elements;
         
         if (loginForm) {
             loginForm.addEventListener('submit', (e) => this.handleLogin(e));
@@ -104,8 +138,8 @@ class EnhancedPortal {
             switchSchoolBtn.addEventListener('click', () => this.showSchoolSelection());
         }
         
-        if (switchSchoolDashboardBtn) {
-            switchSchoolDashboardBtn.addEventListener('click', () => this.showSchoolSelection());
+        if (switchSchoolMobileBtn) {
+            switchSchoolMobileBtn.addEventListener('click', () => this.showSchoolSelection());
         }
         
         if (logoutBtn) {
@@ -116,70 +150,82 @@ class EnhancedPortal {
             refreshBtn.addEventListener('click', () => this.refreshDashboard());
         }
         
-        if (printBtn) {
-            printBtn.addEventListener('click', () => this.printDashboard());
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => this.toggleMobileSidebar());
         }
         
-        if (downloadReportBtn) {
-            downloadReportBtn.addEventListener('click', () => this.downloadReport());
+        if (closeSidebar) {
+            closeSidebar.addEventListener('click', () => this.closeMobileSidebar());
+        }
+        
+        if (saveQRBtn) {
+            saveQRBtn.addEventListener('click', () => this.saveQRCode());
         }
         
         // View report button
         if (this.elements.viewReportBtn) {
             this.elements.viewReportBtn.addEventListener('click', () => this.showSection('report'));
         }
+        
+        // Download report button
+        if (this.elements.downloadReportBtn) {
+            this.elements.downloadReportBtn.addEventListener('click', () => this.downloadReport());
+        }
     }
     
-    setupSidebarNavigation() {
-        const sidebarLinks = document.querySelectorAll('.sidebar-menu a');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
+    setupMobileNavigation() {
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', (e) => {
                 e.preventDefault();
                 
                 // Update active state
-                sidebarLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
                 
                 // Show selected section
-                const section = link.getAttribute('data-section');
+                const section = item.getAttribute('data-section');
                 this.showSection(section);
+                
+                // Close sidebar on mobile
+                this.closeMobileSidebar();
             });
         });
+    }
+    
+    toggleMobileSidebar() {
+        const { mobileSidebar, sidebarOverlay } = this.elements;
+        mobileSidebar.classList.toggle('active');
+        sidebarOverlay.classList.toggle('active');
+        document.body.style.overflow = mobileSidebar.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    closeMobileSidebar() {
+        const { mobileSidebar, sidebarOverlay } = this.elements;
+        mobileSidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
     
     loadAvailableSchools() {
         const schoolList = document.getElementById('schoolList');
         if (!schoolList) return;
         
-        // Extract unique schools from accounts data
-        const schools = new Set();
-        Object.values(this.accounts).forEach(account => {
-            if (account.school_id) {
-                schools.add(account.school_id);
-            }
-        });
-        
         schoolList.innerHTML = '';
         
-        // Add default school option
-        const defaultSchoolOption = this.createSchoolOption(
-            this.currentSchool.id,
-            this.currentSchool.name,
-            'fas fa-graduation-cap'
-        );
-        schoolList.appendChild(defaultSchoolOption);
-        
-        // Add other schools
-        schools.forEach(schoolId => {
-            if (schoolId !== this.currentSchool.id) {
-                const schoolOption = this.createSchoolOption(
-                    schoolId,
-                    `School ${schoolId}`,
-                    'fas fa-school'
-                );
+        // Add schools from schools data
+        Object.entries(this.schools).forEach(([schoolId, schoolData]) => {
+            if (schoolData.name) {
+                const schoolOption = this.createSchoolOption(schoolId, schoolData.name, 'fas fa-school');
                 schoolList.appendChild(schoolOption);
             }
         });
+        
+        // Add default option if no schools
+        if (schoolList.children.length === 0) {
+            const defaultOption = this.createSchoolOption('default', 'Default School', 'fas fa-graduation-cap');
+            schoolList.appendChild(defaultOption);
+        }
     }
     
     createSchoolOption(schoolId, schoolName, iconClass) {
@@ -190,7 +236,7 @@ class EnhancedPortal {
             <i class="${iconClass}"></i>
             <div class="school-info">
                 <div class="school-name">${schoolName}</div>
-                <div class="school-id">School ID: ${schoolId}</div>
+                <div class="school-id">ID: ${schoolId}</div>
             </div>
             <i class="fas fa-chevron-right"></i>
         `;
@@ -204,35 +250,43 @@ class EnhancedPortal {
         };
         
         // Update UI
-        const { selectedSchoolName, currentSchoolName, currentSchoolId, 
-                currentSchoolBadge, dashboardSchoolBadge, welcomeSchool } = this.elements;
+        const { currentSchoolName, currentSchoolId, currentSchoolBadge, 
+                dashboardSchoolBadge, dashboardSchoolId } = this.elements;
         
-        if (selectedSchoolName) selectedSchoolName.textContent = schoolName;
         if (currentSchoolName) currentSchoolName.textContent = schoolName;
         if (currentSchoolId) currentSchoolId.textContent = schoolId;
         if (currentSchoolBadge) {
-            currentSchoolBadge.innerHTML = `<i class="fas fa-school"></i> School ID: <span>${schoolId}</span>`;
+            currentSchoolBadge.innerHTML = `<i class="fas fa-school"></i> <span>${schoolId}</span>`;
         }
         if (dashboardSchoolBadge) {
             dashboardSchoolBadge.innerHTML = `<i class="fas fa-school"></i> <span>${schoolId}</span>`;
         }
-        if (welcomeSchool) welcomeSchool.textContent = schoolId;
+        if (dashboardSchoolId) dashboardSchoolId.textContent = schoolId;
         
         // Show login page
         if (this.elements.schoolSelectionPage) this.elements.schoolSelectionPage.style.display = 'none';
-        if (this.elements.loginPage) this.elements.loginPage.style.display = 'flex';
+        if (this.elements.loginPage) {
+            this.elements.loginPage.style.display = 'block';
+            this.elements.loginPage.classList.add('container');
+        }
     }
     
     showSchoolSelection() {
         // Clear any current session
         this.currentUser = null;
-        sessionStorage.removeItem('enhancedPortalUser');
+        sessionStorage.removeItem('mobilePortalUser');
         sessionStorage.removeItem('currentSchool');
+        
+        // Close sidebar if open
+        this.closeMobileSidebar();
         
         // Show school selection
         if (this.elements.dashboard) this.elements.dashboard.style.display = 'none';
         if (this.elements.loginPage) this.elements.loginPage.style.display = 'none';
-        if (this.elements.schoolSelectionPage) this.elements.schoolSelectionPage.style.display = 'flex';
+        if (this.elements.schoolSelectionPage) {
+            this.elements.schoolSelectionPage.style.display = 'block';
+            this.elements.schoolSelectionPage.classList.add('container');
+        }
         
         // Clear login form
         const loginForm = document.getElementById('loginForm');
@@ -246,8 +300,8 @@ class EnhancedPortal {
         const schoolId = urlParams.get('schoolId');
         const autoLogin = urlParams.get('autoLogin');
         
-        if (schoolId) {
-            this.selectSchool(schoolId, `School ${schoolId}`);
+        if (schoolId && this.schools[schoolId]) {
+            this.selectSchool(schoolId, this.schools[schoolId].name || `School ${schoolId}`);
         }
         
         if (autoLogin === 'true' && portalId && password) {
@@ -257,7 +311,7 @@ class EnhancedPortal {
         }
         
         // Check session storage
-        const sessionUser = sessionStorage.getItem('enhancedPortalUser');
+        const sessionUser = sessionStorage.getItem('mobilePortalUser');
         const sessionSchool = sessionStorage.getItem('currentSchool');
         
         if (sessionUser && sessionSchool) {
@@ -301,13 +355,18 @@ class EnhancedPortal {
                 gender: account.gender,
                 email: account.email,
                 school_id: account.school_id,
-                qr_code: account.qr_code
+                school_name: account.school_name,
+                qr_code: account.qr_code,
+                date_of_birth: account.date_of_birth,
+                phone: account.phone,
+                enrollment_date: account.enrollment_date,
+                sports: account.sports
             };
             
             this.currentUser = safeUserData;
             
             // Store in session (without password)
-            sessionStorage.setItem('enhancedPortalUser', JSON.stringify(safeUserData));
+            sessionStorage.setItem('mobilePortalUser', JSON.stringify(safeUserData));
             sessionStorage.setItem('currentSchool', JSON.stringify(this.currentSchool));
             
             // Show dashboard
@@ -340,10 +399,12 @@ class EnhancedPortal {
     
     showDashboard() {
         // Update welcome message
-        const { welcomeName, welcomeSchool, studentStatus } = this.elements;
+        const { welcomeName, sidebarUserName, sidebarUserSchool, quickClass, quickStatus } = this.elements;
         if (welcomeName) welcomeName.textContent = this.currentUser.name;
-        if (welcomeSchool) welcomeSchool.textContent = this.currentSchool.id;
-        if (studentStatus) studentStatus.textContent = 'Active';
+        if (sidebarUserName) sidebarUserName.textContent = this.currentUser.name;
+        if (sidebarUserSchool) sidebarUserSchool.textContent = this.currentUser.school_name;
+        if (quickClass) quickClass.textContent = this.currentUser.class;
+        if (quickStatus) quickStatus.textContent = 'Active';
         
         // Load profile data
         this.loadProfileData();
@@ -357,45 +418,54 @@ class EnhancedPortal {
         // Show dashboard
         if (this.elements.schoolSelectionPage) this.elements.schoolSelectionPage.style.display = 'none';
         if (this.elements.loginPage) this.elements.loginPage.style.display = 'none';
-        if (this.elements.dashboard) this.elements.dashboard.style.display = 'block';
+        if (this.elements.dashboard) this.elements.dashboard.style.display = 'grid';
         
-        // Show profile section by default
-        this.showSection('profile');
+        // Show welcome section by default
+        this.showSection('welcome');
     }
     
     showSection(section) {
-        const { welcomeSection, profileSection, reportSection, viewReportBtn } = this.elements;
-        
         // Hide all sections
-        if (welcomeSection) welcomeSection.style.display = 'none';
-        if (profileSection) profileSection.style.display = 'none';
-        if (reportSection) reportSection.style.display = 'none';
+        const sections = ['welcome', 'profile', 'report', 'qr', 'settings', 'help'];
+        sections.forEach(sec => {
+            const el = document.getElementById(`${sec}Section`);
+            if (el) el.style.display = 'none';
+        });
         
         // Show selected section
-        switch(section) {
-            case 'profile':
-                if (profileSection) profileSection.style.display = 'block';
-                if (viewReportBtn) viewReportBtn.style.display = 'none';
-                break;
-            case 'report':
-                if (reportSection) reportSection.style.display = 'block';
-                if (viewReportBtn) viewReportBtn.style.display = 'none';
+        const sectionEl = document.getElementById(`${section}Section`);
+        if (sectionEl) {
+            sectionEl.style.display = 'block';
+            
+            // Special handling for report section
+            if (section === 'report') {
                 this.loadReportImage();
-                break;
-            default:
-                if (welcomeSection) welcomeSection.style.display = 'block';
-                if (viewReportBtn) viewReportBtn.style.display = 'none';
+            }
+            
+            // Special handling for QR section
+            if (section === 'qr') {
+                this.updateQRInfo();
+            }
         }
+    }
+    
+    updateQRInfo() {
+        const { qrPortalId, qrSchool } = this.elements;
+        if (qrPortalId) qrPortalId.textContent = this.currentUser.portalId;
+        if (qrSchool) qrSchool.textContent = this.currentUser.school_name;
     }
     
     loadProfileData() {
         const user = this.currentUser;
-        const account = this.accounts[user.portalId];
         
-        if (!account) return;
+        // Update profile elements
+        const { profileStudentName, profileStudentId, profileSchool, 
+                detailDob, detailGender, detailEmail, detailPhone,
+                detailClass, detailStream, detailEnrollment, detailSports } = this.elements;
         
-        const profileGrid = document.getElementById('profileGrid');
-        if (!profileGrid) return;
+        if (profileStudentName) profileStudentName.textContent = user.name;
+        if (profileStudentId) profileStudentId.textContent = `Student ID: ${user.student_id}`;
+        if (profileSchool) profileSchool.textContent = `School: ${user.school_name}`;
         
         // Format dates
         const formatDate = (dateStr) => {
@@ -408,131 +478,43 @@ class EnhancedPortal {
             }
         };
         
-        const personalInfo = `
-            <div class="profile-card">
-                <h3><i class="fas fa-user-circle"></i> Personal Information</h3>
-                <div class="info-item">
-                    <span class="info-label">Full Name:</span>
-                    <span class="info-value">${account.name}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Student ID:</span>
-                    <span class="info-value">${account.student_id}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">School ID:</span>
-                    <span class="info-value">${account.school_id}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Date of Birth:</span>
-                    <span class="info-value">${formatDate(account.date_of_birth)}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Gender:</span>
-                    <span class="info-value">${account.gender || 'N/A'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Email:</span>
-                    <span class="info-value">${account.email || 'N/A'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Phone:</span>
-                    <span class="info-value">${account.phone || 'N/A'}</span>
-                </div>
-            </div>
-        `;
+        if (detailDob) detailDob.textContent = formatDate(user.date_of_birth);
+        if (detailGender) detailGender.textContent = user.gender || 'N/A';
+        if (detailEmail) detailEmail.textContent = user.email || 'N/A';
+        if (detailPhone) detailPhone.textContent = user.phone || 'N/A';
+        if (detailClass) detailClass.textContent = user.class;
+        if (detailStream) detailStream.textContent = user.stream || 'N/A';
+        if (detailEnrollment) detailEnrollment.textContent = formatDate(user.enrollment_date);
+        if (detailSports) detailSports.textContent = user.sports || 'None';
         
-        const academicInfo = `
-            <div class="profile-card">
-                <h3><i class="fas fa-graduation-cap"></i> Academic Information</h3>
-                <div class="info-item">
-                    <span class="info-label">Class:</span>
-                    <span class="info-value">${account.class}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Stream:</span>
-                    <span class="info-value">${account.stream || 'N/A'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Enrollment Date:</span>
-                    <span class="info-value">${formatDate(account.enrollment_date)}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Sports:</span>
-                    <span class="info-value">${account.sports || 'None'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Previous School:</span>
-                    <span class="info-value">${account.previous_school || 'N/A'}</span>
-                </div>
-            </div>
-        `;
-        
-        const contactInfo = `
-            <div class="profile-card">
-                <h3><i class="fas fa-address-book"></i> Contact & Medical</h3>
-                <div class="info-item">
-                    <span class="info-label">Address:</span>
-                    <span class="info-value">${account.address || 'N/A'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Emergency Contact:</span>
-                    <span class="info-value">${account.emergency_contact || 'N/A'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Medical Information:</span>
-                    <span class="info-value">${account.medical_info || 'None'}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Notes:</span>
-                    <span class="info-value">${account.notes || 'None'}</span>
-                </div>
-            </div>
-        `;
-        
-        const portalInfo = `
-            <div class="profile-card">
-                <h3><i class="fas fa-key"></i> Portal Access</h3>
-                <div class="info-item">
-                    <span class="info-label">Portal ID:</span>
-                    <span class="info-value">${user.portalId}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Password:</span>
-                    <span class="info-value">••••••••</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Login URL:</span>
-                    <span class="info-value">${window.location.origin}</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">School:</span>
-                    <span class="info-value">${this.schoolConfig.school_name || 'Scholastic Academy'}</span>
-                </div>
-                <button class="btn" onclick="portal.showCredentials()" style="margin-top: 15px; width: 100%; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
-                    <i class="fas fa-eye"></i> Show Credentials
-                </button>
-            </div>
-        `;
-        
-        profileGrid.innerHTML = personalInfo + academicInfo + contactInfo + portalInfo;
+        // Load student photo if available
+        this.loadStudentPhoto();
+    }
+    
+    loadStudentPhoto() {
+        // This would be implemented to load the photo from the database
+        // For now, we'll use a placeholder
+        const photoContainer = this.elements.studentPhotoContainer;
+        if (photoContainer) {
+            // Clear existing content
+            photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
+        }
     }
     
     loadQRCode() {
         const user = this.currentUser;
-        const account = this.accounts[user.portalId];
         
-        if (!account) return;
+        if (!user) return;
         
         // Generate QR data for current URL
-        const qrData = `${window.location.origin}${window.location.pathname}?portalId=${user.portalId}&schoolId=${user.school_id}&autoLogin=true`;
+        const qrData = `${window.location.origin}${window.location.pathname}?portalId=${user.portalId}&schoolId=${user.school_id}&autoLogin=true&schoolName=${encodeURIComponent(user.school_name)}`;
         
-        // Generate QR code for sidebar
+        // Generate QR code
         const dynamicQR = document.getElementById('dynamicQR');
         if (dynamicQR && typeof QRCode !== 'undefined') {
             QRCode.toCanvas(dynamicQR, qrData, {
-                width: 150,
-                height: 150,
+                width: 200,
+                height: 200,
                 margin: 1,
                 color: {
                     dark: '#374151',
@@ -542,20 +524,27 @@ class EnhancedPortal {
                 if (error) console.error('QR Code generation error:', error);
             });
         }
+    }
+    
+    saveQRCode() {
+        const canvas = document.getElementById('dynamicQR');
+        if (!canvas) return;
         
-        // Set main QR code if available
-        const studentQR = document.getElementById('studentQR');
-        if (studentQR && account.qr_code) {
-            studentQR.src = `data:image/png;base64,${account.qr_code}`;
-            studentQR.style.display = 'block';
-        }
+        const link = document.createElement('a');
+        link.download = `portal_qr_${this.currentUser.portalId}.png`;
+        link.href = canvas.toDataURL('image/png');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        this.showSuccess('QR code saved successfully!');
     }
     
     checkReportAvailability() {
         const user = this.currentUser;
         if (!user || !user.student_id) return;
         
-        // Report image URLs to try (relative paths for GitHub Pages)
+        // Report image URLs to try
         const reportUrls = [
             `./reports/${user.student_id}.png`,
             `../reports/${user.student_id}.png`,
@@ -684,8 +673,8 @@ class EnhancedPortal {
                     const password = params.get('password');
                     const schoolId = params.get('schoolId');
                     
-                    if (schoolId) {
-                        this.selectSchool(schoolId, `School ${schoolId}`);
+                    if (schoolId && this.schools[schoolId]) {
+                        this.selectSchool(schoolId, this.schools[schoolId].name || `School ${schoolId}`);
                     }
                     
                     if (portalId) {
@@ -732,8 +721,11 @@ class EnhancedPortal {
     logout() {
         this.currentUser = null;
         this.currentReportUrl = null;
-        sessionStorage.removeItem('enhancedPortalUser');
+        sessionStorage.removeItem('mobilePortalUser');
         sessionStorage.removeItem('currentSchool');
+        
+        // Close sidebar if open
+        this.closeMobileSidebar();
         
         if (this.elements.dashboard) this.elements.dashboard.style.display = 'none';
         this.showSchoolSelection();
@@ -744,25 +736,6 @@ class EnhancedPortal {
             this.loadProfileData();
             this.checkReportAvailability();
             this.showSuccess('Dashboard refreshed!');
-        }
-    }
-    
-    printDashboard() {
-        window.print();
-    }
-    
-    showCredentials() {
-        if (this.currentUser) {
-            const account = this.accounts[this.currentUser.portalId];
-            if (account) {
-                alert(`Portal Credentials:
-
-School ID: ${account.school_id}
-Portal ID: ${this.currentUser.portalId}
-Password: ${account.password}
-
-Keep these credentials secure!`);
-            }
         }
     }
     
@@ -786,27 +759,36 @@ Keep these credentials secure!`);
                     position: fixed;
                     top: 20px;
                     right: 20px;
+                    left: 20px;
                     background: linear-gradient(135deg, #059669, #047857);
                     color: white;
-                    padding: 15px 25px;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+                    padding: 14px 18px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
                     z-index: 10000;
                     animation: slideIn 0.3s ease-out;
                     display: flex;
                     align-items: center;
                     gap: 10px;
                     font-weight: 600;
+                    font-size: 0.9rem;
                 }
                 
                 @keyframes slideIn {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
+                    from { transform: translateY(-100%); opacity: 0; }
+                    to { transform: translateY(0); opacity: 1; }
                 }
                 
                 @keyframes slideOut {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
+                    from { transform: translateY(0); opacity: 1; }
+                    to { transform: translateY(-100%); opacity: 0; }
+                }
+                
+                @media (min-width: 640px) {
+                    .success-notification {
+                        left: auto;
+                        max-width: 300px;
+                    }
                 }
             `;
             document.head.appendChild(style);
@@ -822,15 +804,11 @@ Keep these credentials secure!`);
 }
 
 // Initialize portal when DOM is loaded
-function initPortal(accountsData, schoolConfig) {
-    window.portal = new EnhancedPortal(accountsData, schoolConfig);
+function initPortal(accountsData, schoolsData) {
+    window.portal = new MobilePortal(accountsData, schoolsData);
 }
 
 // Make functions available globally
-window.showCredentials = () => {
-    if (window.portal) window.portal.showCredentials();
-};
-
 window.selectSchool = (schoolId, schoolName) => {
     if (window.portal) window.portal.selectSchool(schoolId, schoolName);
 };
@@ -839,11 +817,11 @@ window.selectSchool = (schoolId, schoolName) => {
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         if (typeof ENHANCED_PORTAL_ACCOUNTS !== 'undefined') {
-            initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOL_CONFIG);
+            initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOLS_DATA);
         }
     });
 } else {
     if (typeof ENHANCED_PORTAL_ACCOUNTS !== 'undefined') {
-        initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOL_CONFIG);
+        initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOLS_DATA);
     }
 }

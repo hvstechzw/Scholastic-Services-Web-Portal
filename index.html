@@ -2,30 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Scholastic Services - Enhanced Student Portal</title>
-    <meta name="description" content="Enhanced student portal for academic management and profile access">
-    <meta name="theme-color" content="#f8fafc">
+    <meta name="description" content="Mobile-first enhanced student portal for academic management and profile access">
+    <meta name="theme-color" content="#4b5563">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/logos/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- School Selection Page -->
-    <div class="login-container" id="schoolSelectionPage">
-        <div class="login-card fade-in">
+    <div class="container" id="schoolSelectionPage">
+        <div class="login-card">
             <div class="logo-section">
                 <div class="logo-circle">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <h1>Scholastic Services</h1>
-                <p>Enhanced Student Portal</p>
-                <p class="subtitle">Select your school to continue</p>
-            </div>
-
-            <div class="current-school">
-                <i class="fas fa-school"></i> 
-                <span id="selectedSchoolName">Scholastic Academy Pro</span>
+                <p class="subtitle">Enhanced Student Portal</p>
+                <p class="instruction">Select your school to continue</p>
             </div>
 
             <div class="school-list" id="schoolList">
@@ -39,18 +34,18 @@
     </div>
 
     <!-- Login Page -->
-    <div class="login-container" id="loginPage" style="display: none;">
-        <div class="login-card fade-in">
+    <div class="container" id="loginPage" style="display: none;">
+        <div class="login-card">
             <div class="logo-section">
                 <div class="logo-circle">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
-                <h1 id="currentSchoolName">Scholastic Academy Pro</h1>
-                <p>Enhanced Student Portal</p>
-                <p class="subtitle">Access your complete academic profile</p>
+                <h1 id="currentSchoolName">Select School</h1>
+                <p class="subtitle">Enhanced Student Portal</p>
+                <p class="instruction">Access your complete academic profile</p>
             </div>
 
-            <div class="current-school" id="currentSchoolBadge">
+            <div class="school-badge" id="currentSchoolBadge">
                 <i class="fas fa-school"></i> 
                 <span id="currentSchoolId">default</span>
             </div>
@@ -103,126 +98,226 @@
     </div>
 
     <!-- Dashboard -->
-    <div class="dashboard" id="dashboard" style="display: none;">
-        <div class="header">
-            <div class="header-content">
-                <div class="header-brand">
-                    <div class="header-logo">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div>
-                        <h1>Enhanced Student Portal</h1>
-                        <div class="school-badge" id="dashboardSchoolBadge">
-                            <i class="fas fa-school"></i> 
-                            <span id="dashboardSchoolId">default</span>
-                        </div>
+    <div class="dashboard-container" id="dashboard" style="display: none;">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <div class="header-left">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-title">
+                    <h1>Student Portal</h1>
+                    <div class="school-badge-small" id="dashboardSchoolBadge">
+                        <i class="fas fa-school"></i> 
+                        <span id="dashboardSchoolId">default</span>
                     </div>
                 </div>
-
-                <div class="header-actions">
-                    <button class="btn btn-light" id="refreshBtn">
-                        <i class="fas fa-sync-alt"></i> Refresh
-                    </button>
-                    <button class="btn btn-light" id="printBtn">
-                        <i class="fas fa-print"></i> Print
-                    </button>
-                    <button class="btn btn-light" id="viewReportBtn" style="display: none;">
-                        <i class="fas fa-chart-line"></i> View Report
-                    </button>
-                    <button class="btn btn-light" id="switchSchoolDashboardBtn">
-                        <i class="fas fa-exchange-alt"></i> Switch School
-                    </button>
-                    <button class="btn btn-light" id="logoutBtn">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </button>
-                </div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="refreshBtn" title="Refresh">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+                <button class="icon-btn" id="logoutBtn" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
             </div>
         </div>
 
-        <div class="main-content">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3><i class="fas fa-user-circle"></i> Student Profile</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="#profile" class="active" data-section="profile"><i class="fas fa-id-card"></i> Personal Information</a></li>
-                        <li><a href="#report" data-section="report"><i class="fas fa-chart-line"></i> Academic Report</a></li>
-                        <li><a href="#documents" data-section="documents"><i class="fas fa-file-alt"></i> Documents</a></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3><i class="fas fa-qrcode"></i> Quick Access</h3>
-                    <div class="qr-section">
-                        <canvas id="dynamicQR"></canvas>
-                        <p>Scan for quick login</p>
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <h3 id="sidebarUserName">Student</h3>
+                        <p id="sidebarUserSchool">School</p>
                     </div>
                 </div>
+                <button class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-menu">
+                <a href="#profile" class="sidebar-item active" data-section="profile">
+                    <i class="fas fa-id-card"></i>
+                    <span>Personal Information</span>
+                </a>
+                <a href="#report" class="sidebar-item" data-section="report">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Academic Report</span>
+                </a>
+                <a href="#documents" class="sidebar-item" data-section="documents">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Documents</span>
+                </a>
+                <a href="#qr" class="sidebar-item" data-section="qr">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QR Code</span>
+                </a>
+                <a href="#settings" class="sidebar-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#help" class="sidebar-item" data-section="help">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Help & Support</span>
+                </a>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="btn btn-outline" id="switchSchoolMobileBtn">
+                    <i class="fas fa-exchange-alt"></i> Switch School
+                </button>
+            </div>
+        </div>
 
-                <div class="sidebar-section">
-                    <h3><i class="fas fa-cog"></i> Settings</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="#settings"><i class="fas fa-key"></i> Change Password</a></li>
-                        <li><a href="#help"><i class="fas fa-question-circle"></i> Help & Support</a></li>
-                    </ul>
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section" id="welcomeSection">
+                <div class="welcome-header">
+                    <h2>Welcome back, <span id="welcomeName">Student</span>! 👋</h2>
+                    <p>Access your complete academic profile and manage your information.</p>
+                </div>
+                
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h3>Class</h3>
+                            <p id="quickClass">Loading...</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h3>Status</h3>
+                            <p id="quickStatus">Loading...</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Content Area -->
-            <div class="content-area" id="contentArea">
-                <!-- Welcome Section -->
-                <div class="welcome-section fade-in" id="welcomeSection">
-                    <h2>Welcome back, <span id="welcomeName">Student</span>! 👋</h2>
-                    <p>Access your complete academic profile and manage your information.</p>
-                    <div class="school-info">
-                        <i class="fas fa-school"></i> 
-                        School: <strong id="welcomeSchool">default</strong>
-                    </div>
+            <!-- Profile Section -->
+            <div class="content-section" id="profileSection" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-user"></i> Student Profile</h2>
+                    <button class="btn btn-light" id="viewReportBtn" style="display: none;">
+                        <i class="fas fa-chart-line"></i> View Report
+                    </button>
                 </div>
 
-                <!-- Profile Section -->
-                <div class="student-profile fade-in" id="profileSection">
-                    <div class="profile-header">
-                        <h2><i class="fas fa-user"></i> Student Profile</h2>
-                        <div class="profile-status">
-                            <i class="fas fa-check-circle"></i>
-                            <span id="studentStatus">Active</span>
+                <div class="profile-content">
+                    <div class="profile-photo-section">
+                        <div class="photo-container" id="studentPhotoContainer">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="photo-info">
+                            <h3 id="profileStudentName">Loading...</h3>
+                            <p id="profileStudentId">Student ID: Loading...</p>
+                            <p id="profileSchool">School: Loading...</p>
                         </div>
                     </div>
 
-                    <div class="profile-grid" id="profileGrid">
-                        <!-- Profile data loaded dynamically -->
-                    </div>
-
-                    <div class="qr-section">
-                        <img id="studentQR" alt="Student QR Code" style="display: none;">
-                        <p><i class="fas fa-info-circle"></i> Scan this QR code for quick portal access</p>
-                    </div>
-                </div>
-
-                <!-- Report Section -->
-                <div class="report-section fade-in" id="reportSection" style="display: none;">
-                    <div class="profile-header">
-                        <h2><i class="fas fa-chart-line"></i> Academic Report</h2>
-                        <button class="btn btn-light" id="downloadReportBtn" style="display: none;">
-                            <i class="fas fa-download"></i> Download
-                        </button>
-                    </div>
-
-                    <div class="report-viewer" id="reportViewer">
-                        <div class="loading" id="reportLoading">
-                            <div class="loading-spinner"></div>
-                            <p>Loading academic report...</p>
-                        </div>
-                        <img id="reportImage" class="report-image" alt="Academic Report" style="display: none;">
-                        <div id="noReportMessage" style="display: none;">
-                            <div class="no-report-icon">
-                                <i class="fas fa-file-alt"></i>
+                    <div class="profile-details">
+                        <div class="detail-group">
+                            <h3><i class="fas fa-info-circle"></i> Personal Details</h3>
+                            <div class="detail-item">
+                                <span class="detail-label">Date of Birth:</span>
+                                <span class="detail-value" id="detailDob">Loading...</span>
                             </div>
-                            <h3>Report Not Available</h3>
-                            <p>Your academic report is not yet available online.</p>
-                            <p class="subtext">Please contact your school administration for more information.</p>
+                            <div class="detail-item">
+                                <span class="detail-label">Gender:</span>
+                                <span class="detail-value" id="detailGender">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Email:</span>
+                                <span class="detail-value" id="detailEmail">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Phone:</span>
+                                <span class="detail-value" id="detailPhone">Loading...</span>
+                            </div>
                         </div>
+
+                        <div class="detail-group">
+                            <h3><i class="fas fa-graduation-cap"></i> Academic Details</h3>
+                            <div class="detail-item">
+                                <span class="detail-label">Class:</span>
+                                <span class="detail-value" id="detailClass">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Stream:</span>
+                                <span class="detail-value" id="detailStream">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Enrollment Date:</span>
+                                <span class="detail-value" id="detailEnrollment">Loading...</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Sports:</span>
+                                <span class="detail-value" id="detailSports">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report Section -->
+            <div class="content-section" id="reportSection" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Academic Report</h2>
+                    <button class="btn btn-light" id="downloadReportBtn" style="display: none;">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                </div>
+
+                <div class="report-viewer" id="reportViewer">
+                    <div class="loading" id="reportLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading academic report...</p>
+                    </div>
+                    <img id="reportImage" class="report-image" alt="Academic Report" style="display: none;">
+                    <div id="noReportMessage" style="display: none;">
+                        <div class="no-report-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Report Not Available</h3>
+                        <p>Your academic report is not yet available online.</p>
+                        <p class="subtext">Please contact your school administration for more information.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="content-section" id="qrSection" style="display: none;">
+                <div class="section-header">
+                    <h2><i class="fas fa-qrcode"></i> Quick Access QR Code</h2>
+                </div>
+
+                <div class="qr-content">
+                    <div class="qr-display">
+                        <canvas id="dynamicQR"></canvas>
+                    </div>
+                    <div class="qr-info">
+                        <h3>Scan for Instant Access</h3>
+                        <p>Use this QR code to quickly access your portal from any device.</p>
+                        <div class="qr-details">
+                            <div class="qr-detail">
+                                <i class="fas fa-id-card"></i>
+                                <span>Portal ID: <strong id="qrPortalId">Loading...</strong></span>
+                            </div>
+                            <div class="qr-detail">
+                                <i class="fas fa-school"></i>
+                                <span>School: <strong id="qrSchool">Loading...</strong></span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="saveQRBtn">
+                            <i class="fas fa-download"></i> Save QR Code
+                        </button>
                     </div>
                 </div>
             </div>
@@ -240,9 +335,6 @@
                     <a href="https://high-voltage-technologies.itch.io" target="_blank" title="Itch.io"><i class="fab fa-itch-io"></i></a>
                     <a href="https://www.facebook.com/profile.php?id=61561637791826" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
                     <a href="https://discord.gg/q9syM7RuJ6" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-                    <a href="https://www.tiktok.com/@hvstechofficial" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://whatsapp.com/channel/0029ValE9KQ7z4kiKXDsRl0T" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/hvstech_official" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             
@@ -252,7 +344,6 @@
                     <li><i class="fas fa-envelope"></i> Email: highvoltagesoftware8@gmail.com</li>
                     <li><i class="fas fa-phone"></i> WhatsApp: +263785558261</li>
                     <li><i class="fas fa-map-marker-alt"></i> Based in Zimbabwe</li>
-                    <li><i class="fas fa-school"></i> Powered by Scholastic Services</li>
                 </ul>
             </div>
             
@@ -265,7 +356,7 @@
         </div>
         
         <div class="copyright">
-            <p>&copy; 2024 High Voltage Software Technologies. All rights reserved. | Enhanced Portal v2.0</p>
+            <p>&copy; 2024 High Voltage Software Technologies. All rights reserved. | Mobile Portal v2.0</p>
             <p>Powered by PostgreSQL & Advanced Web Technologies</p>
         </div>
     </footer>
@@ -295,7 +386,8 @@
     "previous_school": "",
     "notes": "",
     "qr_code": "iVBORw0KGgoAAAANSUhEUgAAAMQAAADEAQAAAADo3bPGAAAB+UlEQVR4nN2YQQrdMBBDn8vfyzf49z9WbiCf4HXh31JKS6HYUJpF4iQQoYlGM+Mhvz7Wl9+8gH/7zRhjMmAwB5MJc4wxj+NEgTHL6oSyGj3N5wUjAGW4Hiar+9FxHGDmGQbmvvvrr/0Jh/Uuz4Ay3fwO42A0qiYSikbTszjDAfnp4YI8p/moipRIpY3qYT6Ipa0EsDXKDZwi6T4D/YAfjxsGa01JSkp7HidWsdhqkmpzgY/Z8QpWTGuO6xppbKG2WCqV8zgG0tpQYonmgg5K1KZAogq9wAeIblXL9qDeyVMlae235MlxPi9KJq4ZVgJCwdP1FFPbpqhpmiY38qdAkhYgjQAX/KDNtmsjNBBznM+Lmd3ldDJxlDdz9UY9jZQmEbe0z/PB/Lhw/570gu+020KbtKWmN/wgkVpNlUjqlfpDLY0QNLY05/k0gVBCm7ZbCVf4fIIVhJZ6QQc17Aq6/acKF/rE+UBGeJh9s5wrAMf7xMYE2KXB79zO+2itIRRCGq70iW5HEFNjE3sjf0oat6gDKaUX+pAdqI+/haRwI3/8RO5Th1LjeV3veXvtFn5mdM1dja7Mc0lJYjDd1wu+k5iUsPuDQo7r+jMHP+CC+cyMyhxe2SlZ8F5zBvLw2UO48X+ozV7tmftCfwDs0kD3rJXkvL+N/2xf7Csp4fsREYxiOQAAAABJRU5ErkJggg==",
-    "school_id": "marist_brothers_high_eda4a711"
+    "school_id": "marist_brothers_high_eda4a711",
+    "school_name": "Marist Brothers High School"
   },
   "BAF990BC": {
     "password": "MBHS0001",
@@ -315,24 +407,35 @@
     "previous_school": "",
     "notes": "",
     "qr_code": "iVBORw0KGgoAAAANSUhEUgAAAMQAAADEAQAAAADo3bPGAAAB/klEQVR4nN2YQarYMBBDnz/dyzf49z9WbiCf4HXhdFN+KbQ2lHoRSAweZM1oNBny9Vofv9iAf3tnjDEXY7JgMcZkjjHm4TgYDZaaBm2NpmfjfIMROpcM18NkFUZO39s3AKaDmQE+0zX/+LTf7XS5+gALmH972pfLaJLURKDxBj/DAfnp44I8p/HozrESUWxUD+NBCIgE2BHbno+T0oRUrSXFcJofjLJjpCQl5QoeaGPQ2oTa5g4/TRuKscZcwbOPtlpaFD3OzwedDNaCOeAzHSNMelwPME0o2DQShAv8SFokRdxFeqFOA7WhbREivVE/Zec03a/hTr6RVipvStNwo35SSGgB0ghwAY/krZ+IxMbkfP+Z3Z6AT1iO8gmrOezffuCpSdzSE3ODn/0sQNJW4Eb9GFu1pBaNvdF/amI1VSKpN+rHYpGgkEDlAj+F7D5Ku/kxx30VmgrE+qo22gv8JIl9jWKF1hv6JjX70vL28fN6gKbbkCatstX0Bp42iW5DlQi9kQcGSHYl2cQrfrSkCfb1pdL0gj9Ik/zQN92Cd0MPVCBtpEQjx/nZ8zbmAWZm15hMLvi36HbX2Z0n5sK88AFjMskarLHmQ9caeBrPu7Oe+Fg6mVjGhTmYZM/CJdsyXpiD33m72+0IJlzoP++8/YRBmS4ygee03xn/2X+x71cjD56uhDbvAAAAAElFTkSuQmCC",
-    "school_id": "marist_brothers_high_eda4a711"
+    "school_id": "marist_brothers_high_eda4a711",
+    "school_name": "Marist Brothers High School"
   }
 };
-        const SCHOOL_CONFIG = {
-  "school_name": "Scholastic Academy Pro",
-  "current_school_id": "1",
-  "enable_sync": "1",
-  "sync_host": "localhost",
-  "sync_port": "5432",
-  "sync_db": "suitesync_hub",
-  "sync_user": "postgres",
-  "sync_password": "password"
+        const SCHOOLS_DATA = {
+  "learner_first_primar_62166721": {
+    "school_id": "learner_first_primar_62166721",
+    "name": "Learner First Primary School",
+    "logo_blob": null,
+    "logo_filename": null,
+    "email": "learnerfirst@gmail.com",
+    "phone": "+263775993739",
+    "address": "Baobab"
+  },
+  "marist_brothers_high_eda4a711": {
+    "school_id": "marist_brothers_high_eda4a711",
+    "name": "Marist Brothers High School",
+    "logo_blob": null,
+    "logo_filename": null,
+    "email": "maristdete@gmail.com",
+    "phone": "+263785558261",
+    "address": "Chezhou, Dete"
+  }
 };
         
         // Initialize portal when page loads
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof initPortal === 'function') {
-                initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOL_CONFIG);
+                initPortal(ENHANCED_PORTAL_ACCOUNTS, SCHOOLS_DATA);
             }
         });
     </script>
