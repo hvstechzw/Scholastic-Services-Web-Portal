@@ -155,23 +155,23 @@
             </div>
             
             <div class="sidebar-menu">
-                <a href="#welcome" class="sidebar-item active" data-section="welcome">
+                <a href="#" class="sidebar-item active" data-section="welcome">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
                 </a>
-                <a href="#profile" class="sidebar-item" data-section="profile">
+                <a href="#" class="sidebar-item" data-section="profile">
                     <i class="fas fa-id-card"></i>
                     <span>Personal Information</span>
                 </a>
-                <a href="#report" class="sidebar-item" data-section="report">
+                <a href="#" class="sidebar-item" data-section="report">
                     <i class="fas fa-chart-line"></i>
                     <span>Academic Report</span>
                 </a>
-                <a href="#qr" class="sidebar-item" data-section="qr">
+                <a href="#" class="sidebar-item" data-section="qr">
                     <i class="fas fa-qrcode"></i>
                     <span>QR Code</span>
                 </a>
-                <a href="#settings" class="sidebar-item" data-section="settings">
+                <a href="#" class="sidebar-item" data-section="settings">
                     <i class="fas fa-cog"></i>
                     <span>Settings</span>
                 </a>
@@ -345,7 +345,9 @@
                         <div class="loading-spinner"></div>
                         <p>Loading academic report...</p>
                     </div>
-                    <img id="reportImage" class="report-image" alt="Academic Report" style="display: none;">
+                    <div class="report-image-container" id="reportImageContainer" style="display: none;">
+                        <img id="reportImage" class="report-image" alt="Academic Report">
+                    </div>
                     <div id="noReportMessage" style="display: none;">
                         <div class="no-report-icon">
                             <i class="fas fa-file-alt"></i>
@@ -526,14 +528,16 @@
     "email": "learnerfirst@gmail.com",
     "phone": "+263775993739",
     "address": "Baobab",
-    "logo_filename": null
+    "logo_filename": null,
+    "logo_base64": null
   },
   "marist_brothers_high_eda4a711": {
     "name": "Marist Brothers High School",
     "email": "maristdete@gmail.com",
     "phone": "+263785558261",
     "address": "Chezhou, Dete",
-    "logo_filename": null
+    "logo_filename": null,
+    "logo_base64": null
   }
 };
         

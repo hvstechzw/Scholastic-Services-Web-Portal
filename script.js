@@ -273,24 +273,36 @@ class MobilePortal {
         // Add schools from schools data
         Object.entries(this.schools).forEach(([schoolId, schoolData]) => {
             if (schoolData.name) {
-                const schoolOption = this.createSchoolOption(schoolId, schoolData.name, 'fas fa-school');
+                const schoolOption = this.createSchoolOption(schoolId, schoolData.name, schoolData.logo_base64);
                 schoolList.appendChild(schoolOption);
             }
         });
         
         // Add default option if no schools
         if (schoolList.children.length === 0) {
-            const defaultOption = this.createSchoolOption('default', 'Default School', 'fas fa-graduation-cap');
+            const defaultOption = this.createSchoolOption('default', 'Default School', null);
             schoolList.appendChild(defaultOption);
         }
     }
     
-    createSchoolOption(schoolId, schoolName, iconClass) {
+    createSchoolOption(schoolId, schoolName, logoBase64) {
         const div = document.createElement('div');
         div.className = 'school-option';
         div.onclick = () => this.selectSchool(schoolId, schoolName);
+        
+        let logoHtml = '';
+        if (logoBase64) {
+            logoHtml = `
+                <div class="school-logo-display">
+                    <img src="data:image/png;base64,${logoBase64}" alt="${schoolName} Logo">
+                </div>
+            `;
+        } else {
+            logoHtml = `<i class="fas fa-school"></i>`;
+        }
+        
         div.innerHTML = `
-            <i class="${iconClass}"></i>
+            ${logoHtml}
             <div class="school-info">
                 <div class="school-name">${schoolName}</div>
                 <div class="school-id">ID: ${schoolId}</div>
@@ -363,7 +375,9 @@ class MobilePortal {
         
         if (autoLogin === 'true' && portalId && password) {
             if (this.authenticateUser(portalId, password)) {
-                window.history.replaceState(null, null, window.location.pathname);
+                // Remove query parameters from URL
+                const newUrl = window.location.pathname;
+                window.history.replaceState({}, document.title, newUrl);
             }
         }
         
@@ -612,8 +626,8 @@ class MobilePortal {
         
         if (!user) return;
         
-        // Generate QR data for current URL
-        const qrData = `${window.location.origin}${window.location.pathname}?portalId=${user.portalId}&schoolId=${user.school_id}&autoLogin=true&schoolName=${encodeURIComponent(user.school_name)}`;
+        // Generate QR data with proper URL encoding
+        const qrData = `https://${window.location.host}${window.location.pathname}?portalId=${user.portalId}&schoolId=${encodeURIComponent(user.school_id)}&autoLogin=true&schoolName=${encodeURIComponent(user.school_name)}`;
         
         // Generate QR code
         const dynamicQR = document.getElementById('dynamicQR');
@@ -669,7 +683,7 @@ class MobilePortal {
                 const img = new Image();
                 img.onload = () => resolve(url);
                 img.onerror = () => resolve(null);
-                img.src = url;
+                img.src = url + '?t=' + new Date().getTime(); // Cache buster
             });
         };
         
@@ -685,10 +699,11 @@ class MobilePortal {
     }
     
     loadReportImage() {
-        const { reportImage, reportLoading, noReportMessage, downloadReportBtn } = this.elements;
+        const { reportImage, reportLoading, noReportMessage, downloadReportBtn, reportImageContainer } = this.elements;
         
         if (!this.currentReportUrl) {
             if (reportLoading) reportLoading.style.display = 'none';
+            if (reportImageContainer) reportImageContainer.style.display = 'none';
             if (noReportMessage) noReportMessage.style.display = 'block';
             if (downloadReportBtn) downloadReportBtn.style.display = 'none';
             return;
@@ -699,17 +714,21 @@ class MobilePortal {
             if (reportImage) {
                 reportImage.src = this.currentReportUrl;
                 reportImage.style.display = 'block';
-                reportImage.onclick = () => this.downloadReport();
+                reportImage.onclick = null; // Remove auto-download
+            }
+            if (reportImageContainer) {
+                reportImageContainer.style.display = 'block';
             }
             if (reportLoading) reportLoading.style.display = 'none';
             if (downloadReportBtn) downloadReportBtn.style.display = 'inline-flex';
         };
         img.onerror = () => {
             if (reportLoading) reportLoading.style.display = 'none';
+            if (reportImageContainer) reportImageContainer.style.display = 'none';
             if (noReportMessage) noReportMessage.style.display = 'block';
             if (downloadReportBtn) downloadReportBtn.style.display = 'none';
         };
-        img.src = this.currentReportUrl;
+        img.src = this.currentReportUrl + '?t=' + new Date().getTime(); // Cache buster
     }
     
     downloadReport() {
