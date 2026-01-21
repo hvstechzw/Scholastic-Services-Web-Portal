@@ -1,20 +1,16 @@
 {
   "learner_first_primar_62166721": {
-    "school_id": "learner_first_primar_62166721",
     "name": "Learner First Primary School",
-    "logo_blob": null,
-    "logo_filename": null,
     "email": "learnerfirst@gmail.com",
     "phone": "+263775993739",
-    "address": "Baobab"
+    "address": "Baobab",
+    "logo_filename": null
   },
   "marist_brothers_high_eda4a711": {
-    "school_id": "marist_brothers_high_eda4a711",
     "name": "Marist Brothers High School",
-    "logo_blob": null,
-    "logo_filename": null,
     "email": "maristdete@gmail.com",
     "phone": "+263785558261",
-    "address": "Chezhou, Dete"
+    "address": "Chezhou, Dete",
+    "logo_filename": null
   }
 }

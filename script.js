@@ -1,4 +1,4 @@
-// Enhanced Student Portal - Mobile First JavaScript
+// Enhanced Student Portal - Complete Dashboard JavaScript
 
 class MobilePortal {
     constructor(accountsData, schoolsData) {
@@ -18,9 +18,9 @@ class MobilePortal {
             loginPage: document.getElementById('loginPage'),
             dashboard: document.getElementById('dashboard'),
             mobileSidebar: document.getElementById('mobileSidebar'),
+            sidebarOverlay: document.getElementById('sidebarOverlay'),
             menuBtn: document.getElementById('menuBtn'),
             closeSidebar: document.getElementById('closeSidebar'),
-            sidebarOverlay: document.createElement('div'),
             loginForm: document.getElementById('loginForm'),
             errorMessage: document.getElementById('errorMessage'),
             errorText: document.getElementById('errorText'),
@@ -30,7 +30,6 @@ class MobilePortal {
             stopCameraBtn: document.getElementById('stopCameraBtn'),
             switchSchoolBtn: document.getElementById('switchSchoolBtn'),
             switchSchoolMobileBtn: document.getElementById('switchSchoolMobileBtn'),
-            switchSchoolDashboardBtn: document.getElementById('switchSchoolDashboardBtn'),
             
             // Dashboard elements
             welcomeName: document.getElementById('welcomeName'),
@@ -38,6 +37,8 @@ class MobilePortal {
             sidebarUserSchool: document.getElementById('sidebarUserSchool'),
             quickClass: document.getElementById('quickClass'),
             quickStatus: document.getElementById('quickStatus'),
+            quickSchool: document.getElementById('quickSchool'),
+            quickStream: document.getElementById('quickStream'),
             currentSchoolName: document.getElementById('currentSchoolName'),
             currentSchoolId: document.getElementById('currentSchoolId'),
             currentSchoolBadge: document.getElementById('currentSchoolBadge'),
@@ -53,10 +54,15 @@ class MobilePortal {
             detailGender: document.getElementById('detailGender'),
             detailEmail: document.getElementById('detailEmail'),
             detailPhone: document.getElementById('detailPhone'),
+            detailAddress: document.getElementById('detailAddress'),
             detailClass: document.getElementById('detailClass'),
             detailStream: document.getElementById('detailStream'),
             detailEnrollment: document.getElementById('detailEnrollment'),
             detailSports: document.getElementById('detailSports'),
+            detailPreviousSchool: document.getElementById('detailPreviousSchool'),
+            detailEmergencyContact: document.getElementById('detailEmergencyContact'),
+            detailMedicalInfo: document.getElementById('detailMedicalInfo'),
+            detailNotes: document.getElementById('detailNotes'),
             
             // Report elements
             reportSection: document.getElementById('reportSection'),
@@ -73,6 +79,12 @@ class MobilePortal {
             qrSchool: document.getElementById('qrSchool'),
             saveQRBtn: document.getElementById('saveQRBtn'),
             
+            // Settings elements
+            settingsPortalId: document.getElementById('settingsPortalId'),
+            settingsSchool: document.getElementById('settingsSchool'),
+            logoutSettingsBtn: document.getElementById('logoutSettingsBtn'),
+            switchSchoolSettingsBtn: document.getElementById('switchSchoolSettingsBtn'),
+            
             // Buttons
             logoutBtn: document.getElementById('logoutBtn'),
             refreshBtn: document.getElementById('refreshBtn')
@@ -87,10 +99,32 @@ class MobilePortal {
         this.setupMobileNavigation();
         this.loadAvailableSchools();
         this.handleAutoLogin();
-        this.setupSidebarOverlay();
         
         // Prevent zoom on mobile
         this.preventZoom();
+        
+        // Force light theme
+        this.forceLightTheme();
+    }
+    
+    forceLightTheme() {
+        // Add light theme class to body
+        document.body.classList.add('light-theme');
+        document.body.setAttribute('data-theme', 'light');
+        
+        // Set meta tag to force light theme
+        let meta = document.querySelector('meta[name="color-scheme"]');
+        if (!meta) {
+            meta = document.createElement('meta');
+            meta.name = 'color-scheme';
+            meta.content = 'light only';
+            document.head.appendChild(meta);
+        } else {
+            meta.content = 'light only';
+        }
+        
+        // Set CSS variable
+        document.documentElement.style.setProperty('color-scheme', 'light only');
     }
     
     preventZoom() {
@@ -110,17 +144,11 @@ class MobilePortal {
         }, false);
     }
     
-    setupSidebarOverlay() {
-        const overlay = this.elements.sidebarOverlay;
-        overlay.className = 'sidebar-overlay';
-        overlay.addEventListener('click', () => this.closeMobileSidebar());
-        document.body.appendChild(overlay);
-    }
-    
     setupEventListeners() {
         const { loginForm, qrScannerBtn, stopCameraBtn, switchSchoolBtn, 
                 switchSchoolMobileBtn, logoutBtn, refreshBtn, menuBtn, 
-                closeSidebar, saveQRBtn } = this.elements;
+                closeSidebar, saveQRBtn, logoutSettingsBtn, switchSchoolSettingsBtn,
+                sidebarOverlay, viewReportBtn, downloadReportBtn } = this.elements;
         
         if (loginForm) {
             loginForm.addEventListener('submit', (e) => this.handleLogin(e));
@@ -142,8 +170,16 @@ class MobilePortal {
             switchSchoolMobileBtn.addEventListener('click', () => this.showSchoolSelection());
         }
         
+        if (switchSchoolSettingsBtn) {
+            switchSchoolSettingsBtn.addEventListener('click', () => this.showSchoolSelection());
+        }
+        
         if (logoutBtn) {
             logoutBtn.addEventListener('click', () => this.logout());
+        }
+        
+        if (logoutSettingsBtn) {
+            logoutSettingsBtn.addEventListener('click', () => this.logout());
         }
         
         if (refreshBtn) {
@@ -162,15 +198,36 @@ class MobilePortal {
             saveQRBtn.addEventListener('click', () => this.saveQRCode());
         }
         
-        // View report button
-        if (this.elements.viewReportBtn) {
-            this.elements.viewReportBtn.addEventListener('click', () => this.showSection('report'));
+        if (sidebarOverlay) {
+            sidebarOverlay.addEventListener('click', () => this.closeMobileSidebar());
         }
         
-        // Download report button
-        if (this.elements.downloadReportBtn) {
-            this.elements.downloadReportBtn.addEventListener('click', () => this.downloadReport());
+        if (viewReportBtn) {
+            viewReportBtn.addEventListener('click', () => this.showSection('report'));
         }
+        
+        if (downloadReportBtn) {
+            downloadReportBtn.addEventListener('click', () => this.downloadReport());
+        }
+        
+        // Dashboard action buttons
+        const actionButtons = document.querySelectorAll('.dashboard-action-btn');
+        actionButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const section = btn.getAttribute('data-section');
+                this.showSection(section);
+            });
+        });
+        
+        // Theme options
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                themeOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                this.forceLightTheme(); // Always force light theme
+            });
+        });
     }
     
     setupMobileNavigation() {
@@ -354,13 +411,20 @@ class MobilePortal {
                 stream: account.stream,
                 gender: account.gender,
                 email: account.email,
+                phone: account.phone,
+                address: account.address,
                 school_id: account.school_id,
                 school_name: account.school_name,
                 qr_code: account.qr_code,
                 date_of_birth: account.date_of_birth,
-                phone: account.phone,
                 enrollment_date: account.enrollment_date,
-                sports: account.sports
+                sports: account.sports,
+                previous_school: account.previous_school,
+                emergency_contact: account.emergency_contact,
+                medical_info: account.medical_info,
+                notes: account.notes,
+                photo_data: account.photo_data,
+                mime_type: account.mime_type
             };
             
             this.currentUser = safeUserData;
@@ -398,13 +462,17 @@ class MobilePortal {
     }
     
     showDashboard() {
-        // Update welcome message
-        const { welcomeName, sidebarUserName, sidebarUserSchool, quickClass, quickStatus } = this.elements;
+        // Update welcome message and quick stats
+        const { welcomeName, sidebarUserName, sidebarUserSchool, 
+                quickClass, quickStatus, quickSchool, quickStream } = this.elements;
+        
         if (welcomeName) welcomeName.textContent = this.currentUser.name;
         if (sidebarUserName) sidebarUserName.textContent = this.currentUser.name;
         if (sidebarUserSchool) sidebarUserSchool.textContent = this.currentUser.school_name;
         if (quickClass) quickClass.textContent = this.currentUser.class;
         if (quickStatus) quickStatus.textContent = 'Active';
+        if (quickSchool) quickSchool.textContent = this.currentUser.school_name;
+        if (quickStream) quickStream.textContent = this.currentUser.stream || 'Not specified';
         
         // Load profile data
         this.loadProfileData();
@@ -415,6 +483,9 @@ class MobilePortal {
         // Check report availability
         this.checkReportAvailability();
         
+        // Load settings
+        this.loadSettings();
+        
         // Show dashboard
         if (this.elements.schoolSelectionPage) this.elements.schoolSelectionPage.style.display = 'none';
         if (this.elements.loginPage) this.elements.loginPage.style.display = 'none';
@@ -422,11 +493,17 @@ class MobilePortal {
         
         // Show welcome section by default
         this.showSection('welcome');
+        
+        // Update active sidebar item
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => item.classList.remove('active'));
+        const welcomeItem = document.querySelector('.sidebar-item[data-section="welcome"]');
+        if (welcomeItem) welcomeItem.classList.add('active');
     }
     
     showSection(section) {
         // Hide all sections
-        const sections = ['welcome', 'profile', 'report', 'qr', 'settings', 'help'];
+        const sections = ['welcome', 'profile', 'report', 'qr', 'settings'];
         sections.forEach(sec => {
             const el = document.getElementById(`${sec}Section`);
             if (el) el.style.display = 'none';
@@ -446,6 +523,12 @@ class MobilePortal {
             if (section === 'qr') {
                 this.updateQRInfo();
             }
+            
+            // Update active sidebar item
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            sidebarItems.forEach(item => item.classList.remove('active'));
+            const activeItem = document.querySelector(`.sidebar-item[data-section="${section}"]`);
+            if (activeItem) activeItem.classList.add('active');
         }
     }
     
@@ -460,8 +543,10 @@ class MobilePortal {
         
         // Update profile elements
         const { profileStudentName, profileStudentId, profileSchool, 
-                detailDob, detailGender, detailEmail, detailPhone,
-                detailClass, detailStream, detailEnrollment, detailSports } = this.elements;
+                detailDob, detailGender, detailEmail, detailPhone, detailAddress,
+                detailClass, detailStream, detailEnrollment, detailSports,
+                detailPreviousSchool, detailEmergencyContact, detailMedicalInfo,
+                detailNotes, studentPhotoContainer } = this.elements;
         
         if (profileStudentName) profileStudentName.textContent = user.name;
         if (profileStudentId) profileStudentId.textContent = `Student ID: ${user.student_id}`;
@@ -482,21 +567,42 @@ class MobilePortal {
         if (detailGender) detailGender.textContent = user.gender || 'N/A';
         if (detailEmail) detailEmail.textContent = user.email || 'N/A';
         if (detailPhone) detailPhone.textContent = user.phone || 'N/A';
+        if (detailAddress) detailAddress.textContent = user.address || 'N/A';
         if (detailClass) detailClass.textContent = user.class;
         if (detailStream) detailStream.textContent = user.stream || 'N/A';
         if (detailEnrollment) detailEnrollment.textContent = formatDate(user.enrollment_date);
         if (detailSports) detailSports.textContent = user.sports || 'None';
+        if (detailPreviousSchool) detailPreviousSchool.textContent = user.previous_school || 'None';
+        if (detailEmergencyContact) detailEmergencyContact.textContent = user.emergency_contact || 'Not provided';
+        if (detailMedicalInfo) detailMedicalInfo.textContent = user.medical_info || 'No special medical information';
+        if (detailNotes) detailNotes.textContent = user.notes || 'No additional notes';
         
         // Load student photo if available
-        this.loadStudentPhoto();
+        this.loadStudentPhoto(user);
     }
     
-    loadStudentPhoto() {
-        // This would be implemented to load the photo from the database
-        // For now, we'll use a placeholder
+    loadStudentPhoto(user) {
         const photoContainer = this.elements.studentPhotoContainer;
-        if (photoContainer) {
-            // Clear existing content
+        if (photoContainer && user.photo_data) {
+            try {
+                // Clear existing content
+                photoContainer.innerHTML = '';
+                
+                // Create image element
+                const img = document.createElement('img');
+                img.src = `data:${user.mime_type || 'image/jpeg'};base64,${user.photo_data}`;
+                img.alt = `${user.name}'s photo`;
+                img.style.width = '100%';
+                img.style.height = '100%';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '50%';
+                
+                photoContainer.appendChild(img);
+            } catch (e) {
+                console.error('Error loading student photo:', e);
+                photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
+            }
+        } else {
             photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
         }
     }
@@ -538,6 +644,12 @@ class MobilePortal {
         document.body.removeChild(link);
         
         this.showSuccess('QR code saved successfully!');
+    }
+    
+    loadSettings() {
+        const { settingsPortalId, settingsSchool } = this.elements;
+        if (settingsPortalId) settingsPortalId.value = this.currentUser.portalId;
+        if (settingsSchool) settingsSchool.value = this.currentUser.school_name;
     }
     
     checkReportAvailability() {
@@ -761,7 +873,7 @@ class MobilePortal {
                     right: 20px;
                     left: 20px;
                     background: linear-gradient(135deg, #059669, #047857);
-                    color: white;
+                    color: white !important;
                     padding: 14px 18px;
                     border-radius: 12px;
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
