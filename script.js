@@ -1,4 +1,4 @@
-// Enhanced Student Portal - Complete Dashboard JavaScript
+// Enhanced Student Portal - FIXED MOBILE NAVIGATION JavaScript
 
 class MobilePortal {
     constructor(accountsData, schoolsData) {
@@ -44,6 +44,7 @@ class MobilePortal {
             currentSchoolBadge: document.getElementById('currentSchoolBadge'),
             dashboardSchoolBadge: document.getElementById('dashboardSchoolBadge'),
             dashboardSchoolId: document.getElementById('dashboardSchoolId'),
+            schoolLogoContainer: document.getElementById('schoolLogoContainer'),
             
             // Profile elements
             profileStudentName: document.getElementById('profileStudentName'),
@@ -273,29 +274,51 @@ class MobilePortal {
         // Add schools from schools data
         Object.entries(this.schools).forEach(([schoolId, schoolData]) => {
             if (schoolData.name) {
-                const schoolOption = this.createSchoolOption(schoolId, schoolData.name, 'fas fa-school');
+                const schoolOption = this.createSchoolOption(schoolId, schoolData.name);
                 schoolList.appendChild(schoolOption);
             }
         });
         
         // Add default option if no schools
         if (schoolList.children.length === 0) {
-            const defaultOption = this.createSchoolOption('default', 'Default School', 'fas fa-graduation-cap');
+            const defaultOption = this.createSchoolOption('default', 'Default School');
             schoolList.appendChild(defaultOption);
         }
     }
     
-    createSchoolOption(schoolId, schoolName, iconClass) {
+    createSchoolOption(schoolId, schoolName) {
         const div = document.createElement('div');
         div.className = 'school-option';
         div.onclick = () => this.selectSchool(schoolId, schoolName);
+        
+        // Check if school has logo
+        const schoolData = this.schools[schoolId];
+        const hasLogo = schoolData && schoolData.logo_base64;
+        
         div.innerHTML = `
-            <i class="${iconClass}"></i>
+            ${hasLogo ? 
+                `<div class="school-logo-small" style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #f8fafc;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                ">
+                    <img src="data:image/png;base64,${schoolData.logo_base64}" 
+                         alt="${schoolName}" 
+                         style="width: 100%; height: 100%; object-fit: contain;"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-school\'></i>';">
+                </div>` :
+                `<i class="fas fa-school" style="font-size: 20px; color: #4b5563; min-width: 40px;"></i>`
+            }
             <div class="school-info">
                 <div class="school-name">${schoolName}</div>
                 <div class="school-id">ID: ${schoolId}</div>
             </div>
-            <i class="fas fa-chevron-right"></i>
+            <i class="fas fa-chevron-right" style="color: #9ca3af;"></i>
         `;
         return div;
     }
@@ -308,7 +331,7 @@ class MobilePortal {
         
         // Update UI
         const { currentSchoolName, currentSchoolId, currentSchoolBadge, 
-                dashboardSchoolBadge, dashboardSchoolId } = this.elements;
+                dashboardSchoolBadge, dashboardSchoolId, schoolLogoContainer } = this.elements;
         
         if (currentSchoolName) currentSchoolName.textContent = schoolName;
         if (currentSchoolId) currentSchoolId.textContent = schoolId;
@@ -320,12 +343,41 @@ class MobilePortal {
         }
         if (dashboardSchoolId) dashboardSchoolId.textContent = schoolId;
         
+        // Update school logo
+        this.updateSchoolLogo(schoolId);
+        
         // Show login page
         if (this.elements.schoolSelectionPage) this.elements.schoolSelectionPage.style.display = 'none';
         if (this.elements.loginPage) {
             this.elements.loginPage.style.display = 'block';
             this.elements.loginPage.classList.add('container');
         }
+    }
+    
+    updateSchoolLogo(schoolId) {
+        const schoolLogoContainer = document.getElementById('schoolLogoContainer');
+        const sidebarAvatar = document.getElementById('sidebarAvatar');
+        
+        if (!schoolLogoContainer && !sidebarAvatar) return;
+        
+        const schoolData = this.schools[schoolId];
+        const hasLogo = schoolData && schoolData.logo_base64;
+        
+        const updateLogo = (container) => {
+            if (hasLogo) {
+                container.innerHTML = `
+                    <img src="data:image/png;base64,${schoolData.logo_base64}" 
+                         alt="${schoolData.name}" 
+                         style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-school\'></i>';">
+                `;
+            } else {
+                container.innerHTML = '<i class="fas fa-school"></i>';
+            }
+        };
+        
+        if (schoolLogoContainer) updateLogo(schoolLogoContainer);
+        if (sidebarAvatar) updateLogo(sidebarAvatar);
     }
     
     showSchoolSelection() {
@@ -415,6 +467,7 @@ class MobilePortal {
                 address: account.address,
                 school_id: account.school_id,
                 school_name: account.school_name,
+                school_logo: account.school_logo,
                 qr_code: account.qr_code,
                 date_of_birth: account.date_of_birth,
                 enrollment_date: account.enrollment_date,
@@ -506,13 +559,17 @@ class MobilePortal {
         const sections = ['welcome', 'profile', 'report', 'qr', 'settings'];
         sections.forEach(sec => {
             const el = document.getElementById(`${sec}Section`);
-            if (el) el.style.display = 'none';
+            if (el) {
+                el.style.display = 'none';
+                el.classList.remove('active-section');
+            }
         });
         
         // Show selected section
         const sectionEl = document.getElementById(`${section}Section`);
         if (sectionEl) {
             sectionEl.style.display = 'block';
+            sectionEl.classList.add('active-section');
             
             // Special handling for report section
             if (section === 'report') {
@@ -583,27 +640,28 @@ class MobilePortal {
     
     loadStudentPhoto(user) {
         const photoContainer = this.elements.studentPhotoContainer;
-        if (photoContainer && user.photo_data) {
-            try {
-                // Clear existing content
-                photoContainer.innerHTML = '';
-                
-                // Create image element
-                const img = document.createElement('img');
-                img.src = `data:${user.mime_type || 'image/jpeg'};base64,${user.photo_data}`;
-                img.alt = `${user.name}'s photo`;
-                img.style.width = '100%';
-                img.style.height = '100%';
-                img.style.objectFit = 'cover';
-                img.style.borderRadius = '50%';
-                
-                photoContainer.appendChild(img);
-            } catch (e) {
-                console.error('Error loading student photo:', e);
+        if (photoContainer) {
+            photoContainer.innerHTML = '';
+            
+            if (user.photo_data) {
+                try {
+                    // Create image element
+                    const img = document.createElement('img');
+                    img.src = `data:${user.mime_type || 'image/jpeg'};base64,${user.photo_data}`;
+                    img.alt = `${user.name}'s photo`;
+                    img.style.width = '100%';
+                    img.style.height = '100%';
+                    img.style.objectFit = 'cover';
+                    img.style.borderRadius = '50%';
+                    
+                    photoContainer.appendChild(img);
+                } catch (e) {
+                    console.error('Error loading student photo:', e);
+                    photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
+                }
+            } else {
                 photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
             }
-        } else {
-            photoContainer.innerHTML = '<i class="fas fa-user-circle"></i>';
         }
     }
     
@@ -612,8 +670,8 @@ class MobilePortal {
         
         if (!user) return;
         
-        // Generate QR data for current URL
-        const qrData = `${window.location.origin}${window.location.pathname}?portalId=${user.portalId}&schoolId=${user.school_id}&autoLogin=true&schoolName=${encodeURIComponent(user.school_name)}`;
+        // Generate QR data for current URL - PROPER URL FORMAT
+        const qrData = `https://${window.location.hostname}${window.location.pathname}?portalId=${user.portalId}&schoolId=${user.school_id}&autoLogin=true`;
         
         // Generate QR code
         const dynamicQR = document.getElementById('dynamicQR');
@@ -699,7 +757,14 @@ class MobilePortal {
             if (reportImage) {
                 reportImage.src = this.currentReportUrl;
                 reportImage.style.display = 'block';
-                reportImage.onclick = () => this.downloadReport();
+                // Make image clickable to view full size
+                reportImage.onclick = () => {
+                    this.viewFullReport(reportImage.src);
+                };
+                
+                // Show image container
+                const reportImageContainer = document.querySelector('.report-image-container');
+                if (reportImageContainer) reportImageContainer.style.display = 'block';
             }
             if (reportLoading) reportLoading.style.display = 'none';
             if (downloadReportBtn) downloadReportBtn.style.display = 'inline-flex';
@@ -710,6 +775,67 @@ class MobilePortal {
             if (downloadReportBtn) downloadReportBtn.style.display = 'none';
         };
         img.src = this.currentReportUrl;
+    }
+    
+    viewFullReport(imageSrc) {
+        // Create modal for full report view
+        const modal = document.createElement('div');
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+        modal.style.zIndex = '10000';
+        modal.style.display = 'flex';
+        modal.style.justifyContent = 'center';
+        modal.style.alignItems = 'center';
+        modal.style.padding = '20px';
+        
+        const img = new Image();
+        img.src = imageSrc;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90%';
+        img.style.objectFit = 'contain';
+        img.style.borderRadius = '12px';
+        img.style.cursor = 'zoom-out';
+        
+        // Close modal when clicking outside image
+        modal.onclick = (e) => {
+            if (e.target === modal || e.target === img) {
+                document.body.removeChild(modal);
+            }
+        };
+        
+        // Add download button
+        const downloadBtn = document.createElement('button');
+        downloadBtn.innerHTML = '<i class="fas fa-download"></i> Download';
+        downloadBtn.style.position = 'absolute';
+        downloadBtn.style.top = '20px';
+        downloadBtn.style.right = '20px';
+        downloadBtn.style.padding = '12px 20px';
+        downloadBtn.style.background = 'linear-gradient(135deg, #059669, #047857)';
+        downloadBtn.style.color = 'white';
+        downloadBtn.style.border = 'none';
+        downloadBtn.style.borderRadius = '12px';
+        downloadBtn.style.cursor = 'pointer';
+        downloadBtn.style.fontWeight = '600';
+        downloadBtn.style.fontSize = '14px';
+        downloadBtn.style.display = 'flex';
+        downloadBtn.style.alignItems = 'center';
+        downloadBtn.style.gap = '8px';
+        downloadBtn.style.zIndex = '10001';
+        
+        downloadBtn.onclick = () => {
+            const link = document.createElement('a');
+            link.href = imageSrc;
+            link.download = `academic_report_${this.currentUser.student_id}_${new Date().toISOString().split('T')[0]}.png`;
+            link.click();
+        };
+        
+        modal.appendChild(img);
+        modal.appendChild(downloadBtn);
+        document.body.appendChild(modal);
     }
     
     downloadReport() {
@@ -862,54 +988,13 @@ class MobilePortal {
         
         document.body.appendChild(notification);
         
-        // Add styles if not already present
-        if (!document.querySelector('#notification-styles')) {
-            const style = document.createElement('style');
-            style.id = 'notification-styles';
-            style.textContent = `
-                .success-notification {
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    left: 20px;
-                    background: linear-gradient(135deg, #059669, #047857);
-                    color: white !important;
-                    padding: 14px 18px;
-                    border-radius: 12px;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-                    z-index: 10000;
-                    animation: slideIn 0.3s ease-out;
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    font-weight: 600;
-                    font-size: 0.9rem;
-                }
-                
-                @keyframes slideIn {
-                    from { transform: translateY(-100%); opacity: 0; }
-                    to { transform: translateY(0); opacity: 1; }
-                }
-                
-                @keyframes slideOut {
-                    from { transform: translateY(0); opacity: 1; }
-                    to { transform: translateY(-100%); opacity: 0; }
-                }
-                
-                @media (min-width: 640px) {
-                    .success-notification {
-                        left: auto;
-                        max-width: 300px;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-        
+        // Auto-remove after 3 seconds
         setTimeout(() => {
             notification.style.animation = 'slideOut 0.3s ease-out';
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (notification.parentNode) {
+                    document.body.removeChild(notification);
+                }
             }, 300);
         }, 3000);
     }
