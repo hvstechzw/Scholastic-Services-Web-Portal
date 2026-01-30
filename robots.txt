@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /school_exports/
+Disallow: /assets/images/schools/
+
+Sitemap: https://scholasticforum.education/sitemap.xml
+
+# Scholastic Forum - School Directory
+# Contact: scholasticserviceszw@gmail.com
+# Last updated: 2026-01-01
