@@ -82,13 +82,6 @@
                 font-size: 10px; 
                 color: #999; 
             }
-            .btn-secondary {
-                background: #6c757d;
-                margin-top: 10px;
-            }
-            .btn-secondary:hover {
-                background: #5a6268;
-            }
             .student-name {
                 font-size: 22px;
                 font-weight: bold;
@@ -99,6 +92,12 @@
                 color: #666;
                 font-size: 14px;
                 margin-bottom: 20px;
+            }
+            .qr-instruction {
+                text-align: center;
+                font-size: 12px;
+                color: #4a6a8a;
+                margin-top: 8px;
             }
         </style>
     </head>
@@ -111,6 +110,9 @@
             <input type="password" id="password" placeholder="Password">
             <button onclick="login()">Access Portal</button>
             <div class="error" id="errorMsg"></div>
+            <div class="qr-instruction">
+                <i>📱 Scan QR code on your student card for instant access</i>
+            </div>
         </div>
         
         <div class="card" id="dashboard" style="display:none">
@@ -144,7 +146,6 @@
     <script>
     let accounts = null;
     let currentStudent = null;
-    let currentSchoolId = null;
 
     // Load accounts data
     fetch('data/accounts.json')
@@ -152,24 +153,31 @@
         .then(data => { 
             accounts = data; 
             console.log('Accounts loaded:', Object.keys(accounts).length);
-        });
+            // Auto-login after accounts are loaded
+            checkAutoLogin();
+        })
+        .catch(err => console.error('Error loading accounts:', err));
 
-    // Auto-login from QR code
-    function autoLogin() {
+    // Check for auto-login from URL parameters
+    function checkAutoLogin() {
+        if (!accounts) {
+            // Wait for accounts to load
+            setTimeout(checkAutoLogin, 100);
+            return;
+        }
+        
         const urlParams = new URLSearchParams(window.location.search);
         const portalId = urlParams.get('portalId');
         const password = urlParams.get('password');
-        const schoolId = urlParams.get('schoolId');
         const autoLogin = urlParams.get('autoLogin');
         
+        console.log('Checking auto-login:', { portalId, autoLogin });
+        
         if (autoLogin === 'true' && portalId && password) {
-            console.log('Auto-login triggered for:', portalId);
+            console.log('Attempting auto-login for:', portalId);
             setTimeout(() => {
-                const loginResult = authenticateUser(portalId, password);
-                if (loginResult) {
-                    window.history.replaceState(null, null, window.location.pathname);
-                }
-            }, 500);
+                authenticateUser(portalId, password);
+            }, 100);
         }
     }
 
@@ -178,7 +186,6 @@
         
         if (account && account.password === password) {
             currentStudent = account;
-            currentSchoolId = account.school_id;
             
             document.getElementById('studentName').innerHTML = account.name;
             document.getElementById('studentId').innerHTML = `Student ID: ${account.student_id}`;
@@ -192,6 +199,14 @@
             
             // Load report
             loadReport(account);
+            
+            // Remove auto-login parameters from URL without reloading
+            const url = new URL(window.location.href);
+            url.searchParams.delete('portalId');
+            url.searchParams.delete('password');
+            url.searchParams.delete('schoolId');
+            url.searchParams.delete('autoLogin');
+            window.history.replaceState({}, '', url);
             
             return true;
         }
@@ -216,7 +231,6 @@
     }
 
     function loadReport(student) {
-        const reportContainer = document.getElementById('reportContainer');
         const loading = document.getElementById('reportLoading');
         const reportImage = document.getElementById('reportImage');
         const reportError = document.getElementById('reportError');
@@ -225,19 +239,15 @@
         reportImage.style.display = 'none';
         reportError.style.display = 'none';
         
-        // Try different report paths based on school and student
-        const schoolName = student.school_id || 'default';
-        const className = student.class || 'Unknown';
         const studentId = student.student_id;
+        const schoolId = student.school_id || 'default';
+        const className = student.class || 'Unknown';
         
-        // Report paths in priority order
+        // Try different report paths
         const reportPaths = [
-            `reports/${schoolName}/${className}/${studentId}.png`,
-            `reports/${schoolName}/${studentId}.png`,
-            `reports/${studentId}.png`,
-            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${schoolName}/${className}/${studentId}.png`,
-            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${schoolName}/${studentId}.png`,
-            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${studentId}.png`
+            `reports/${schoolId}/${className}/${studentId}.png`,
+            `reports/${schoolId}/${studentId}.png`,
+            `reports/${studentId}.png`
         ];
         
         function tryLoad(index) {
@@ -279,11 +289,6 @@
         document.getElementById('portalId').value = '';
         document.getElementById('password').value = '';
     }
-
-    // Run auto-login when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        autoLogin();
-    });
     </script>
     </body>
     </html>
