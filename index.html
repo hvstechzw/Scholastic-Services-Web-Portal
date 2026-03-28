@@ -99,19 +99,136 @@
                 color: #4a6a8a;
                 margin-top: 8px;
             }
+            .social-section {
+                margin-top: 20px;
+                padding-top: 20px;
+                border-top: 1px solid #e0e0e0;
+            }
+            .social-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+                margin: 15px 0;
+            }
+            .social-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 10px 16px;
+                background: #f0f2f5;
+                border-radius: 25px;
+                text-decoration: none;
+                color: #1a2a3a;
+                font-size: 13px;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+            .social-link:hover {
+                background: #e4e6e9;
+                transform: translateY(-1px);
+            }
+            .social-link i {
+                font-size: 16px;
+            }
+            .whatsapp-channel {
+                background: #25D366;
+                color: white;
+                margin-bottom: 15px;
+            }
+            .whatsapp-channel:hover {
+                background: #20b359;
+                color: white;
+            }
+            .temporal-notice {
+                background: #fff3e0;
+                border-left: 3px solid #ff9800;
+                padding: 12px;
+                border-radius: 8px;
+                margin: 15px 0;
+                font-size: 12px;
+                color: #666;
+            }
+            .temporal-notice i {
+                color: #ff9800;
+                margin-right: 8px;
+            }
+            .section-title {
+                font-size: 14px;
+                font-weight: bold;
+                color: #4a6a8a;
+                margin: 15px 0 10px 0;
+                text-align: center;
+            }
         </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
     <div class="container">
         <div class="card" id="loginCard">
             <h1>Scholastic Services</h1>
             <div class="sub">Student Portal Access</div>
+            
             <input type="text" id="portalId" placeholder="Portal ID">
             <input type="password" id="password" placeholder="Password">
             <button onclick="login()">Access Portal</button>
             <div class="error" id="errorMsg"></div>
             <div class="qr-instruction">
-                <i>📱 Scan QR code on your student card for instant access</i>
+                <i class="fas fa-qrcode"></i> Scan QR code on your student card for instant access
+            </div>
+            
+            <!-- Temporal Platform Notice -->
+            <div class="temporal-notice">
+                <i class="fas fa-clock"></i>
+                <strong>Temporal Platform</strong> - This is a temporary access portal. Follow our channels for updates on the full system.
+            </div>
+            
+            <!-- WhatsApp Channel - Prompt to follow -->
+            <div class="social-section">
+                <div class="section-title">
+                    <i class="fab fa-whatsapp"></i> GET UPDATES
+                </div>
+                <a href="https://whatsapp.com/channel/0029VbD5miI0Qeaq1xSmdm2t" target="_blank" class="social-link whatsapp-channel" style="display:flex; justify-content:center;">
+                    <i class="fab fa-whatsapp"></i> Follow WhatsApp Channel
+                </a>
+                <div style="font-size: 11px; text-align: center; color: #888; margin-top: 5px;">
+                    Get instructions on how to use the system and updates
+                </div>
+            </div>
+            
+            <!-- Scholastic Services Socials -->
+            <div class="social-section">
+                <div class="section-title">
+                    <i class="fas fa-graduation-cap"></i> Scholastic Services
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61584543795337" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/scholasticserviceszw" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Aetheris Socials -->
+            <div class="social-section">
+                <div class="section-title">
+                    <i class="fas fa-building"></i> Aetheris Innovative Enterprises
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/aetheriszw/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/aetheriszw" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+            
+            <div class="temporal-notice" style="margin-top: 10px;">
+                <i class="fas fa-info-circle"></i>
+                Follow our social channels for updates on the full system and instructions on how to set up and use the system as a parent/student.
             </div>
         </div>
         
@@ -135,6 +252,13 @@
             </div>
             
             <button onclick="logout()">Logout</button>
+            
+            <!-- Social links in dashboard footer -->
+            <div class="social-section" style="margin-top: 20px;">
+                <div style="font-size: 11px; text-align: center; color: #888;">
+                    <i class="fab fa-whatsapp"></i> Follow our <a href="https://whatsapp.com/channel/0029VbD5miI0Qeaq1xSmdm2t" target="_blank" style="color:#25D366;">WhatsApp Channel</a> for updates
+                </div>
+            </div>
         </div>
         
         <div class="watermark">
@@ -161,7 +285,6 @@
     // Check for auto-login from URL parameters
     function checkAutoLogin() {
         if (!accounts) {
-            // Wait for accounts to load
             setTimeout(checkAutoLogin, 100);
             return;
         }
@@ -171,10 +294,7 @@
         const password = urlParams.get('password');
         const autoLogin = urlParams.get('autoLogin');
         
-        console.log('Checking auto-login:', { portalId, autoLogin });
-        
         if (autoLogin === 'true' && portalId && password) {
-            console.log('Attempting auto-login for:', portalId);
             setTimeout(() => {
                 authenticateUser(portalId, password);
             }, 100);
@@ -197,10 +317,9 @@
             document.getElementById('dashboard').style.display = 'block';
             document.getElementById('errorMsg').style.display = 'none';
             
-            // Load report
             loadReport(account);
             
-            // Remove auto-login parameters from URL without reloading
+            // Remove auto-login parameters
             const url = new URL(window.location.href);
             url.searchParams.delete('portalId');
             url.searchParams.delete('password');
@@ -243,7 +362,6 @@
         const schoolId = student.school_id || 'default';
         const className = student.class || 'Unknown';
         
-        // Try different report paths
         const reportPaths = [
             `reports/${schoolId}/${className}/${studentId}.png`,
             `reports/${schoolId}/${studentId}.png`,
