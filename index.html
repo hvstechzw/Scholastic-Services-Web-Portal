@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholastic Services Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 400px; margin: 0 auto; }
+        .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        h1 { font-size: 24px; margin-bottom: 8px; }
+        .sub { color: #666; font-size: 12px; margin-bottom: 24px; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
+        button { width: 100%; padding: 12px; background: #666; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #555; }
+        .error { color: #d32f2f; margin: 10px 0; display: none; }
+        .dashboard { display: none; }
+        .info { margin: 20px 0; padding: 12px; background: #f0f0f0; border-radius: 6px; }
+        .info p { margin: 8px 0; }
+        .report-btn { background: #4a6fa5; margin-top: 10px; }
+        .report-btn:hover { background: #3a5a8a; }
+        .watermark { margin-top: 20px; text-align: center; font-size: 10px; color: #999; }
+        .report-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .report-modal-content { max-width: 90%; max-height: 90%; background: white; border-radius: 12px; padding: 20px; }
+        .report-modal img { max-width: 100%; max-height: 80vh; }
+        .close-report { margin-top: 10px; padding: 8px 16px; background: #666; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card" id="loginCard">
+        <h1>Scholastic Services</h1>
+        <div class="sub">Student Portal Access</div>
+        <input type="text" id="portalId" placeholder="Portal ID">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Access Portal</button>
+        <div class="error" id="errorMsg"></div>
+    </div>
+    
+    <div class="card" id="dashboard" style="display:none">
+        <h1 id="studentName">Welcome</h1>
+        <div class="sub">Student Dashboard</div>
+        <div class="info">
+            <p><strong>Student ID:</strong> <span id="displayStudentId"></span></p>
+            <p><strong>Class:</strong> <span id="displayClass"></span></p>
+            <p><strong>Stream:</strong> <span id="displayStream"></span></p>
+            <p><strong>Portal ID:</strong> <span id="displayPortalId"></span></p>
+        </div>
+        <button onclick="viewReport()" class="report-btn">View Academic Report</button>
+        <button onclick="logout()" style="margin-top: 10px;">Logout</button>
+    </div>
+    
+    <div class="watermark">
+        Scholastic Services Temporal Access Key<br>
+        Powered by Aetheris Innovative Enterprises Pvt Ltd
+    </div>
+</div>
+
+<div id="reportModal" class="report-modal" onclick="closeReportModal(event)">
+    <div class="report-modal-content">
+        <div id="reportLoading" style="text-align:center; padding:40px;">Loading report...</div>
+        <img id="reportImage" style="display:none;" alt="Academic Report">
+        <div id="reportError" style="display:none; text-align:center; padding:40px; color:#666;">Report not available</div>
+        <button class="close-report" onclick="closeReportModal()">Close</button>
+    </div>
+</div>
+
+<script>
+let accounts = null;
+let currentStudentId = null;
+
+fetch('data/accounts.json')
+    .then(r => r.json())
+    .then(data => { accounts = data; });
+
+function login() {
+    const portalId = document.getElementById('portalId').value.toUpperCase();
+    const password = document.getElementById('password').value;
+    
+    if (accounts && accounts[portalId] && accounts[portalId].password === password) {
+        const student = accounts[portalId];
+        currentStudentId = student.student_id;
+        document.getElementById('studentName').innerHTML = `Welcome, ${student.name}`;
+        document.getElementById('displayStudentId').innerText = student.student_id;
+        document.getElementById('displayClass').innerText = student.class;
+        document.getElementById('displayStream').innerText = student.stream;
+        document.getElementById('displayPortalId').innerText = portalId;
+        
+        document.getElementById('loginCard').style.display = 'none';
+        document.getElementById('dashboard').style.display = 'block';
+        document.getElementById('errorMsg').style.display = 'none';
+    } else {
+        document.getElementById('errorMsg').innerText = 'Invalid Portal ID or password';
+        document.getElementById('errorMsg').style.display = 'block';
+    }
+}
+
+function logout() {
+    document.getElementById('loginCard').style.display = 'block';
+    document.getElementById('dashboard').style.display = 'none';
+    document.getElementById('portalId').value = '';
+    document.getElementById('password').value = '';
+    currentStudentId = null;
+}
+
+function viewReport() {
+    const modal = document.getElementById('reportModal');
+    const loading = document.getElementById('reportLoading');
+    const img = document.getElementById('reportImage');
+    const error = document.getElementById('reportError');
+    
+    modal.style.display = 'flex';
+    loading.style.display = 'block';
+    img.style.display = 'none';
+    error.style.display = 'none';
+    
+    const reportUrls = [
+        `reports/${currentStudentId}.png`,
+        `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${currentStudentId}.png`,
+        `./reports/${currentStudentId}.png`
+    ];
+    
+    function tryLoad(index) {
+        if (index >= reportUrls.length) {
+            loading.style.display = 'none';
+            error.style.display = 'block';
+            return;
+        }
+        
+        const testImg = new Image();
+        testImg.onload = function() {
+            img.src = reportUrls[index];
+            loading.style.display = 'none';
+            img.style.display = 'block';
+        };
+        testImg.onerror = function() {
+            tryLoad(index + 1);
+        };
+        testImg.src = reportUrls[index];
+    }
+    
+    tryLoad(0);
+}
+
+function closeReportModal(event) {
+    const modal = document.getElementById('reportModal');
+    if (!event || event.target === modal || event.target.classList.contains('close-report')) {
+        modal.style.display = 'none';
+        document.getElementById('reportLoading').style.display = 'block';
+        document.getElementById('reportImage').style.display = 'none';
+        document.getElementById('reportError').style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
