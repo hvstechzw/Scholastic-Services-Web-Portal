@@ -1,0 +1,4251 @@
+{
+  "273A4F54": {
+    "password": "4F591254",
+    "student_id": "MBDHSA0392",
+    "name": "Chikwasha Sheena",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "B265DDCE": {
+    "password": "3B3838E1",
+    "student_id": "MBDHSA0393",
+    "name": "Chimbare Mitchell",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "F6685AFA": {
+    "password": "FA131C3C",
+    "student_id": "MBDHSA0394",
+    "name": "Dube Nokuthaba",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "A38C7D16": {
+    "password": "E484ADBF",
+    "student_id": "MBDHSA0395",
+    "name": "Dube Mendy",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "EFA72571": {
+    "password": "FCB47474",
+    "student_id": "MBDHSA0396",
+    "name": "Kavuru Kimberly",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "BE883212": {
+    "password": "3FDF72F4",
+    "student_id": "MBDHSA0397",
+    "name": "Madzima Mutsawashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "F37B798D": {
+    "password": "3A0DC229",
+    "student_id": "MBDHSA0398",
+    "name": "Mapanzure Tatenda",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "211A5780": {
+    "password": "34C14E8C",
+    "student_id": "MBDHSA0399",
+    "name": "Mashonganyika Tinovimba",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "56CC5C93": {
+    "password": "DF48833D",
+    "student_id": "MBDHSA0400",
+    "name": "Mpala Premier",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "1EFEB3C7": {
+    "password": "400E54BF",
+    "student_id": "MBDHSA0401",
+    "name": "Mudongi Tadiwanashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "2C9692B6": {
+    "password": "34CD2BDD",
+    "student_id": "MBDHSA0402",
+    "name": "Mugwisi Shannon",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "A86A49BE": {
+    "password": "B734A19C",
+    "student_id": "MBDHSA0403",
+    "name": "Munsaka Doreen",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "9925D969": {
+    "password": "07D94824",
+    "student_id": "MBDHSA0405",
+    "name": "Ncube Vaughn",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "3F2EAFE0": {
+    "password": "A17E10C2",
+    "student_id": "MBDHSA0406",
+    "name": "Ncube Wandile",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "DE877595": {
+    "password": "1FA23957",
+    "student_id": "MBDHSA0407",
+    "name": "Ncube Trinity",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "21178911": {
+    "password": "BB269EC7",
+    "student_id": "MBDHSA0408",
+    "name": "Ndlovu Nobuhle",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "81A45D5E": {
+    "password": "C7E518BB",
+    "student_id": "MBDHSA0409",
+    "name": "Nhamoinesu Gabriella",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "52D67D37": {
+    "password": "B3BD3374",
+    "student_id": "MBDHSA0410",
+    "name": "Nyika Shalom",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "02E6FA17": {
+    "password": "18AC6D6B",
+    "student_id": "MBDHSA0411",
+    "name": "Sibanda Natalie",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "6D3C6B92": {
+    "password": "BA3891CE",
+    "student_id": "MBDHSA0412",
+    "name": "Simoyi Ruvarashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "0B8577EE": {
+    "password": "CD155E51",
+    "student_id": "MBDHSA0413",
+    "name": "Zimidzi Shalom",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "E0751E57": {
+    "password": "356743DC",
+    "student_id": "MBDHSA0414",
+    "name": "Bwalya Noel",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "2AC9190F": {
+    "password": "CF7ADE34",
+    "student_id": "MBDHSA0415",
+    "name": "Chirocheirwa Tafadzwa",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "6B44D75E": {
+    "password": "89FC42F3",
+    "student_id": "MBDHSA0416",
+    "name": "Dube Lungelo",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "4D3E2782": {
+    "password": "1580C879",
+    "student_id": "MBDHSA0417",
+    "name": "Gumbo Anesuishe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "C47F5B3D": {
+    "password": "3FBF8772",
+    "student_id": "MBDHSA0418",
+    "name": "Jemwa Tanaka",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "D5C1CAC5": {
+    "password": "784E634B",
+    "student_id": "MBDHSA0419",
+    "name": "Maseko Amram",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "B2C56200": {
+    "password": "63EFDF80",
+    "student_id": "MBDHSA0420",
+    "name": "Mathe Lindokuhle",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "06BC3267": {
+    "password": "75C4E144",
+    "student_id": "MBDHSA0421",
+    "name": "Maunganidze Tadiwanashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "691EC0B4": {
+    "password": "F581E033",
+    "student_id": "MBDHSA0422",
+    "name": "Mawanza Chamunorwa",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "75DD0BB9": {
+    "password": "3232B303",
+    "student_id": "MBDHSA0423",
+    "name": "Mbirikira Simbarashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "6E8F959B": {
+    "password": "E51EDF2A",
+    "student_id": "MBDHSA0424",
+    "name": "Mhaka Trevor",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "6A777FEC": {
+    "password": "FD442F8E",
+    "student_id": "MBDHSA0425",
+    "name": "Moyo Mukudzei",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "842DBE5E": {
+    "password": "D5F551B5",
+    "student_id": "MBDHSA0426",
+    "name": "Mugande Dylan",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "ACC58E68": {
+    "password": "59E0DB15",
+    "student_id": "MBDHSA0427",
+    "name": "Mukuyu Nigel",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "1977E475": {
+    "password": "F1A8C378",
+    "student_id": "MBDHSA0428",
+    "name": "Munkuli Perfect",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "216B0243": {
+    "password": "1EACE65A",
+    "student_id": "MBDHSA0429",
+    "name": "Munotengwa Michael",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "03D268DC": {
+    "password": "7619B1D0",
+    "student_id": "MBDHSA0430",
+    "name": "Mushongahande Jasper",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "2436416C": {
+    "password": "7B7B6207",
+    "student_id": "MBDHSA0431",
+    "name": "Muzanenhamo Prince",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "A61772A0": {
+    "password": "8842F0CC",
+    "student_id": "MBDHSA0432",
+    "name": "Muzunze Kupakwashe",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "DA623F65": {
+    "password": "B49D50BC",
+    "student_id": "MBDHSA0433",
+    "name": "Mwinde Atuba",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "C1E290BD": {
+    "password": "BE0765D7",
+    "student_id": "MBDHSA0434",
+    "name": "Nyathi Sibongiseni",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "C444B8D3": {
+    "password": "B0897A5A",
+    "student_id": "MBDHSA0435",
+    "name": "Nyatondo Brian",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "D3380BF8": {
+    "password": "1413C468",
+    "student_id": "MBDHSA0436",
+    "name": "Paradza Lovemore",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "452C979E": {
+    "password": "4089BD02",
+    "student_id": "MBDHSA0437",
+    "name": "Shoko Sydney",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "F4FB9F58": {
+    "password": "6D48224D",
+    "student_id": "MBDHSA0438",
+    "name": "Sianungwa Bethany",
+    "class": "4A1",
+    "stream": "N/A"
+  },
+  "BAF990BC": {
+    "password": "MBHS0001",
+    "student_id": "MBHS0001",
+    "name": "John Doe",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D05F09EC": {
+    "password": "MBHS0002",
+    "student_id": "MBHS0002",
+    "name": "Jane Smith",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "4D40A74D": {
+    "password": "MBHS10",
+    "student_id": "MBHS10",
+    "name": "Moyo Tashanta",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "246D09A7": {
+    "password": "4829F31B",
+    "student_id": "MBHS1030",
+    "name": "Sibanda Prillian",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "28720CF5": {
+    "password": "53750F26",
+    "student_id": "MBHS1040",
+    "name": "Kunda Wayne J",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "A367AE30": {
+    "password": "CA062D76",
+    "student_id": "MBHS1060",
+    "name": "Ncube Kristen",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "6AB50D6D": {
+    "password": "MBHS12",
+    "student_id": "MBHS12",
+    "name": "Sibanda Tadiwanashe",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "BF938213": {
+    "password": "MBHS13",
+    "student_id": "MBHS13",
+    "name": "Sibanda Mercy D",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "5AB427EE": {
+    "password": "MBHS14",
+    "student_id": "MBHS14",
+    "name": "Ncube Tanakilwa",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "E1AB65FD": {
+    "password": "MBHS15",
+    "student_id": "MBHS15",
+    "name": "Masukume Alice",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "D57A2151": {
+    "password": "MBHS20",
+    "student_id": "MBHS20",
+    "name": "Sibanda Clarence",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "E40396B8": {
+    "password": "MBHS21",
+    "student_id": "MBHS21",
+    "name": "Sibanda Honour",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "C8F25749": {
+    "password": "MBHS22",
+    "student_id": "MBHS22",
+    "name": "Muleya Anisher",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "DCBFD292": {
+    "password": "MBHS23",
+    "student_id": "MBHS23",
+    "name": "Mbulo Liesel",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "A71276C2": {
+    "password": "MBHS26",
+    "student_id": "MBHS26",
+    "name": "Sibanda Blessed",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "0FFD05BB": {
+    "password": "7057B3A2",
+    "student_id": "MBHSD0351",
+    "name": "Chinembiri Caroline",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "188CC914": {
+    "password": "C7302EE1",
+    "student_id": "MBHSD0352",
+    "name": "Mabhudhu Blessing T",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "FE783916": {
+    "password": "C1239418",
+    "student_id": "MBHSD0353",
+    "name": "Molife Ayanda",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "6CAD3F6E": {
+    "password": "45B31025",
+    "student_id": "MBHSD0354",
+    "name": "Mukuli Tutambule B",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "1370FE4A": {
+    "password": "A27A06DE",
+    "student_id": "MBHSD0355",
+    "name": "Musodza Vester M",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "2AA5EA1A": {
+    "password": "6CFF15B4",
+    "student_id": "MBHSD0356",
+    "name": "Ncube Christine",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "28BCE4EE": {
+    "password": "0EEC7B19",
+    "student_id": "MBHSD0357",
+    "name": "Ncube Violet",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "A4ECB23C": {
+    "password": "B2C0062A",
+    "student_id": "MBHSD0358",
+    "name": "Ndlovu Shalom",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "8B48D4A1": {
+    "password": "07F2551A",
+    "student_id": "MBHSD0359",
+    "name": "Ndhlovu Prevalent",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "D29A254B": {
+    "password": "707C496C",
+    "student_id": "MBHSD0360",
+    "name": "Ncube Lebogang",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "D64DE197": {
+    "password": "45C4F434",
+    "student_id": "MBHSD0361",
+    "name": "Ngwenya Thubelihle",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "E7768910": {
+    "password": "178DDA8E",
+    "student_id": "MBHSD0362",
+    "name": "Nkomo Angela",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "D35E41C1": {
+    "password": "295DFD81",
+    "student_id": "MBHSD0363",
+    "name": "Nyoni Lawrencia K",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "5C6141AF": {
+    "password": "5DCFA95B",
+    "student_id": "MBHSD0364",
+    "name": "Nyoni Simpiwe",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "48335B5A": {
+    "password": "7E3B412C",
+    "student_id": "MBHSD0365",
+    "name": "Nyoni Tashanta",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "4688299E": {
+    "password": "657E6BE7",
+    "student_id": "MBHSD0366",
+    "name": "Sansole Takalani E",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "73E2A3E0": {
+    "password": "9A72EB11",
+    "student_id": "MBHSD0367",
+    "name": "Shoko Bokani",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "27ED32B7": {
+    "password": "08FC80CC",
+    "student_id": "MBHSD0368",
+    "name": "Phiri Sheryl A",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "45C960BA": {
+    "password": "854B7194",
+    "student_id": "MBHSD0369",
+    "name": "Sibanda Ntsako N",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "75184FF1": {
+    "password": "8F6014A7",
+    "student_id": "MBHSD0371",
+    "name": "Chimatira Tatenda",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "32E56831": {
+    "password": "9B519C17",
+    "student_id": "MBHSD0372",
+    "name": "Chimboora Nigel T",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "6AEF8000": {
+    "password": "D43A786B",
+    "student_id": "MBHSD0373",
+    "name": "Gamure Lincoln A",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "ED520220": {
+    "password": "BBC8A689",
+    "student_id": "MBHSD0374",
+    "name": "Gonongono Liam S",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "3B5AA904": {
+    "password": "4C32AC52",
+    "student_id": "MBHSD0375",
+    "name": "Gorerino Munashe",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "940B76BA": {
+    "password": "C7623652",
+    "student_id": "MBHSD0376",
+    "name": "Kangwaru Kingstone",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "97DD4FCA": {
+    "password": "4C245FFE",
+    "student_id": "MBHSD0377",
+    "name": "Maguraushe Tanaka",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "438147D5": {
+    "password": "7660BF4E",
+    "student_id": "MBHSD0378",
+    "name": "Maisiri Prince",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "69587F18": {
+    "password": "D140FCFE",
+    "student_id": "MBHSD0379",
+    "name": "Makhurane Boitsepo",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "E288B75A": {
+    "password": "76E3C5DC",
+    "student_id": "MBHSD0380",
+    "name": "Makovere Tatenda",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "777B69E0": {
+    "password": "2C5543B3",
+    "student_id": "MBHSD0381",
+    "name": "Mguni Lwandile",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "B6D7F529": {
+    "password": "A569D05A",
+    "student_id": "MBHSD0382",
+    "name": "Mathe Agent",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "1AE1411E": {
+    "password": "29E3BE06",
+    "student_id": "MBHSD0383",
+    "name": "Mungombe Enrique",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "62AB20B5": {
+    "password": "3724BE7C",
+    "student_id": "MBHSD0384",
+    "name": "Mumpande Alpha",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "E9120DF7": {
+    "password": "8737A64A",
+    "student_id": "MBHSD0385",
+    "name": "Muchada Keith",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "AB7E98BE": {
+    "password": "7295A027",
+    "student_id": "MBHSD0386",
+    "name": "Mdlongwa Sphamandla",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "DA4C43CA": {
+    "password": "68E8CD83",
+    "student_id": "MBHSD0387",
+    "name": "Ncube Adrian",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "AD8CF5F8": {
+    "password": "6E76D24A",
+    "student_id": "MBHSD0388",
+    "name": "Ndlovu Derick",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "DAD0CCB8": {
+    "password": "581C842B",
+    "student_id": "MBHSD0389",
+    "name": "Nyakudya Cleopas",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "600106E2": {
+    "password": "4004348C",
+    "student_id": "MBHSD0391",
+    "name": "Tsoriyo Liam",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "AD324E91": {
+    "password": "78538D86",
+    "student_id": "MBHSDA0001",
+    "name": "Chinganga Anesu",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "F455E697": {
+    "password": "FDC53FFC",
+    "student_id": "MBHSDA0002",
+    "name": "Chiwando Tashanta",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "2B30C42F": {
+    "password": "4A8207A8",
+    "student_id": "MBHSDA0003",
+    "name": "Chuma Leilla Michel",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "773F2D55": {
+    "password": "A14B4A87",
+    "student_id": "MBHSDA0004",
+    "name": "Chuma Nicole H",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "FD967DA3": {
+    "password": "95D162AD",
+    "student_id": "MBHSDA0005",
+    "name": "Mahachi Ashley N",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "2AB15F4D": {
+    "password": "3DC97B73",
+    "student_id": "MBHSDA0006",
+    "name": "Makore Mabambe L",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "F5581911": {
+    "password": "D854EC4A",
+    "student_id": "MBHSDA0007",
+    "name": "Kariyana Salma",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "9264B19C": {
+    "password": "1F2B72F6",
+    "student_id": "MBHSDA0008",
+    "name": "Mapete Tadisa M",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "5D75D9A6": {
+    "password": "A3F8F3BF",
+    "student_id": "MBHSDA0009",
+    "name": "Moyo Ayibongwe S",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "FB34FA5E": {
+    "password": "D74E4953",
+    "student_id": "MBHSDA0010",
+    "name": "Mudenda Jacquelin C",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D2FB8B15": {
+    "password": "1DF99722",
+    "student_id": "MBHSDA0011",
+    "name": "Mudenda Rosemund L",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "3ABFA8A6": {
+    "password": "FDCFA393",
+    "student_id": "MBHSDA0013",
+    "name": "Mudimba Cherish B",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "86C43CA3": {
+    "password": "7AB16257",
+    "student_id": "MBHSDA0014",
+    "name": "Ncube Getrude",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "771AAE9B": {
+    "password": "92BAF6F5",
+    "student_id": "MBHSDA0015",
+    "name": "Ncube Sisanda Ann",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "E372B0B1": {
+    "password": "EFF655D0",
+    "student_id": "MBHSDA0016",
+    "name": "Ndebele Bonginkosi E",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "0D0426B9": {
+    "password": "B7B09917",
+    "student_id": "MBHSDA0017",
+    "name": "Ndebele Sheron",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "4166A0CF": {
+    "password": "FA846764",
+    "student_id": "MBHSDA0019",
+    "name": "Nyoni Tricia",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "BE87C13E": {
+    "password": "9B2C1800",
+    "student_id": "MBHSDA0020",
+    "name": "Ndlovu Beatrice",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "F770E3BD": {
+    "password": "8CE09EA5",
+    "student_id": "MBHSDA0021",
+    "name": "Phiri Raheel",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "038B41CF": {
+    "password": "199B58A4",
+    "student_id": "MBHSDA0022",
+    "name": "Rgwaringesu Annabelle R",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "0FA55EE0": {
+    "password": "C5454D68",
+    "student_id": "MBHSDA0023",
+    "name": "Siatabwa Chitondezyo N",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "80D6416B": {
+    "password": "BEFE9368",
+    "student_id": "MBHSDA0024",
+    "name": "Sibanda Abigail",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "0100A396": {
+    "password": "MBHSDA0025",
+    "student_id": "MBHSDA0025",
+    "name": "Chibengo Charlie",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "F7057AAF": {
+    "password": "MBHSDA0026",
+    "student_id": "MBHSDA0026",
+    "name": "Chimhamhiwa Vincent",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "720C6264": {
+    "password": "7BD64ECC",
+    "student_id": "MBHSDA0027",
+    "name": "Chipadza Wilson",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "ADC8E480": {
+    "password": "42451E10",
+    "student_id": "MBHSDA0028",
+    "name": "Kahuta Isheunesu",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "40F2975F": {
+    "password": "DA32124A",
+    "student_id": "MBHSDA0029",
+    "name": "Lumano Irvin",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "ADE22EEE": {
+    "password": "3895591A",
+    "student_id": "MBHSDA0030",
+    "name": "Machiya Tinotenda M",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "37C88127": {
+    "password": "73998B85",
+    "student_id": "MBHSDA0031",
+    "name": "Madyegasva Tapiwanashe",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "91EAF283": {
+    "password": "77061321",
+    "student_id": "MBHSDA0032",
+    "name": "Maisiri Pardon",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "3B2AA711": {
+    "password": "0D378D91",
+    "student_id": "MBHSDA0033",
+    "name": "Mashindi Tinovongaishe",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D3A72F6C": {
+    "password": "493A381B",
+    "student_id": "MBHSDA0034",
+    "name": "Mazibuko Prince J",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D68A0FF7": {
+    "password": "111E7B47",
+    "student_id": "MBHSDA0035",
+    "name": "Mudimba Emmanuel",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "1A89DF42": {
+    "password": "1826E140",
+    "student_id": "MBHSDA0036",
+    "name": "Mudimba Rosewell P",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "7B58DC54": {
+    "password": "35632438",
+    "student_id": "MBHSDA0037",
+    "name": "Mugeji Alois J.G",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "A4CBDB92": {
+    "password": "949C23F9",
+    "student_id": "MBHSDA0038",
+    "name": "Muleya Paul M.R",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D2D07677": {
+    "password": "6E8469A3",
+    "student_id": "MBHSDA0040",
+    "name": "Ndaguta Tawananyasha  T",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "437BC0B4": {
+    "password": "F068844F",
+    "student_id": "MBHSDA0041",
+    "name": "Ndlovu Lincoln",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "798B52FC": {
+    "password": "B9BA7B8D",
+    "student_id": "MBHSDA0042",
+    "name": "Siatabwa Chilongezyo N",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "A64C3CDA": {
+    "password": "F8F21E35",
+    "student_id": "MBHSDA0043",
+    "name": "Sibanda Bryce B",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "D24456D1": {
+    "password": "016BD10D",
+    "student_id": "MBHSDA0044",
+    "name": "Sibanda Tafara",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "66112625": {
+    "password": "1B4965B1",
+    "student_id": "MBHSDA0045",
+    "name": "Sikhosana Albert",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "449789FF": {
+    "password": "7E717B13",
+    "student_id": "MBHSDA0046",
+    "name": "Tshuma Maximillan",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "CDAAE333": {
+    "password": "6DF1E842",
+    "student_id": "MBHSDA0047",
+    "name": "Alubi Roselyn A",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "9C95D961": {
+    "password": "B066ECBA",
+    "student_id": "MBHSDA0049",
+    "name": "Beto Lynemary",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "CD014158": {
+    "password": "7346E1CC",
+    "student_id": "MBHSDA0050",
+    "name": "Chikowore Khloe",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "2D62D443": {
+    "password": "FD346C68",
+    "student_id": "MBHSDA0051",
+    "name": "Gwara Shumirai K",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "1669D8E5": {
+    "password": "E07866F5",
+    "student_id": "MBHSDA0052",
+    "name": "Machumi Tinotenda",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "A1DE3922": {
+    "password": "7A1633CE",
+    "student_id": "MBHSDA0053",
+    "name": "Madamombe Ruvarashe V",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "ED350F4C": {
+    "password": "C67A0FFE",
+    "student_id": "MBHSDA0054",
+    "name": "Masuku Samantha J",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "5F4C4422": {
+    "password": "33C19046",
+    "student_id": "MBHSDA0056",
+    "name": "Ngwenya Lindokuhle",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "E4721962": {
+    "password": "34364FD4",
+    "student_id": "MBHSDA0058",
+    "name": "Muzivoreva Anaishe",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "0F5B54C3": {
+    "password": "D624D6A8",
+    "student_id": "MBHSDA0059",
+    "name": "Mwinde Atumusumpule L",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "642789DA": {
+    "password": "66477800",
+    "student_id": "MBHSDA0060",
+    "name": "Ncube Lwandile V",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "6696CA79": {
+    "password": "E57E8F9A",
+    "student_id": "MBHSDA0061",
+    "name": "Ncube Nelisiwe N",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "ED0A614A": {
+    "password": "7E691975",
+    "student_id": "MBHSDA0062",
+    "name": "Ndlovu Nokuthaba N",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "86403E11": {
+    "password": "12D459D3",
+    "student_id": "MBHSDA0063",
+    "name": "Nyika Yolanda",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "AB98CB2F": {
+    "password": "00B2200C",
+    "student_id": "MBHSDA0064",
+    "name": "Nyoni Kendra",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "D581E822": {
+    "password": "3EF2886D",
+    "student_id": "MBHSDA0066",
+    "name": "Nyoni Nomthandazo E",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "622D8B61": {
+    "password": "E84A486E",
+    "student_id": "MBHSDA0067",
+    "name": "Nyoni Shanice T",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "8B94F3BC": {
+    "password": "BF330B8B",
+    "student_id": "MBHSDA0069",
+    "name": "Zingoma Samantha R",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "A8F422B4": {
+    "password": "37545D12",
+    "student_id": "MBHSDA0070",
+    "name": "Banda Bruce C",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "45C167BA": {
+    "password": "13326807",
+    "student_id": "MBHSDA0071",
+    "name": "Banda Ishmael",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "46F48480": {
+    "password": "C6563B3A",
+    "student_id": "MBHSDA0072",
+    "name": "Bhebhe Amicable R",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "5DFF9570": {
+    "password": "56ADE8F2",
+    "student_id": "MBHSDA0073",
+    "name": "Chuma Carl Ishmael",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "B17D795B": {
+    "password": "6B7568AB",
+    "student_id": "MBHSDA0074",
+    "name": "Dube Nqobile D",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "03C4BCB7": {
+    "password": "0AF88F97",
+    "student_id": "MBHSDA0075",
+    "name": "Gatsi Varsily D",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "845CC8E4": {
+    "password": "DDBA94F8",
+    "student_id": "MBHSDA0077",
+    "name": "Kupamhana Macdonald J",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "839C05F7": {
+    "password": "7EAA5FDB",
+    "student_id": "MBHSDA0078",
+    "name": "Madembo Takunda H",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "0BEB4273": {
+    "password": "F355A623",
+    "student_id": "MBHSDA0079",
+    "name": "Masina Prince P",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "030B9577": {
+    "password": "EDADBF62",
+    "student_id": "MBHSDA0080",
+    "name": "Matavanda Leon",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "E458FE17": {
+    "password": "1854F46C",
+    "student_id": "MBHSDA0081",
+    "name": "Mpagamuri Munashe B",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "FD1A12B3": {
+    "password": "BE833A2A",
+    "student_id": "MBHSDA0082",
+    "name": "Mpofu Musawenkosi J",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "10CA6685": {
+    "password": "D669C09B",
+    "student_id": "MBHSDA0083",
+    "name": "Ncube Jeremmy T. E",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "974EB63F": {
+    "password": "E8129144",
+    "student_id": "MBHSDA0084",
+    "name": "Ncube Lauret N",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "E9FAC15E": {
+    "password": "A9B685DD",
+    "student_id": "MBHSDA0085",
+    "name": "Ncube Marcus B",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "BF725103": {
+    "password": "4608492B",
+    "student_id": "MBHSDA0086",
+    "name": "Ncube Nkosikhona S",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "DBE1498E": {
+    "password": "A6A9A87E",
+    "student_id": "MBHSDA0087",
+    "name": "Nyati Michael M",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "77CBB231": {
+    "password": "D80270F7",
+    "student_id": "MBHSDA0088",
+    "name": "Nyathi Thabiso",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "E76AE173": {
+    "password": "C9BD6955",
+    "student_id": "MBHSDA0089",
+    "name": "Nyoni Usher",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "5EC0699C": {
+    "password": "E8560C6F",
+    "student_id": "MBHSDA0090",
+    "name": "Phiri Taboka A",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "1DBE5FFA": {
+    "password": "E644C10C",
+    "student_id": "MBHSDA0091",
+    "name": "Sibanda Denver",
+    "class": "1A1",
+    "stream": "N/A"
+  },
+  "27753910": {
+    "password": "41C38DDC",
+    "student_id": "MBHSDA0092",
+    "name": "Sibanda Ivumile L",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "C123AD8A": {
+    "password": "9F99B17D",
+    "student_id": "MBHSDA0093",
+    "name": "Dengu Rumbidzai",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "86F074E2": {
+    "password": "04F75248",
+    "student_id": "MBHSDA0094",
+    "name": "Dewah Rutendo P",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "A2420599": {
+    "password": "9BA9C3B0",
+    "student_id": "MBHSDA0095",
+    "name": "Dhliwayo Prisca",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "BC9C35DB": {
+    "password": "DF5EF93E",
+    "student_id": "MBHSDA0096",
+    "name": "Dube Nolwandile",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "0CC4DA11": {
+    "password": "D6F992D5",
+    "student_id": "MBHSDA0097",
+    "name": "Gambiza Rejoice N",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "F5F0997A": {
+    "password": "DC10583D",
+    "student_id": "MBHSDA0098",
+    "name": "Luphahla Kayla S",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "98CDBF37": {
+    "password": "AB92C4D0",
+    "student_id": "MBHSDA0099",
+    "name": "Maphosa Tiffany N",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "01EDF348": {
+    "password": "10B92788",
+    "student_id": "MBHSDA0102",
+    "name": "Mudzviti Tanatswa L",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "106083BA": {
+    "password": "4874CB52",
+    "student_id": "MBHSDA0103",
+    "name": "Mukamwe Makanaka",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "D057AFBE": {
+    "password": "24CBECB2",
+    "student_id": "MBHSDA0104",
+    "name": "Muleya Ethel",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "24539AE4": {
+    "password": "A6C4C04A",
+    "student_id": "MBHSDA0105",
+    "name": "Munenekwa Madalitso",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "4F34B3F7": {
+    "password": "6EED0AF7",
+    "student_id": "MBHSDA0106",
+    "name": "Ndiweni Isabel",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "05EA724A": {
+    "password": "7BBC899C",
+    "student_id": "MBHSDA0107",
+    "name": "Ngwenya Primrose E",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "8B3B939E": {
+    "password": "AC00F021",
+    "student_id": "MBHSDA0109",
+    "name": "Nyathi Valerie G",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "28E2E0BA": {
+    "password": "4A44D868",
+    "student_id": "MBHSDA0110",
+    "name": "Sibanda Dineo N",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "AA83FE6D": {
+    "password": "446E62E4",
+    "student_id": "MBHSDA0113",
+    "name": "Sibanda Princess",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "B1DEC926": {
+    "password": "C15BC419",
+    "student_id": "MBHSDA0114",
+    "name": "Yadini Joannah",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "46C99D0B": {
+    "password": "E5A0686A",
+    "student_id": "MBHSDA0115",
+    "name": "Venge Kimberley",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "8AAAFCFE": {
+    "password": "471ABD37",
+    "student_id": "MBHSDA0116",
+    "name": "Banda Joel (S)",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "162AB533": {
+    "password": "ACD41E3F",
+    "student_id": "MBHSDA0117",
+    "name": "Davira Joel T",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "4AFA26CC": {
+    "password": "EF1D7ED3",
+    "student_id": "MBHSDA0118",
+    "name": "Dube Andries",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "7F9B095F": {
+    "password": "0C756BDC",
+    "student_id": "MBHSDA0119",
+    "name": "Dube Delight X",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "F7E7B06B": {
+    "password": "D305BA73",
+    "student_id": "MBHSDA0121",
+    "name": "Mafu Andile B",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "2917E532": {
+    "password": "8D59DF2C",
+    "student_id": "MBHSDA0122",
+    "name": "Mangena Ayibongwe",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "8093A489": {
+    "password": "FBB3F2FE",
+    "student_id": "MBHSDA0123",
+    "name": "Maphosa Thandolwenkosi",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "16D96991": {
+    "password": "9477026D",
+    "student_id": "MBHSDA0124",
+    "name": "Munkuli Alain",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "057F2E91": {
+    "password": "F95699C4",
+    "student_id": "MBHSDA0125",
+    "name": "Munsaka Tabeel T",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "9D0B1BD0": {
+    "password": "26E6DBF7",
+    "student_id": "MBHSDA0126",
+    "name": "Muposowa Shayne T",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "D7CC279F": {
+    "password": "645C9074",
+    "student_id": "MBHSDA0127",
+    "name": "Muyako Progress",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "FE122415": {
+    "password": "B9CE5ACC",
+    "student_id": "MBHSDA0128",
+    "name": "Ncube Eric S",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "D428CDE7": {
+    "password": "AAB32FDF",
+    "student_id": "MBHSDA0129",
+    "name": "Ncube Raywise",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "5A1361D5": {
+    "password": "62431225",
+    "student_id": "MBHSDA0131",
+    "name": "Ndaba Jayden",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "44891E62": {
+    "password": "FA80F4E9",
+    "student_id": "MBHSDA0132",
+    "name": "Ndlovu Luyanda O",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "49005214": {
+    "password": "132AC932",
+    "student_id": "MBHSDA0133",
+    "name": "Ndlovu Thabo",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "4F8E5E3B": {
+    "password": "56301222",
+    "student_id": "MBHSDA0134",
+    "name": "Nekatambe Tinashe",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "7E3EAA87": {
+    "password": "C8CAC897",
+    "student_id": "MBHSDA0135",
+    "name": "Njabili Lusako G",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "5BF621F9": {
+    "password": "5C743DA0",
+    "student_id": "MBHSDA0136",
+    "name": "Nyathi Ethan U",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "F0908673": {
+    "password": "5F8EAF7D",
+    "student_id": "MBHSDA0137",
+    "name": "Zulu Harmon",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "E8EBA4EF": {
+    "password": "7BFF6B58",
+    "student_id": "MBHSDA0138",
+    "name": "Zumba Tanatswa",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "BF412BCB": {
+    "password": "9246C302",
+    "student_id": "MBHSDA0139",
+    "name": "Bvunzawabaya Chidochashe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "9BB1D004": {
+    "password": "95CD76C8",
+    "student_id": "MBHSDA0140",
+    "name": "Jaka Tariro",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "FA88BBEE": {
+    "password": "157CEBD8",
+    "student_id": "MBHSDA0141",
+    "name": "Kuwerera Manasa",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "4C6AF8F5": {
+    "password": "ABC961DA",
+    "student_id": "MBHSDA0142",
+    "name": "Makoni Makatendeka",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "56CB1AF2": {
+    "password": "A0FFF057",
+    "student_id": "MBHSDA0143",
+    "name": "Maligo Tammia B G",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "0FE8D67A": {
+    "password": "C1E9F4A7",
+    "student_id": "MBHSDA0144",
+    "name": "Mavhiki Tershia",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "E912016F": {
+    "password": "D7865FCF",
+    "student_id": "MBHSDA0145",
+    "name": "Mkosana Angel K",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "23EB7320": {
+    "password": "7643DB72",
+    "student_id": "MBHSDA0146",
+    "name": "Moyo Minenhle",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "AF2BA0AD": {
+    "password": "01CD815C",
+    "student_id": "MBHSDA0147",
+    "name": "Musaka Raah",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "B5BE6CD8": {
+    "password": "48412A58",
+    "student_id": "MBHSDA0148",
+    "name": "Muzenda Florence E",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "B9DE5590": {
+    "password": "DE03BDD6",
+    "student_id": "MBHSDA0149",
+    "name": "Ncube Ammeliorate Y",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "E69957B1": {
+    "password": "F7B571DD",
+    "student_id": "MBHSDA0150",
+    "name": "Ncube Nomvelo T",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "943FB3B3": {
+    "password": "179CF8C3",
+    "student_id": "MBHSDA0151",
+    "name": "Ncube Mayibongwe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "B27B44AB": {
+    "password": "9DE7812B",
+    "student_id": "MBHSDA0152",
+    "name": "Ncube Vanessa",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "B0A28105": {
+    "password": "5A90BCC1",
+    "student_id": "MBHSDA0153",
+    "name": "Ndlovu Natasha S",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "46173D3C": {
+    "password": "3C14DD8C",
+    "student_id": "MBHSDA0154",
+    "name": "Ndlovu Nozithelo",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "C88F7941": {
+    "password": "D730A86D",
+    "student_id": "MBHSDA0155",
+    "name": "Phiri Raeesah B",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "78559662": {
+    "password": "A1A43F6B",
+    "student_id": "MBHSDA0156",
+    "name": "Phiri Chloe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "208D6885": {
+    "password": "0166F50A",
+    "student_id": "MBHSDA0157",
+    "name": "Sibanda Mitchell",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "F7FE058C": {
+    "password": "2CAC6DFD",
+    "student_id": "MBHSDA0158",
+    "name": "Siziba Anashe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "7022B09C": {
+    "password": "B448D42F",
+    "student_id": "MBHSDA0159",
+    "name": "Tanga Tanaka",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "6780235D": {
+    "password": "13A28FAD",
+    "student_id": "MBHSDA0160",
+    "name": "Tome Tadiwanashe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "2F16853D": {
+    "password": "8065535E",
+    "student_id": "MBHSDA0161",
+    "name": "Zakeyo Lauren",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "15F199DF": {
+    "password": "95641A65",
+    "student_id": "MBHSDA0162",
+    "name": "Dube Graig",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "D3201545": {
+    "password": "301A64B8",
+    "student_id": "MBHSDA0163",
+    "name": "Jubane Derrick",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "A5CBAB68": {
+    "password": "F8CE065C",
+    "student_id": "MBHSDA0164",
+    "name": "Kamanga Leeroy",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "2867836C": {
+    "password": "A6610746",
+    "student_id": "MBHSDA0165",
+    "name": "Kupfuwa Tinomuonga",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "8529F385": {
+    "password": "554123DC",
+    "student_id": "MBHSDA0166",
+    "name": "Lunga Professor M",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "0009FD0F": {
+    "password": "E28380F9",
+    "student_id": "MBHSDA0167",
+    "name": "Moyo Thamsanqa",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "9A14DE40": {
+    "password": "0572F2A7",
+    "student_id": "MBHSDA0168",
+    "name": "Mpofu Remington P",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "AFC394C6": {
+    "password": "6971C48E",
+    "student_id": "MBHSDA0169",
+    "name": "Mudimba Bulangizi A",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "BDCAA248": {
+    "password": "6C65B271",
+    "student_id": "MBHSDA0170",
+    "name": "Mufiri Mutsawashe",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "2EEF7CE2": {
+    "password": "72DCE372",
+    "student_id": "MBHSDA0171",
+    "name": "Mutshayani Neville E",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "D8591107": {
+    "password": "7D5DF98C",
+    "student_id": "MBHSDA0172",
+    "name": "Muzondo Blessed",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "D92238AA": {
+    "password": "6D57AC7B",
+    "student_id": "MBHSDA0173",
+    "name": "Ncube Alex M",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "848D6262": {
+    "password": "8EB78BCE",
+    "student_id": "MBHSDA0174",
+    "name": "Ncube Bezalel",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "CBD7BFA6": {
+    "password": "020A9B79",
+    "student_id": "MBHSDA0175",
+    "name": "Ncube Feddoscent P",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "8B738E32": {
+    "password": "C4F1FEBA",
+    "student_id": "MBHSDA0176",
+    "name": "Ngoma Charles (s)",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "D0BD7C5F": {
+    "password": "EC2F68B2",
+    "student_id": "MBHSDA0177",
+    "name": "Ngwenya Mandel",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "F125D704": {
+    "password": "2770D80D",
+    "student_id": "MBHSDA0178",
+    "name": "Nyoni Tinoboka G",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "995EC1F3": {
+    "password": "AE3761C3",
+    "student_id": "MBHSDA0179",
+    "name": "Sibanda Joanan",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "A143286C": {
+    "password": "D0F1CA42",
+    "student_id": "MBHSDA0180",
+    "name": "Simba Tanaka S",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "15D0DF34": {
+    "password": "C11787BF",
+    "student_id": "MBHSDA0181",
+    "name": "Zimondi Lesley",
+    "class": "2A1",
+    "stream": "N/A"
+  },
+  "FBB77039": {
+    "password": "30E970B9",
+    "student_id": "MBHSDA0182",
+    "name": "Chisiya Shantel",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "5C77809B": {
+    "password": "AE7C1CB7",
+    "student_id": "MBHSDA0183",
+    "name": "Dhinari Musline T",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "883D0A2F": {
+    "password": "20B8E0FD",
+    "student_id": "MBHSDA0184",
+    "name": "Dube Anotidaishe",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "A91C30A8": {
+    "password": "9FED4E1D",
+    "student_id": "MBHSDA0185",
+    "name": "Mafuta Makanaka L",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "C3448F72": {
+    "password": "F9F802D2",
+    "student_id": "MBHSDA0186",
+    "name": "Mapika Shamta M",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "3DF3753E": {
+    "password": "DCB55B34",
+    "student_id": "MBHSDA0187",
+    "name": "Maseko Delight R",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "CFF4CE5A": {
+    "password": "725A810C",
+    "student_id": "MBHSDA0188",
+    "name": "Mathe Erin",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "0C5DEAE3": {
+    "password": "924BB9B8",
+    "student_id": "MBHSDA0189",
+    "name": "Matshaqa Lindah",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "11A9BD61": {
+    "password": "E73F08B0",
+    "student_id": "MBHSDA0190",
+    "name": "Muchimba Bubotu",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "87FDA893": {
+    "password": "658F1B9D",
+    "student_id": "MBHSDA0191",
+    "name": "Mupfumira Nikki",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "EB59C228": {
+    "password": "D0CA8403",
+    "student_id": "MBHSDA0192",
+    "name": "Ncube Alicia",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D1CF4A0E": {
+    "password": "46F38B5F",
+    "student_id": "MBHSDA0193",
+    "name": "Ncube Amanda",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "3D7F294F": {
+    "password": "B0A03931",
+    "student_id": "MBHSDA0194",
+    "name": "Ndlovu Possenta",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "48A1FE52": {
+    "password": "0A3631D4",
+    "student_id": "MBHSDA0195",
+    "name": "Ndlovu Princess",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "87CD8419": {
+    "password": "E8ED2EF9",
+    "student_id": "MBHSDA0196",
+    "name": "Ngwenya Vannesa",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "6A2DD819": {
+    "password": "D05CE268",
+    "student_id": "MBHSDA0197",
+    "name": "Ngowani Kimnanah",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "71C85B4B": {
+    "password": "FBB44006",
+    "student_id": "MBHSDA0198",
+    "name": "Nkomo Candice",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "B3B0ACAD": {
+    "password": "458FB930",
+    "student_id": "MBHSDA0199",
+    "name": "Phiri Valentine",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "6195B2AA": {
+    "password": "2B3B9257",
+    "student_id": "MBHSDA0200",
+    "name": "Rundofa Natalli",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "A99CE180": {
+    "password": "22D7EC09",
+    "student_id": "MBHSDA0201",
+    "name": "Rundofa Natasha",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "4B9E6B6E": {
+    "password": "FBA66886",
+    "student_id": "MBHSDA0202",
+    "name": "Sibanda Kimberly N",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "82072A8B": {
+    "password": "8C476DDE",
+    "student_id": "MBHSDA0203",
+    "name": "Sibanda Maureen",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "B4934813": {
+    "password": "053E2AF7",
+    "student_id": "MBHSDA0204",
+    "name": "Sidinga Muponi K",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "EC5AD883": {
+    "password": "83CFDD4D",
+    "student_id": "MBHSDA0205",
+    "name": "Size Thando S",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "474F7D15": {
+    "password": "46454030",
+    "student_id": "MBHSDA0206",
+    "name": "Zunga Nyasha M",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "6D1391AE": {
+    "password": "608699BA",
+    "student_id": "MBHSDA0207",
+    "name": "Chemusaita Henry T",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "4AD6FA30": {
+    "password": "87FE616D",
+    "student_id": "MBHSDA0208",
+    "name": "Chingwe Bothel",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "294784DD": {
+    "password": "52C549A9",
+    "student_id": "MBHSDA0209",
+    "name": "Chiwando Tawana C D",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "80ABE899": {
+    "password": "BFF72D1E",
+    "student_id": "MBHSDA0210",
+    "name": "Dube Emmanuel T",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "7B86B438": {
+    "password": "FC954A87",
+    "student_id": "MBHSDA0211",
+    "name": "Kwaramba Anotida",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D15BA5B8": {
+    "password": "93FEE492",
+    "student_id": "MBHSDA0212",
+    "name": "Mafara Farai K (D)",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D424732C": {
+    "password": "C835DD11",
+    "student_id": "MBHSDA0213",
+    "name": "Marwofu Bright",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "E55F7FB6": {
+    "password": "2DEFD7B7",
+    "student_id": "MBHSDA0214",
+    "name": "Mswuswu Action J",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D638A285": {
+    "password": "C5C85E51",
+    "student_id": "MBHSDA0215",
+    "name": "Moyo Eliel",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D6C40066": {
+    "password": "9D7C2B09",
+    "student_id": "MBHSDA0216",
+    "name": "Moyo Muziwakhe J",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "56191A69": {
+    "password": "75C1311C",
+    "student_id": "MBHSDA0217",
+    "name": "Moyo Sibusiso",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "7D7E613F": {
+    "password": "7CD519A1",
+    "student_id": "MBHSDA0218",
+    "name": "Moyo Leonel J",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "D73080D8": {
+    "password": "EA5E6EBF",
+    "student_id": "MBHSDA0219",
+    "name": "Mukombwe Cilangililo",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "14292F6D": {
+    "password": "FF23ACD1",
+    "student_id": "MBHSDA0220",
+    "name": "Ncube Noble A",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "4D67CD70": {
+    "password": "F9D272DA",
+    "student_id": "MBHSDA0222",
+    "name": "Nhau Tinaye",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "32A40926": {
+    "password": "0792ED56",
+    "student_id": "MBHSDA0223",
+    "name": "Pange Tafara S",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "F64E9F9C": {
+    "password": "A56953F8",
+    "student_id": "MBHSDA0224",
+    "name": "Saurombe Attain",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "07189903": {
+    "password": "627884E3",
+    "student_id": "MBHSDA0225",
+    "name": "Shoko Craig",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "80A5FB48": {
+    "password": "8BD1417E",
+    "student_id": "MBHSDA0226",
+    "name": "Siachema Ebenezer C",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "A5167B8A": {
+    "password": "5EB548F3",
+    "student_id": "MBHSDA0227",
+    "name": "Zaranyika Tawanda D",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "74D17962": {
+    "password": "AC3DE6E6",
+    "student_id": "MBHSDA0228",
+    "name": "Zhou Edmore E",
+    "class": "2A2",
+    "stream": "N/A"
+  },
+  "337996B9": {
+    "password": "D0AE4024",
+    "student_id": "MBHSDA0229",
+    "name": "Dlamini Asande A",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "0F75BD30": {
+    "password": "5B1DB830",
+    "student_id": "MBHSDA0231",
+    "name": "Harineki Natalie M",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "16BC0F6C": {
+    "password": "6338F413",
+    "student_id": "MBHSDA0232",
+    "name": "Makiwa Makanaka S",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "926AD80A": {
+    "password": "265FD21B",
+    "student_id": "MBHSDA0233",
+    "name": "Masakadza Makanakaishe",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "9530BEAD": {
+    "password": "CA619D0F",
+    "student_id": "MBHSDA0234",
+    "name": "Masuku Clair V",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "B28850BF": {
+    "password": "193BD2DF",
+    "student_id": "MBHSDA0235",
+    "name": "Mataswa Tariro C",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "6DB3FAC0": {
+    "password": "05101965",
+    "student_id": "MBHSDA0237",
+    "name": "Moyo Blessing",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "7C95A29E": {
+    "password": "4088C302",
+    "student_id": "MBHSDA0238",
+    "name": "Moyo Dumile",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "A57976B4": {
+    "password": "38A7BDDF",
+    "student_id": "MBHSDA0239",
+    "name": "Moyo Nomalanga",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "151C5F75": {
+    "password": "5F300492",
+    "student_id": "MBHSDA0240",
+    "name": "Mudenda Prosperity M",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "819CB9FB": {
+    "password": "0F765BAC",
+    "student_id": "MBHSDA0241",
+    "name": "Mudongi Akudzweshe",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "10AB1A6E": {
+    "password": "E03E6199",
+    "student_id": "MBHSDA0242",
+    "name": "Mugande Lauran",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "1214F81B": {
+    "password": "34D3EC0E",
+    "student_id": "MBHSDA0243",
+    "name": "Muleya Arbitrate C",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "90DD897A": {
+    "password": "1BAD8598",
+    "student_id": "MBHSDA0244",
+    "name": "Ncube Natalya",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "C08D3644": {
+    "password": "D44A31CA",
+    "student_id": "MBHSDA0245",
+    "name": "Ncube Shamaine B",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "1005AED5": {
+    "password": "CD22AD82",
+    "student_id": "MBHSDA0246",
+    "name": "Ndimande Sandile k",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "23414683": {
+    "password": "74B8A180",
+    "student_id": "MBHSDA0247",
+    "name": "Ndoro Naishe",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "2C945C82": {
+    "password": "1FFADA31",
+    "student_id": "MBHSDA0248",
+    "name": "Ngwenya Thandekile A",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "BAB00116": {
+    "password": "634EBF5C",
+    "student_id": "MBHSDA0250",
+    "name": "Sambo Leticia S",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "157C4D6B": {
+    "password": "CE921F2B",
+    "student_id": "MBHSDA0251",
+    "name": "Sibanda Asimethembe",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "92FC96A3": {
+    "password": "A457408D",
+    "student_id": "MBHSDA0252",
+    "name": "Sibanda Princess",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "51ADC0F9": {
+    "password": "17E120A9",
+    "student_id": "MBHSDA0253",
+    "name": "Chikwava Kupakwashe D",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "6AFE379D": {
+    "password": "FD0432B6",
+    "student_id": "MBHSDA0254",
+    "name": "Chirenje Prince N",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "11859496": {
+    "password": "56D55C06",
+    "student_id": "MBHSDA0255",
+    "name": "Gomba Bradley",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "3327B169": {
+    "password": "8436CFF7",
+    "student_id": "MBHSDA0256",
+    "name": "Luphahla Ryan J",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "658A8AF9": {
+    "password": "DF1365BB",
+    "student_id": "MBHSDA0258",
+    "name": "Mahwiriri Innocent",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "57AFC1F3": {
+    "password": "F829413F",
+    "student_id": "MBHSDA0259",
+    "name": "Matambo Christain K",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "4406B3A1": {
+    "password": "DB03D0D5",
+    "student_id": "MBHSDA0260",
+    "name": "Mazuru Tatenda",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "EEDA90D1": {
+    "password": "D827B532",
+    "student_id": "MBHSDA0261",
+    "name": "Mhaka Pardon",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "00C82AA1": {
+    "password": "577D70D6",
+    "student_id": "MBHSDA0262",
+    "name": "Mlilo Thulani",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "153CDE57": {
+    "password": "96C89630",
+    "student_id": "MBHSDA0263",
+    "name": "Mutikani Tatenda S",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "FC984FF2": {
+    "password": "DC7D3959",
+    "student_id": "MBHSDA0264",
+    "name": "Ncube Dumoluhle",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "A9D25155": {
+    "password": "87D0D70D",
+    "student_id": "MBHSDA0265",
+    "name": "Ncube Elisha A",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "072E5C44": {
+    "password": "4792B4B3",
+    "student_id": "MBHSDA0266",
+    "name": "Ndlovu Antonio",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "6DD10BFF": {
+    "password": "57AEAD1D",
+    "student_id": "MBHSDA0267",
+    "name": "Nehumba Theobald T",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "A7290EBF": {
+    "password": "35A96CD1",
+    "student_id": "MBHSDA0268",
+    "name": "Nkomazana Dean L",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "F64075B8": {
+    "password": "4398DE20",
+    "student_id": "MBHSDA0269",
+    "name": "Nyathi Ethan T",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "4F923F3D": {
+    "password": "8A2709DE",
+    "student_id": "MBHSDA0270",
+    "name": "Sithole Tashinga",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "E5E81AB3": {
+    "password": "C0F990AD",
+    "student_id": "MBHSDA0271",
+    "name": "Toungana Prince",
+    "class": "2A3",
+    "stream": "N/A"
+  },
+  "4C41B947": {
+    "password": "21578135",
+    "student_id": "MBHSDA0272",
+    "name": "Chifuwo Natasha",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "D272F708": {
+    "password": "1D737791",
+    "student_id": "MBHSDA0273",
+    "name": "Chunte Accurate",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "31C96775": {
+    "password": "F35C8D7E",
+    "student_id": "MBHSDA0274",
+    "name": "Hove Ennie",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "47AC1F34": {
+    "password": "03E723BE",
+    "student_id": "MBHSDA0275",
+    "name": "Machingambi Priscilla",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "BBAC8897": {
+    "password": "E5C4CC26",
+    "student_id": "MBHSDA0276",
+    "name": "Mambo Samantha",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "5B0B4133": {
+    "password": "DD23E08A",
+    "student_id": "MBHSDA0277",
+    "name": "Mangwengwe Vanessa V",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "7F2E11B4": {
+    "password": "CBA2CBCC",
+    "student_id": "MBHSDA0278",
+    "name": "Mpike Keisha P",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "D1A4D7F5": {
+    "password": "50E94EC6",
+    "student_id": "MBHSDA0279",
+    "name": "Mremi Naledi .I",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "1E4A0C92": {
+    "password": "1B8CE6B7",
+    "student_id": "MBHSDA0280",
+    "name": "Mudenda Victoria M",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "8DF3D922": {
+    "password": "FE51D63F",
+    "student_id": "MBHSDA0281",
+    "name": "Mumba Merylin T",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "235A9C54": {
+    "password": "C06F8DB6",
+    "student_id": "MBHSDA0282",
+    "name": "Mwembe Ulaswebo",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "657073E2": {
+    "password": "973BE277",
+    "student_id": "MBHSDA0283",
+    "name": "Ngwenya Nombulelo",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "CFEDEE4E": {
+    "password": "580D7088",
+    "student_id": "MBHSDA0285",
+    "name": "Nyoni Naomi P",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "D5DE46F4": {
+    "password": "A664F7AC",
+    "student_id": "MBHSDA0286",
+    "name": "Phiri Laika B",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "4A0981BB": {
+    "password": "88CE83D5",
+    "student_id": "MBHSDA0287",
+    "name": "Taurai Mufaro",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "9CB0135F": {
+    "password": "AA2851A0",
+    "student_id": "MBHSDA0288",
+    "name": "Thadeous Tinevimbo",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "177873F9": {
+    "password": "D2C15DD9",
+    "student_id": "MBHSDA0289",
+    "name": "Zulu Bethel C",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "DE977D39": {
+    "password": "E18FECB6",
+    "student_id": "MBHSDA0290",
+    "name": "Zulu Mitchell S",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "26627891": {
+    "password": "52318F88",
+    "student_id": "MBHSDA0291",
+    "name": "Chikanya Jonathan",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "8EA856CA": {
+    "password": "3251E7B0",
+    "student_id": "MBHSDA0292",
+    "name": "Dube Emmanuel",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "D2320A09": {
+    "password": "6D7472BB",
+    "student_id": "MBHSDA0293",
+    "name": "Dube Immanuel",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "51753F57": {
+    "password": "D4C8EB24",
+    "student_id": "MBHSDA0294",
+    "name": "Dube Joe",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "A79D0D34": {
+    "password": "5FBEDCF0",
+    "student_id": "MBHSDA0295",
+    "name": "Goto Daryl",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "59FA85E8": {
+    "password": "BB70EA52",
+    "student_id": "MBHSDA0296",
+    "name": "Jongwe Nigel T",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "7643F2EB": {
+    "password": "6C90A068",
+    "student_id": "MBHSDA0297",
+    "name": "Kameya Hilton C",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "C47A1BC8": {
+    "password": "928A1907",
+    "student_id": "MBHSDA0298",
+    "name": "Maphosa Andile C",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "6D2C3D2B": {
+    "password": "2D6DDEEF",
+    "student_id": "MBHSDA0299",
+    "name": "Mloyi Nathanael T",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "3538778E": {
+    "password": "451F0D7A",
+    "student_id": "MBHSDA0300",
+    "name": "Msiza Tanny",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "60167F74": {
+    "password": "5684F4F8",
+    "student_id": "MBHSDA0301",
+    "name": "Mpala Norlan M",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "6BB7F36C": {
+    "password": "F69976F0",
+    "student_id": "MBHSDA0302",
+    "name": "Muleya Gift",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "861B5FC3": {
+    "password": "8E2F6A88",
+    "student_id": "MBHSDA0303",
+    "name": "Muzuru Nelson",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "306C3C53": {
+    "password": "0E1217F4",
+    "student_id": "MBHSDA0304",
+    "name": "Ncube Adonis",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "05C0CFE3": {
+    "password": "DBAEEFFF",
+    "student_id": "MBHSDA0305",
+    "name": "Nhayitayi Kundai",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "2A204964": {
+    "password": "F2EADFEC",
+    "student_id": "MBHSDA0306",
+    "name": "Nyasha Trymore",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "9FE81876": {
+    "password": "61A4ECA2",
+    "student_id": "MBHSDA0307",
+    "name": "Nyathi Melchizedek",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "015B25ED": {
+    "password": "E2C2AADC",
+    "student_id": "MBHSDA0308",
+    "name": "Nyathi Muzundi M",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "78CFAA2B": {
+    "password": "E46E3F3A",
+    "student_id": "MBHSDA0309",
+    "name": "Nyoni Tremendous",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "9DF2FB13": {
+    "password": "77494F0F",
+    "student_id": "MBHSDA0311",
+    "name": "Sibanda Jimmy D",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "CEEFD6BF": {
+    "password": "7EDD1FE5",
+    "student_id": "MBHSDA0312",
+    "name": "Sibanda Ryan",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "F99506B4": {
+    "password": "1053B673",
+    "student_id": "MBHSDA0313",
+    "name": "Sithole Anotidaishe S",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "E2111E5C": {
+    "password": "465AF3D4",
+    "student_id": "MBHSDA0314",
+    "name": "Sithole Daniel T",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "28446650": {
+    "password": "AED4B215",
+    "student_id": "MBHSDA0315",
+    "name": "Siyamikombe Jeffrey T",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "6626A7F3": {
+    "password": "D04B8B98",
+    "student_id": "MBHSDA0316",
+    "name": "Tshimiti Tadiwanashe",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "057E20CC": {
+    "password": "0F5C3C3B",
+    "student_id": "MBHSDA0317",
+    "name": "Tshuma Nkosilathi",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "A85DBE09": {
+    "password": "6ECDB86D",
+    "student_id": "MBHSDA0318",
+    "name": "Tsondai Wayne",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "42162599": {
+    "password": "EC567146",
+    "student_id": "MBHSDA0320",
+    "name": "Chipumha Davinna",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "D9F53962": {
+    "password": "6BD9390A",
+    "student_id": "MBHSDA0321",
+    "name": "Dube Princess",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "49C796B7": {
+    "password": "8C37E93D",
+    "student_id": "MBHSDA0322",
+    "name": "Gombedza Anesu",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "CF4D4266": {
+    "password": "2D0C3F21",
+    "student_id": "MBHSDA0323",
+    "name": "Jele Lakelo",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "EBB35398": {
+    "password": "9A41F46C",
+    "student_id": "MBHSDA0324",
+    "name": "Mabasa Tiyani K",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "180D7FA8": {
+    "password": "446F109B",
+    "student_id": "MBHSDA0325",
+    "name": "Mabhaya Audrey S",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "034F10CB": {
+    "password": "6E75E127",
+    "student_id": "MBHSDA0326",
+    "name": "Madhunguza Rutendo",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "9E7B4B76": {
+    "password": "0B4F9056",
+    "student_id": "MBHSDA0327",
+    "name": "Muguto Natasha",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "E150F771": {
+    "password": "B59B7981",
+    "student_id": "MBHSDA0328",
+    "name": "Maligo Kelina",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "6A4B1CBB": {
+    "password": "74B34616",
+    "student_id": "MBHSDA0329",
+    "name": "Marume Denise",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "59BA1379": {
+    "password": "DF8884A5",
+    "student_id": "MBHSDA0330",
+    "name": "Mavhunda Nokutenda",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "9ACFE416": {
+    "password": "312FCC30",
+    "student_id": "MBHSDA0331",
+    "name": "Mlotswa Nomahle",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "8B3DABA2": {
+    "password": "5D6BF43C",
+    "student_id": "MBHSDA0332",
+    "name": "Moyo Nompilo E",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "C9576F03": {
+    "password": "1B46C787",
+    "student_id": "MBHSDA0333",
+    "name": "Moyo Prudence",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "A79FC059": {
+    "password": "9CD8D889",
+    "student_id": "MBHSDA0334",
+    "name": "Mpala Blonde",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "291D21C7": {
+    "password": "FB1424DF",
+    "student_id": "MBHSDA0335",
+    "name": "Mpofu Trophy",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "B9B0CFC5": {
+    "password": "AFD4126B",
+    "student_id": "MBHSDA0336",
+    "name": "Mushani Angel",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "A65B2593": {
+    "password": "A8A79165",
+    "student_id": "MBHSDA0337",
+    "name": "Mushayavanhu Telisha",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "53889E22": {
+    "password": "D0A23FEB",
+    "student_id": "MBHSDA0338",
+    "name": "Muteba Denice",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "9C5E924B": {
+    "password": "32B955E0",
+    "student_id": "MBHSDA0339",
+    "name": "Ndlovu Andiswa",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "2F5B7AA5": {
+    "password": "58CB874B",
+    "student_id": "MBHSDA0342",
+    "name": "Nyoni Shontelle T",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "7E4A3537": {
+    "password": "71206F5B",
+    "student_id": "MBHSDA0343",
+    "name": "Zulu Nomaqhawe",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "80836E4A": {
+    "password": "881BFDE8",
+    "student_id": "MBHSDA0344",
+    "name": "Banda Leroy",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "3AD6AD68": {
+    "password": "3EE4FE74",
+    "student_id": "MBHSDA0345",
+    "name": "Dube Samson",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "9507BB99": {
+    "password": "7868C1BC",
+    "student_id": "MBHSDA0346",
+    "name": "Madombwe Nigel",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "70E76245": {
+    "password": "3E794D34",
+    "student_id": "MBHSDA0347",
+    "name": "Moyo Euan",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "C3FA500D": {
+    "password": "9637B06D",
+    "student_id": "MBHSDA0348",
+    "name": "Mpofu Siyabonga",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "EE9F6F75": {
+    "password": "7C725807",
+    "student_id": "MBHSDA0349",
+    "name": "Munsaka Wisdom J",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "70733C6B": {
+    "password": "9B25E93C",
+    "student_id": "MBHSDA0350",
+    "name": "Ndlovu Shelton",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "77921089": {
+    "password": "2C6101A4",
+    "student_id": "MBHSDA0351",
+    "name": "Njini Tinotenda",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "DF546123": {
+    "password": "95888A5A",
+    "student_id": "MBHSDA0352",
+    "name": "Sibanda Delight",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "0636EC6F": {
+    "password": "7DBC0F50",
+    "student_id": "MBHSDA0353",
+    "name": "Sikhosana Eric",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "10AB085E": {
+    "password": "B5F2D3C6",
+    "student_id": "MBHSDA0439",
+    "name": "Chakoreka Shaniqua",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "8C3744E3": {
+    "password": "35D49FBA",
+    "student_id": "MBHSDA0440",
+    "name": "Jele Mitchell",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "7B6AFF76": {
+    "password": "919950AF",
+    "student_id": "MBHSDA0442",
+    "name": "Konde Candice",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "025A7CA1": {
+    "password": "2E07F8BC",
+    "student_id": "MBHSDA0443",
+    "name": "Lungu Tamanda",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "CD9699C7": {
+    "password": "C67EBBCC",
+    "student_id": "MBHSDA0444",
+    "name": "Lupahla Kimberly",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "7A4A3A67": {
+    "password": "0C290035",
+    "student_id": "MBHSDA0445",
+    "name": "Mapwashike Christy",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "0440C106": {
+    "password": "E403B7BD",
+    "student_id": "MBHSDA0446",
+    "name": "Mkhwananzi Thandiswa",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "D66CFACA": {
+    "password": "EEA951D3",
+    "student_id": "MBHSDA0447",
+    "name": "Msebele Lindokuhle",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "A9DF401B": {
+    "password": "15376AB2",
+    "student_id": "MBHSDA0448",
+    "name": "Mudyanembwa Neesha",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "6BD4CDE1": {
+    "password": "8A679FEC",
+    "student_id": "MBHSDA0449",
+    "name": "Ncube Princess",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "D5E3EA74": {
+    "password": "D975532B",
+    "student_id": "MBHSDA0450",
+    "name": "Ndebele Nokuthaba",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "52F0EFED": {
+    "password": "C1960AE3",
+    "student_id": "MBHSDA0451",
+    "name": "Ndlovu Nombono",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "28298ED8": {
+    "password": "F7B60F17",
+    "student_id": "MBHSDA0452",
+    "name": "Ndlovu Iphokuhle",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "CF927B9A": {
+    "password": "312548D7",
+    "student_id": "MBHSDA0453",
+    "name": "Nkomo Buhlebenkosi",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "2621F18A": {
+    "password": "887C826F",
+    "student_id": "MBHSDA0454",
+    "name": "Nyathi Sinenkosi",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "BE6987ED": {
+    "password": "ACBDB5B7",
+    "student_id": "MBHSDA0455",
+    "name": "Shoko Bethel",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "E867FB64": {
+    "password": "865D8970",
+    "student_id": "MBHSDA0456",
+    "name": "Sibanda Amanda",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "78EB61F1": {
+    "password": "BC8EE871",
+    "student_id": "MBHSDA0457",
+    "name": "Sibanda Vallery",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "94750571": {
+    "password": "73DF1F5C",
+    "student_id": "MBHSDA0458",
+    "name": "Zvomuya Lisa",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "2A06F25E": {
+    "password": "38638882",
+    "student_id": "MBHSDA0459",
+    "name": "Makovere Ethan",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "D9421911": {
+    "password": "3D7D92EA",
+    "student_id": "MBHSDA0460",
+    "name": "Moyo Andile",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "CE075EE1": {
+    "password": "6B85E418",
+    "student_id": "MBHSDA0463",
+    "name": "Mutemachani Ryan",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "4C4B8741": {
+    "password": "569AEA26",
+    "student_id": "MBHSDA0464",
+    "name": "Ncube Artwell",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "0F0C493D": {
+    "password": "0D3599FE",
+    "student_id": "MBHSDA0465",
+    "name": "Ncube Ayanda",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "7FDCEBA7": {
+    "password": "C3FE25BE",
+    "student_id": "MBHSDA0466",
+    "name": "Nkomo Delma",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "B7703A25": {
+    "password": "6948DD86",
+    "student_id": "MBHSDA0467",
+    "name": "Ndlovu Quinton",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "2B316D9E": {
+    "password": "B2820ACA",
+    "student_id": "MBHSDA0468",
+    "name": "Nyathi Prince",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "9F61D1E0": {
+    "password": "ED17C25F",
+    "student_id": "MBHSDA0470",
+    "name": "Sakala Robert",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "3B1664D0": {
+    "password": "AF113DC0",
+    "student_id": "MBHSDA0471",
+    "name": "Siameka Rousseau",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "8036F417": {
+    "password": "FE2D4526",
+    "student_id": "MBHSDA0473",
+    "name": "Tembo Brendon",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "276DD9B5": {
+    "password": "BB263BEC",
+    "student_id": "MBHSDA0474",
+    "name": "Phiri Isaiah",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "579C5498": {
+    "password": "6CFE8D63",
+    "student_id": "MBHSDA0475",
+    "name": "Bvekwa Anashe",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "2F4838A6": {
+    "password": "27DC8C5D",
+    "student_id": "MBHSDA0476",
+    "name": "Gatsi Amanda",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "27B59A45": {
+    "password": "A6EB6620",
+    "student_id": "MBHSDA0477",
+    "name": "Makhuyana Lindile",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "EB1238CF": {
+    "password": "AA928227",
+    "student_id": "MBHSDA0478",
+    "name": "Manaira Nyasha",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "56241AB1": {
+    "password": "24F9D543",
+    "student_id": "MBHSDA0479",
+    "name": "Manhungi Chiedza",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "F8901737": {
+    "password": "B6F0804A",
+    "student_id": "MBHSDA0481",
+    "name": "Mukiwa Tsitsi",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "5EF5D914": {
+    "password": "DCD1A00F",
+    "student_id": "MBHSDA0482",
+    "name": "Munjeri Ruvimbo",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "0449BC04": {
+    "password": "0D5DC7DD",
+    "student_id": "MBHSDA0483",
+    "name": "Ncube Zinhle",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "DD8DD074": {
+    "password": "8985A064",
+    "student_id": "MBHSDA0484",
+    "name": "Ndlovu Kelly",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "15CAAC5E": {
+    "password": "C6ED68BE",
+    "student_id": "MBHSDA0485",
+    "name": "Ngwenya Gugulethu",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "DDF32F63": {
+    "password": "542FEDCA",
+    "student_id": "MBHSDA0486",
+    "name": "Nyamuziwa Laurel",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "DE1FA763": {
+    "password": "C27D7EDB",
+    "student_id": "MBHSDA0487",
+    "name": "Nyathi Matilda",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "213B28E3": {
+    "password": "B6636C4B",
+    "student_id": "MBHSDA0488",
+    "name": "Sibanda Tumelo",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "1242CDE5": {
+    "password": "71315EF0",
+    "student_id": "MBHSDA0489",
+    "name": "Sibanda Lindokuhle",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "6EB47C7F": {
+    "password": "569664EE",
+    "student_id": "MBHSDA0490",
+    "name": "Tshuma Buhlebenkosi",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "48EC8D15": {
+    "password": "02159C2C",
+    "student_id": "MBHSDA0491",
+    "name": "Zimkalula Rufaro",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "4414FB21": {
+    "password": "F10D3B8A",
+    "student_id": "MBHSDA0492",
+    "name": "Daka Prince",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "E333896C": {
+    "password": "50A913A1",
+    "student_id": "MBHSDA0493",
+    "name": "Duru Lincoln",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "2AC9B322": {
+    "password": "C95DFE01",
+    "student_id": "MBHSDA0494",
+    "name": "Makowa Munotidaishe",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "DDF08484": {
+    "password": "F5F3C3F2",
+    "student_id": "MBHSDA0495",
+    "name": "Maligo Tabaka",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "E8099D8F": {
+    "password": "A4DD5503",
+    "student_id": "MBHSDA0496",
+    "name": "Mangezi Kinglsey",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "883E55E9": {
+    "password": "34903DCF",
+    "student_id": "MBHSDA0497",
+    "name": "Maripise Obama",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "1EBCAE56": {
+    "password": "EAE6256A",
+    "student_id": "MBHSDA0498",
+    "name": "Mathe Sibusiso",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "BF8115D5": {
+    "password": "E4210CA5",
+    "student_id": "MBHSDA0499",
+    "name": "Mbewe Phillemon",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "0F74375F": {
+    "password": "8F414FE0",
+    "student_id": "MBHSDA0500",
+    "name": "Moyo Dominic",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "EF0C74B1": {
+    "password": "FC859275",
+    "student_id": "MBHSDA0501",
+    "name": "Msindo Lionel",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "FB8AB1D0": {
+    "password": "01E300FF",
+    "student_id": "MBHSDA0502",
+    "name": "Mudenda Isaac",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "2F7CFE3E": {
+    "password": "747FA56D",
+    "student_id": "MBHSDA0503",
+    "name": "Mugwambo Anotida",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "A76C5443": {
+    "password": "07714F57",
+    "student_id": "MBHSDA0504",
+    "name": "Ncube Awande",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "FA6A65B7": {
+    "password": "F9322888",
+    "student_id": "MBHSDA0505",
+    "name": "Ncube Charlie",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "FFB3BD08": {
+    "password": "4258F166",
+    "student_id": "MBHSDA0506",
+    "name": "Ncube Prince",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "78B0C72E": {
+    "password": "EBE95560",
+    "student_id": "MBHSDA0507",
+    "name": "Ncube Methembe",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "2FD73A37": {
+    "password": "F1FAB8A9",
+    "student_id": "MBHSDA0508",
+    "name": "Ndlovu Siyabonga",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "C9DB8759": {
+    "password": "DE0BBF95",
+    "student_id": "MBHSDA0509",
+    "name": "Ngoma Taonga",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "C165E061": {
+    "password": "C1E1F127",
+    "student_id": "MBHSDA0510",
+    "name": "Nhanga Kudakwashe",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "66851285": {
+    "password": "1380A22D",
+    "student_id": "MBHSDA0511",
+    "name": "Nyamuromba Terrence",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "46E613CF": {
+    "password": "16871DD4",
+    "student_id": "MBHSDA0512",
+    "name": "Nyathi Panashe",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "9DFF8591": {
+    "password": "2A3C7D06",
+    "student_id": "MBHSDA0513",
+    "name": "Nyoni Dean",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "A4DE1341": {
+    "password": "7F25A250",
+    "student_id": "MBHSDA0514",
+    "name": "Shoko Leo",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "DF356306": {
+    "password": "DA045B45",
+    "student_id": "MBHSDA0515",
+    "name": "Sibanda Alistar",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "D2CB1A89": {
+    "password": "6F86FA1B",
+    "student_id": "MBHSDA0516",
+    "name": "Charewa Grace",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "484AA662": {
+    "password": "D60B1F02",
+    "student_id": "MBHSDA0517",
+    "name": "Chipadza Jacquelyn",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "FBF14145": {
+    "password": "760D6FA2",
+    "student_id": "MBHSDA0518",
+    "name": "Gabella Nomvelo",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "9844BAC3": {
+    "password": "86D74673",
+    "student_id": "MBHSDA0519",
+    "name": "Mudimba Prime",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "B2A0515B": {
+    "password": "853621AE",
+    "student_id": "MBHSDA0520",
+    "name": "Mudimba Princess",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "38B06DF3": {
+    "password": "51DD1068",
+    "student_id": "MBHSDA0521",
+    "name": "Kasango Amanda",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "0E9CB1AB": {
+    "password": "F67E0F3B",
+    "student_id": "MBHSDA0522",
+    "name": "Munkuli Eternal",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "07CEF1C2": {
+    "password": "9255CF76",
+    "student_id": "MBHSDA0523",
+    "name": "Tome Kristen",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "66926448": {
+    "password": "BF11D6C2",
+    "student_id": "MBHSDA0524",
+    "name": "Nyoni Nokuthula",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "9BD7B308": {
+    "password": "B548AC2F",
+    "student_id": "MBHSDA0525",
+    "name": "Mataure Tauyandiye",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "EAC20755": {
+    "password": "45780B4B",
+    "student_id": "MBHSDA0526",
+    "name": "Mhlanga Thubelihle",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "5291A814": {
+    "password": "A7CC0D3F",
+    "student_id": "MBHSDA0527",
+    "name": "Nyoni Unathi",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "47637506": {
+    "password": "BBAD29D5",
+    "student_id": "MBHSDA0528",
+    "name": "Ncube Anthony",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "5596EC8E": {
+    "password": "B3A52BB2",
+    "student_id": "MBHSDA0529",
+    "name": "Phiri Raheem",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "32C0BDB1": {
+    "password": "D718BABE",
+    "student_id": "MBHSDA0530",
+    "name": "Tshuma Anthony",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "63E52A0A": {
+    "password": "2C3B3AA3",
+    "student_id": "MBHSDA0531",
+    "name": "Muvhimi Tanaka",
+    "class": "Upper 6 Sciences",
+    "stream": "N/A"
+  },
+  "1BABB6A0": {
+    "password": "C2389C32",
+    "student_id": "MBHSDA0532",
+    "name": "Hodobo Faith",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "7707AE20": {
+    "password": "3333FC3C",
+    "student_id": "MBHSDA0533",
+    "name": "Kamanga Lindsay",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "FF3CB089": {
+    "password": "36026335",
+    "student_id": "MBHSDA0534",
+    "name": "Moyo Ethelbert",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "D8943ED7": {
+    "password": "634410E9",
+    "student_id": "MBHSDA0535",
+    "name": "Mutanga Hazel",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "A77AAEDE": {
+    "password": "73D3C14C",
+    "student_id": "MBHSDA0536",
+    "name": "Mutshayani Nicole",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "3287BED0": {
+    "password": "DC54BCA0",
+    "student_id": "MBHSDA0537",
+    "name": "Muzvinoreva Anotida",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "26167707": {
+    "password": "85CB6128",
+    "student_id": "MBHSDA0538",
+    "name": "Mpofu Simingenkosi",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "8485E6B8": {
+    "password": "A268D788",
+    "student_id": "MBHSDA0539",
+    "name": "Nhachi Nannette",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "70259D63": {
+    "password": "9121A38C",
+    "student_id": "MBHSDA0540",
+    "name": "Chipato Vincent",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "BAC9D945": {
+    "password": "42B09451",
+    "student_id": "MBHSDA0541",
+    "name": "Magenzi Tinotenda",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "9ADB555A": {
+    "password": "150619BE",
+    "student_id": "MBHSDA0542",
+    "name": "Mupazviripo Alpha",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "70887F8C": {
+    "password": "4219FE20",
+    "student_id": "MBHSDA0543",
+    "name": "Ncube Andile",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "621BCE3D": {
+    "password": "011BC5DA",
+    "student_id": "MBHSDA0544",
+    "name": "Ngwenya Emmanuel",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "D60C250A": {
+    "password": "8172AF0F",
+    "student_id": "MBHSDA0545",
+    "name": "Sibanda Ashton",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "ED2FDFB0": {
+    "password": "C2EB1970",
+    "student_id": "MBHSDA0546",
+    "name": "Sithole Crispen",
+    "class": "Upper 6 Commercials",
+    "stream": "N/A"
+  },
+  "AFB135A4": {
+    "password": "E1EB3CA7",
+    "student_id": "MBHSDA0547",
+    "name": "Gwenzi Rutendo",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "2DB8A0F5": {
+    "password": "7F892175",
+    "student_id": "MBHSDA0548",
+    "name": "Jongwe Shanis",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "42C16C66": {
+    "password": "F2D09A78",
+    "student_id": "MBHSDA0549",
+    "name": "Masimini Nkanyenzi",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "9171FE97": {
+    "password": "0C7F4683",
+    "student_id": "MBHSDA0550",
+    "name": "Pakati Mitchelle",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "181E75B6": {
+    "password": "B96C0FAA",
+    "student_id": "MBHSDA0552",
+    "name": "Zulu Natasha",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "0C0F6EB3": {
+    "password": "8F42DCD4",
+    "student_id": "MBHSDA0553",
+    "name": "Bonda Adrian",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "E311416C": {
+    "password": "BC250C4F",
+    "student_id": "MBHSDA0554",
+    "name": "Mbewe Valenciano",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "65428141": {
+    "password": "3AC6D322",
+    "student_id": "MBHSDA0555",
+    "name": "Moyo Mduduzi",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "97F4F7A2": {
+    "password": "7EA5F4E2",
+    "student_id": "MBHSDA0556",
+    "name": "Chitungwa Sandisiwe",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "FE0BCE29": {
+    "password": "14F13979",
+    "student_id": "MBHSDA0557",
+    "name": "Hlabangani Lynne T P",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "7FFCF5E3": {
+    "password": "B5B86203",
+    "student_id": "MBHSDA0558",
+    "name": "Kaviza Shantel",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "7456CFB3": {
+    "password": "E4D643B3",
+    "student_id": "MBHSDA0559",
+    "name": "Mlilo Shantel",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "3C4A27FD": {
+    "password": "111F01F5",
+    "student_id": "MBHSDA0560",
+    "name": "Mukuli Lusinizyo",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "A1694A44": {
+    "password": "34F4D063",
+    "student_id": "MBHSDA0561",
+    "name": "Mtemeri Mavis Lesley",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "16AC5145": {
+    "password": "60497149",
+    "student_id": "MBHSDA0562",
+    "name": "Dube Londile",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "BA2845B8": {
+    "password": "691E608B",
+    "student_id": "MBHSDA0563",
+    "name": "Chitungwa Andile T",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "5BF7A330": {
+    "password": "FB6E4EB1",
+    "student_id": "MBHSDA0564",
+    "name": "Machingura Juniour G G",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "18FEEE34": {
+    "password": "D555E9FB",
+    "student_id": "MBHSDA0565",
+    "name": "Mapurazi Ashley",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "0C71DD53": {
+    "password": "389C389A",
+    "student_id": "MBHSDA0567",
+    "name": "Mbewe Siyabonga",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "5F9F9A17": {
+    "password": "35203694",
+    "student_id": "MBHSDA0568",
+    "name": "Mkanyira Jameel C",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "DBA23815": {
+    "password": "2B048EC3",
+    "student_id": "MBHSDA0569",
+    "name": "Mpofu Langelihle",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "A815EBC5": {
+    "password": "0080DDB5",
+    "student_id": "MBHSDA0570",
+    "name": "Muleya Devine",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "926C2DDE": {
+    "password": "28468FE6",
+    "student_id": "MBHSDA0571",
+    "name": "Mwinde Itobele O",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "F17B3908": {
+    "password": "F5FABF63",
+    "student_id": "MBHSDA0572",
+    "name": "Ndlovu Raymond",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "FA32524B": {
+    "password": "59EEF03C",
+    "student_id": "MBHSDA0573",
+    "name": "Sigodo Thamsanqa Nigel",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "3FE5D4D8": {
+    "password": "6FE70BCB",
+    "student_id": "MBHSDA0574",
+    "name": "Tshuma Brian",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "D73E2A30": {
+    "password": "74CFEF25",
+    "student_id": "MBHSDA0575",
+    "name": "Zikadza Malvin",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "13B4FD66": {
+    "password": "9EF4F36A",
+    "student_id": "MBHSDA0576",
+    "name": "Zunga Gerald",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "604CA008": {
+    "password": "1A70E96F",
+    "student_id": "MBHSDA0577",
+    "name": "Chinyanga Megan",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "190EC743": {
+    "password": "60A3ED83",
+    "student_id": "MBHSDA0578",
+    "name": "Mitole Praise",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "7E9485E9": {
+    "password": "3F7D71C7",
+    "student_id": "MBHSDA0579",
+    "name": "Mdlala Navia",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "6678683A": {
+    "password": "F0A31D38",
+    "student_id": "MBHSDA0580",
+    "name": "Muchikange Shantel",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "1B6BA5D4": {
+    "password": "A2D7D40D",
+    "student_id": "MBHSDA0581",
+    "name": "Mudimba Musimune",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "A208A3B6": {
+    "password": "E2638C10",
+    "student_id": "MBHSDA0582",
+    "name": "Ndlovu Thato",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "20F66F28": {
+    "password": "94458753",
+    "student_id": "MBHSDA0583",
+    "name": "Nyathi Denise",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "0473B615": {
+    "password": "8E64EEE8",
+    "student_id": "MBHSDA0584",
+    "name": "Pedro Vannesa",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "09799DDE": {
+    "password": "A38EDA79",
+    "student_id": "MBHSDA0585",
+    "name": "Sithole Nicole",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "3B993B1E": {
+    "password": "46BDA4EE",
+    "student_id": "MBHSDA0586",
+    "name": "Tokonye Tadiwa",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "F65C96F7": {
+    "password": "17AC9C76",
+    "student_id": "MBHSDA0587",
+    "name": "Zinja Ayanda",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "E6F73A62": {
+    "password": "480A6A4B",
+    "student_id": "MBHSDA0588",
+    "name": "Dzere Anesu",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "41195C5A": {
+    "password": "F0F77D44",
+    "student_id": "MBHSDA0589",
+    "name": "Ganyani Tafara Praise",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "0C6EA02C": {
+    "password": "F3C71B89",
+    "student_id": "MBHSDA0590",
+    "name": "Jeche Lewis",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "FA521A5E": {
+    "password": "40308FCA",
+    "student_id": "MBHSDA0591",
+    "name": "Ndati Pierre",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "CEBF4682": {
+    "password": "0E2B2369",
+    "student_id": "MBHSDA0592",
+    "name": "Ndebele Muziwandile",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "8E5FBE26": {
+    "password": "1305EB14",
+    "student_id": "MBHSDA0593",
+    "name": "Nehwati Sasha",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "F4DDE5DF": {
+    "password": "D409F75A",
+    "student_id": "MBHSDA0594",
+    "name": "Chikwenje Shalom",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "20637FC2": {
+    "password": "B4BE10F1",
+    "student_id": "MBHSDA0595",
+    "name": "Chimhete Charmaine",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "A9932D5E": {
+    "password": "D4FE318E",
+    "student_id": "MBHSDA0596",
+    "name": "Gotekwa leanne P",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "82949011": {
+    "password": "E1A53A68",
+    "student_id": "MBHSDA0597",
+    "name": "Gumbo Veronica",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "005BF180": {
+    "password": "4E9F6134",
+    "student_id": "MBHSDA0599",
+    "name": "Muunga Pelatia",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "4A480759": {
+    "password": "533306A9",
+    "student_id": "MBHSDA0600",
+    "name": "Muzamba Charlotte",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "A98CC360": {
+    "password": "958CFF6B",
+    "student_id": "MBHSDA0601",
+    "name": "Ncube Yolisa",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "AF851AAB": {
+    "password": "99A439BB",
+    "student_id": "MBHSDA0602",
+    "name": "Ndlovu Noeleen M",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "3F203B8F": {
+    "password": "024F1B2F",
+    "student_id": "MBHSDA0603",
+    "name": "Ndlovu Thembelihle",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "D7445F3F": {
+    "password": "FBDAE2E8",
+    "student_id": "MBHSDA0604",
+    "name": "Sibanda Hope",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "1BA75EDE": {
+    "password": "29C1F4A5",
+    "student_id": "MBHSDA0605",
+    "name": "Kabondo Blessing",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "051428FC": {
+    "password": "8FEF0D82",
+    "student_id": "MBHSDA0606",
+    "name": "Mpala Best L",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "63447A3C": {
+    "password": "D23732E6",
+    "student_id": "MBHSDA0607",
+    "name": "Muusha Audious N",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "5D12524C": {
+    "password": "0BD41223",
+    "student_id": "MBHSDA0608",
+    "name": "Siatabwa Caabilo",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "D8D2BE26": {
+    "password": "379BDF89",
+    "student_id": "MBHSDA0609",
+    "name": "Tshuma Proffesor",
+    "class": "Lower 6 Arts",
+    "stream": "N/A"
+  },
+  "A224FC6F": {
+    "password": "ST124632",
+    "student_id": "ST124632",
+    "name": "Ngwenya Mbalenhle",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "59EAA1BD": {
+    "password": "ST126134",
+    "student_id": "ST126134",
+    "name": "Sitemere Bradley",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "6919B845": {
+    "password": "ST133045",
+    "student_id": "ST133045",
+    "name": "Muleya Royce",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "EB0E073A": {
+    "password": "ST188155",
+    "student_id": "ST188155",
+    "name": "Nyathi Hope",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "CA678A85": {
+    "password": "ST240234",
+    "student_id": "ST240234",
+    "name": "Mudenda Cyril",
+    "class": "4A2",
+    "stream": "N/A"
+  },
+  "B28F9FCD": {
+    "password": "2CDFD603",
+    "student_id": "ST252991",
+    "name": "Mbabane Hadassah",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "5E19825C": {
+    "password": "ST277643",
+    "student_id": "ST277643",
+    "name": "Munkuli Caitlyn",
+    "class": "4A3",
+    "stream": "N/A"
+  },
+  "EEE781E3": {
+    "password": "ST285065",
+    "student_id": "ST285065",
+    "name": "Dube Tasha",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "C26DDA77": {
+    "password": "ST310039",
+    "student_id": "ST310039",
+    "name": "Shoko Janine",
+    "class": "Upper 6 Arts",
+    "stream": "N/A"
+  },
+  "E9146920": {
+    "password": "ST314357",
+    "student_id": "ST314357",
+    "name": "Nyoni Bliss",
+    "class": "1A3",
+    "stream": "N/A"
+  },
+  "FF01323F": {
+    "password": "ST331039",
+    "student_id": "ST331039",
+    "name": "Masuku Prisca",
+    "class": "3A3",
+    "stream": "N/A"
+  },
+  "5442118D": {
+    "password": "D3D1AE89",
+    "student_id": "ST489085",
+    "name": "Mpofu Peter",
+    "class": "3A2",
+    "stream": "N/A"
+  },
+  "8697E461": {
+    "password": "ST573619",
+    "student_id": "ST573619",
+    "name": "Sithole Malvin",
+    "class": "1A2",
+    "stream": "N/A"
+  },
+  "4A9D3595": {
+    "password": "D60B6014",
+    "student_id": "ST586471",
+    "name": "Zulu Theophilus",
+    "class": "3A1",
+    "stream": "N/A"
+  },
+  "75F6B06B": {
+    "password": "ST611520",
+    "student_id": "ST611520",
+    "name": "Maravanyika Blessing",
+    "class": "Lower 6 Commercials",
+    "stream": "N/A"
+  },
+  "1962D1C5": {
+    "password": "ST805335",
+    "student_id": "ST805335",
+    "name": "Ncube Lubelihle",
+    "class": "Lower 6 Sciences",
+    "stream": "N/A"
+  },
+  "52DFC019": {
+    "password": "ST183330",
+    "student_id": "ST183330",
+    "name": "Nyathi Romeo",
+    "class": "3A3",
+    "stream": null
+  },
+  "E46867FC": {
+    "password": "TSTD001",
+    "student_id": "TSTD001",
+    "name": "Test Student",
+    "class": "Form 3",
+    "stream": null
+  }
+}

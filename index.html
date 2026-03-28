@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Scholastic Services Student Portal</title>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { 
+                font-family: 'Segoe UI', Arial, sans-serif; 
+                background: #f5f5f5; 
+                padding: 20px;
+                min-height: 100vh;
+            }
+            .container { max-width: 450px; margin: 0 auto; }
+            .card { 
+                background: white; 
+                border-radius: 16px; 
+                padding: 28px; 
+                margin-bottom: 20px; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
+            h1 { font-size: 26px; margin-bottom: 8px; color: #1a2a3a; }
+            .sub { color: #666; font-size: 13px; margin-bottom: 28px; }
+            input { 
+                width: 100%; 
+                padding: 14px; 
+                margin: 10px 0; 
+                border: 1px solid #ddd; 
+                border-radius: 10px; 
+                font-size: 16px;
+                font-family: inherit;
+            }
+            button { 
+                width: 100%; 
+                padding: 14px; 
+                background: #4a6a8a; 
+                color: white; 
+                border: none; 
+                border-radius: 10px; 
+                font-size: 16px; 
+                cursor: pointer; 
+                font-weight: 600;
+                margin-top: 10px;
+            }
+            button:hover { background: #3a5a7a; }
+            .error { color: #d32f2f; margin: 12px 0; display: none; text-align: center; }
+            .dashboard { display: none; }
+            .info { 
+                margin: 20px 0; 
+                padding: 16px; 
+                background: #f8f9fa; 
+                border-radius: 12px;
+                border-left: 4px solid #4a6a8a;
+            }
+            .info p { margin: 10px 0; }
+            .report-container {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .report-image {
+                max-width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                cursor: pointer;
+            }
+            .report-placeholder {
+                padding: 60px;
+                background: #f8f9fa;
+                border-radius: 12px;
+                text-align: center;
+                color: #999;
+            }
+            .loading {
+                text-align: center;
+                padding: 40px;
+                color: #666;
+            }
+            .watermark { 
+                margin-top: 20px; 
+                text-align: center; 
+                font-size: 10px; 
+                color: #999; 
+            }
+            .btn-secondary {
+                background: #6c757d;
+                margin-top: 10px;
+            }
+            .btn-secondary:hover {
+                background: #5a6268;
+            }
+            .student-name {
+                font-size: 22px;
+                font-weight: bold;
+                color: #1a2a3a;
+                margin-bottom: 5px;
+            }
+            .student-id {
+                color: #666;
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="card" id="loginCard">
+            <h1>Scholastic Services</h1>
+            <div class="sub">Student Portal Access</div>
+            <input type="text" id="portalId" placeholder="Portal ID">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Access Portal</button>
+            <div class="error" id="errorMsg"></div>
+        </div>
+        
+        <div class="card" id="dashboard" style="display:none">
+            <div class="student-name" id="studentName">Welcome</div>
+            <div class="student-id" id="studentId">Student ID: ---</div>
+            
+            <div class="info">
+                <p><strong>Class:</strong> <span id="displayClass"></span></p>
+                <p><strong>Stream:</strong> <span id="displayStream"></span></p>
+                <p><strong>Portal ID:</strong> <span id="displayPortalId"></span></p>
+            </div>
+            
+            <div class="report-container" id="reportContainer">
+                <div class="loading" id="reportLoading">Loading report...</div>
+                <img id="reportImage" class="report-image" style="display:none;" alt="Academic Report">
+                <div id="reportError" class="report-placeholder" style="display:none;">
+                    <p>📭 No report available</p>
+                    <p style="font-size:12px; margin-top:10px;">Please contact the school for your report</p>
+                </div>
+            </div>
+            
+            <button onclick="logout()">Logout</button>
+        </div>
+        
+        <div class="watermark">
+            Scholastic Services Temporal Access Key<br>
+            Powered by Aetheris Innovative Enterprises Pvt Ltd
+        </div>
+    </div>
+
+    <script>
+    let accounts = null;
+    let currentStudent = null;
+    let currentSchoolId = null;
+
+    // Load accounts data
+    fetch('data/accounts.json')
+        .then(r => r.json())
+        .then(data => { 
+            accounts = data; 
+            console.log('Accounts loaded:', Object.keys(accounts).length);
+        });
+
+    // Auto-login from QR code
+    function autoLogin() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const portalId = urlParams.get('portalId');
+        const password = urlParams.get('password');
+        const schoolId = urlParams.get('schoolId');
+        const autoLogin = urlParams.get('autoLogin');
+        
+        if (autoLogin === 'true' && portalId && password) {
+            console.log('Auto-login triggered for:', portalId);
+            setTimeout(() => {
+                const loginResult = authenticateUser(portalId, password);
+                if (loginResult) {
+                    window.history.replaceState(null, null, window.location.pathname);
+                }
+            }, 500);
+        }
+    }
+
+    function authenticateUser(portalId, password) {
+        const account = accounts[portalId];
+        
+        if (account && account.password === password) {
+            currentStudent = account;
+            currentSchoolId = account.school_id;
+            
+            document.getElementById('studentName').innerHTML = account.name;
+            document.getElementById('studentId').innerHTML = `Student ID: ${account.student_id}`;
+            document.getElementById('displayClass').innerText = account.class;
+            document.getElementById('displayStream').innerText = account.stream || 'N/A';
+            document.getElementById('displayPortalId').innerText = portalId;
+            
+            document.getElementById('loginCard').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.getElementById('errorMsg').style.display = 'none';
+            
+            // Load report
+            loadReport(account);
+            
+            return true;
+        }
+        return false;
+    }
+
+    function login() {
+        const portalId = document.getElementById('portalId').value.toUpperCase();
+        const password = document.getElementById('password').value;
+        
+        if (!portalId || !password) {
+            showError('Please enter both Portal ID and password');
+            return;
+        }
+        
+        if (authenticateUser(portalId, password)) {
+            document.getElementById('portalId').value = '';
+            document.getElementById('password').value = '';
+        } else {
+            showError('Invalid Portal ID or password');
+        }
+    }
+
+    function loadReport(student) {
+        const reportContainer = document.getElementById('reportContainer');
+        const loading = document.getElementById('reportLoading');
+        const reportImage = document.getElementById('reportImage');
+        const reportError = document.getElementById('reportError');
+        
+        loading.style.display = 'block';
+        reportImage.style.display = 'none';
+        reportError.style.display = 'none';
+        
+        // Try different report paths based on school and student
+        const schoolName = student.school_id || 'default';
+        const className = student.class || 'Unknown';
+        const studentId = student.student_id;
+        
+        // Report paths in priority order
+        const reportPaths = [
+            `reports/${schoolName}/${className}/${studentId}.png`,
+            `reports/${schoolName}/${studentId}.png`,
+            `reports/${studentId}.png`,
+            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${schoolName}/${className}/${studentId}.png`,
+            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${schoolName}/${studentId}.png`,
+            `https://raw.githubusercontent.com/hvstechzw/Scholastic-Services-Web-Portal/main/reports/${studentId}.png`
+        ];
+        
+        function tryLoad(index) {
+            if (index >= reportPaths.length) {
+                loading.style.display = 'none';
+                reportError.style.display = 'block';
+                return;
+            }
+            
+            const img = new Image();
+            img.onload = function() {
+                reportImage.src = reportPaths[index];
+                loading.style.display = 'none';
+                reportImage.style.display = 'block';
+                reportImage.onclick = () => window.open(reportPaths[index], '_blank');
+            };
+            img.onerror = function() {
+                tryLoad(index + 1);
+            };
+            img.src = reportPaths[index];
+        }
+        
+        tryLoad(0);
+    }
+
+    function showError(message) {
+        const errorMsg = document.getElementById('errorMsg');
+        errorMsg.innerText = message;
+        errorMsg.style.display = 'block';
+        setTimeout(() => {
+            errorMsg.style.display = 'none';
+        }, 3000);
+    }
+
+    function logout() {
+        currentStudent = null;
+        document.getElementById('loginCard').style.display = 'block';
+        document.getElementById('dashboard').style.display = 'none';
+        document.getElementById('portalId').value = '';
+        document.getElementById('password').value = '';
+    }
+
+    // Run auto-login when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        autoLogin();
+    });
+    </script>
+    </body>
+    </html>

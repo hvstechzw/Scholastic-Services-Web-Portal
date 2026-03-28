@@ -1,0 +1,18 @@
+body { margin: 0; padding: 0; background: #f5f5f5; font-family: 'Segoe UI', Arial, sans-serif; }
+    .container { max-width: 450px; margin: 0 auto; padding: 20px; }
+    .card { background: white; border-radius: 16px; padding: 28px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1 { font-size: 26px; margin-bottom: 8px; color: #1a2a3a; }
+    .sub { color: #666; font-size: 13px; margin-bottom: 28px; }
+    input { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; box-sizing: border-box; }
+    button { width: 100%; padding: 14px; background: #4a6a8a; color: white; border: none; border-radius: 10px; font-size: 16px; cursor: pointer; font-weight: 600; margin-top: 10px; }
+    button:hover { background: #3a5a7a; }
+    .error { color: #d32f2f; margin: 12px 0; display: none; text-align: center; }
+    .info { margin: 20px 0; padding: 16px; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #4a6a8a; }
+    .info p { margin: 10px 0; }
+    .report-container { margin: 20px 0; text-align: center; }
+    .report-image { max-width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; }
+    .report-placeholder { padding: 60px; background: #f8f9fa; border-radius: 12px; text-align: center; color: #999; }
+    .loading { text-align: center; padding: 40px; color: #666; }
+    .watermark { margin-top: 20px; text-align: center; font-size: 10px; color: #999; }
+    .student-name { font-size: 22px; font-weight: bold; color: #1a2a3a; margin-bottom: 5px; }
+    .student-id { color: #666; font-size: 14px; margin-bottom: 20px; }
