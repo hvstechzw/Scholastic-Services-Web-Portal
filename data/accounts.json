@@ -4247,5 +4247,12 @@
     "name": "Test Student",
     "class": "Form 3",
     "stream": null
+  },
+  "1E282AA4": {
+    "password": "ST153807",
+    "student_id": "ST153807",
+    "name": "Siatimba Lubeteko",
+    "class": "Lower 6 Sciences",
+    "stream": null
   }
 }
